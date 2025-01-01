@@ -6,7 +6,7 @@ export default function Panel({
 	border,
 }: {
 	title: string;
-	content: string[];
+	content: Record<string, Record<string, string[]>>;
 	border?: boolean;
 }) {
 	return (
@@ -17,11 +17,7 @@ export default function Panel({
 			)}
 		>
 			<h3>{title}</h3>
-			<div className="flex flex-col gap-4 items-center justify-center">
-				{typeof content[0] === "string"
-					? content.map((item, index) => <p key={index}>{item}</p>)
-					: null}
-			</div>
+			<div className="flex flex-col gap-4 items-center justify-center"></div>
 		</div>
 	);
 }

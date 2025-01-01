@@ -1,29 +1,36 @@
 "use client";
 import { useState } from "react";
 import Panel from "./panel";
-import { cn } from "@/lib/utils";
 import { SelectTeams } from "./select-team";
+import TransactionsPanel from "./transactions-panel.tsx";
+import { Transactions } from "@/types/transactions";
+import { OutgoingMatch } from "@/types/schedule";
+import ScheduleList from "./schedule-list";
 
 export default function Panels({
 	teamsList,
 	allTransactions,
 	allTeams,
+	schedule,
 }: {
 	teamsList: string[];
-	allTransactions: any[];
-	allTeams: any[];
+	allTransactions: Transactions;
+	allTeams: Record<string, Record<string, string[]>>;
+	schedule: OutgoingMatch[];
 }) {
 	const [selected, setSelected] = useState("");
-	const [content, setContent] = useState([]);
 	return (
-		<div className="w-full h-full flex">
+		<div className="w-full h-full flex ">
 			<div className={"w-full grid border-red-50 grid-cols-3"}>
-				<div className="px-8 py-4">
-					<h3 className="text-xl font-bold">{selected}</h3>
-					<SelectTeams teams={teamsList} setSelected={setSelected} />
-					{/* <Panel title={"Teams"} content={teamsList} /> */}
+				<div className="px-8 py-4 flex flex-col gap-4">
+					<SelectTeams
+						teams={teamsList}
+						setSelected={setSelected}
+						selected={selected}
+					/>
+					<ScheduleList schedule={schedule} />
 				</div>
-				<Panel title="Transactions" content={allTransactions} border={true} />
+				<TransactionsPanel content={allTransactions} selected={selected} />
 				<Panel title="Date" content={allTeams} />
 			</div>
 		</div>
