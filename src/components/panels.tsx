@@ -28,7 +28,7 @@ export default function Panels({
 						setSelected={setSelected}
 						selected={selected}
 					/>
-					<ScheduleList schedule={schedule} />
+					<ScheduleList schedule={schedule} selected={selected} />
 				</div>
 				<TransactionsPanel content={allTransactions} selected={selected} />
 				<Panel title="Date" content={allTeams} />

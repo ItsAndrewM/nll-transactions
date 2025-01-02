@@ -113,7 +113,7 @@ export default function TransactionsPanel({
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5 }}
 									className={cn(
-										"border p-4 rounded-md",
+										"border p-6 rounded-md",
 										index >= visibleEntries.length - newlyLoadedCount
 											? "bg-blue-50"
 											: ""
@@ -121,16 +121,18 @@ export default function TransactionsPanel({
 								>
 									<h4 className="font-bold underline">{key}</h4>
 									<ul className="w-full text-left flex flex-col gap-2">
-										{Object.entries(value).map(([subKey, subValue]) => (
-											<li key={subKey} className="ml-4">
-												<span className="font-bold">{subKey}:</span>{" "}
-												<ul className="list-disc w-full list-inside ml-4">
-													{subValue.map((transaction: string) => (
-														<li key={transaction}>{transaction}</li>
-													))}
-												</ul>
-											</li>
-										))}
+										{Object.entries(value as Record<string, string[]>).map(
+											([subKey, subValue]) => (
+												<li key={subKey} className="ml-4">
+													<span className="font-bold">{subKey}:</span>{" "}
+													<ul className="list-disc w-full list-inside ml-4">
+														{subValue.map((transaction: string) => (
+															<li key={transaction}>{transaction}</li>
+														))}
+													</ul>
+												</li>
+											)
+										)}
 									</ul>
 								</motion.li>
 							</div>

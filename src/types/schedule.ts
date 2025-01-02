@@ -19,6 +19,13 @@ export interface Match {
 		code: string;
 		typeId: number;
 		typeName: string;
+		period?: number;
+		periodDisplay?: string;
+		periodSecs?: number;
+		periodTime?: string;
+		remainingDisplay?: string;
+		remainingSecs?: number;
+		remainingTime?: string;
 	};
 	type: {
 		id: number;
@@ -47,7 +54,7 @@ export interface Week {
 }
 
 export interface Squad {
-	score: {
+	score?: {
 		goals: number;
 		score: number;
 	};

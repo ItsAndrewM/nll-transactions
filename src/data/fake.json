@@ -1,0 +1,6742 @@
+{
+	"success": true,
+	"schedule": [
+		{
+			"id": 686551329,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 5,
+						"score": 5
+					},
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2024-11-29",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-11-30T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"winningSquadId": 545,
+			"week": {
+				"code": "WK01",
+				"phaseNumber": 1,
+				"id": 29277,
+				"name": "Week 01",
+				"number": 1,
+				"season_id": "224"
+			}
+		},
+		{
+			"id": 686554369,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 7,
+						"score": 7
+					},
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2024-11-29",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2024-11-30T02:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"winningSquadId": 525,
+			"week": {
+				"code": "WK01",
+				"phaseNumber": 1,
+				"id": 29277,
+				"name": "Week 01",
+				"number": 1,
+				"season_id": "224"
+			}
+		},
+		{
+			"id": 686551586,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"score": {
+						"goals": 14,
+						"score": 14
+					},
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2024-11-30",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-01T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 546,
+			"week": {
+				"code": "WK01",
+				"phaseNumber": 1,
+				"id": 29277,
+				"name": "Week 01",
+				"number": 1,
+				"season_id": "224"
+			}
+		},
+		{
+			"id": 686552098,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 10,
+						"score": 10
+					},
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2024-11-30",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-01T00:00:00.000Z"
+			},
+			"status": {
+				"period": 5,
+				"periodSecs": 437,
+				"periodDisplay": "Full Time",
+				"periodTime": "07:17",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 540,
+			"week": {
+				"code": "WK01",
+				"phaseNumber": 1,
+				"id": 29277,
+				"name": "Week 01",
+				"number": 1,
+				"season_id": "224"
+			}
+		},
+		{
+			"id": 686562833,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 15,
+						"score": 15
+					},
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"score": {
+						"goals": 18,
+						"score": 18
+					},
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-01",
+				"startTime": "15:00:00",
+				"utcMatchStart": "2024-12-01T23:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"winningSquadId": 542,
+			"week": {
+				"code": "WK01",
+				"phaseNumber": 1,
+				"id": 29277,
+				"name": "Week 01",
+				"number": 1,
+				"season_id": "224"
+			}
+		},
+		{
+			"id": 686568738,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 15,
+						"score": 15
+					},
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-06",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2024-12-07T03:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"winningSquadId": 525,
+			"week": {
+				"code": "WK02",
+				"phaseNumber": 2,
+				"id": 29279,
+				"name": "Week 02",
+				"number": 2
+			}
+		},
+		{
+			"id": 686567459,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 18,
+						"score": 18
+					},
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"score": {
+						"goals": 17,
+						"score": 17
+					},
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-07",
+				"startTime": "18:00:00",
+				"utcMatchStart": "2024-12-07T22:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"winningSquadId": 524,
+			"week": {
+				"code": "WK02",
+				"phaseNumber": 2,
+				"id": 29279,
+				"name": "Week 02",
+				"number": 2
+			}
+		},
+		{
+			"id": 686567971,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 15,
+						"score": 15
+					},
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"score": {
+						"goals": 7,
+						"score": 7
+					},
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-07",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-08T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 509,
+			"week": {
+				"code": "WK02",
+				"phaseNumber": 2,
+				"id": 29279,
+				"name": "Week 02",
+				"number": 2
+			}
+		},
+		{
+			"id": 686568195,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 15,
+						"score": 15
+					},
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"score": {
+						"goals": 4,
+						"score": 4
+					},
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-07",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-08T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"winningSquadId": 548,
+			"week": {
+				"code": "WK02",
+				"phaseNumber": 2,
+				"id": 29279,
+				"name": "Week 02",
+				"number": 2
+			}
+		},
+		{
+			"id": 686570259,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"score": {
+						"goals": 13,
+						"score": 13
+					},
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-07",
+				"startTime": "20:00:00",
+				"utcMatchStart": "2024-12-08T01:00:00.000Z"
+			},
+			"status": {
+				"period": 5,
+				"periodSecs": 175,
+				"periodDisplay": "Full Time",
+				"periodTime": "02:55",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 539,
+			"week": {
+				"code": "WK02",
+				"phaseNumber": 2,
+				"id": 29279,
+				"name": "Week 02",
+				"number": 2
+			}
+		},
+		{
+			"id": 686584097,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 18,
+						"score": 18
+					},
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"score": {
+						"goals": 7,
+						"score": 7
+					},
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-13",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-14T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"winningSquadId": 509,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686587665,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 7,
+						"score": 7
+					},
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"score": {
+						"goals": 10,
+						"score": 10
+					},
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-13",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-14T03:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"winningSquadId": 543,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686587409,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"score": {
+						"goals": 14,
+						"score": 14
+					},
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-13",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2024-12-14T03:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"winningSquadId": 542,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686587154,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 10,
+						"score": 10
+					},
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"score": {
+						"goals": 19,
+						"score": 19
+					},
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-14",
+				"startTime": "18:00:00",
+				"utcMatchStart": "2024-12-14T23:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 541,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686584866,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 13,
+						"score": 13
+					},
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-14",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-15T00:00:00.000Z"
+			},
+			"status": {
+				"period": 5,
+				"periodSecs": 50,
+				"periodDisplay": "Full Time",
+				"periodTime": "00:50",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 524,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686586642,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"score": {
+						"goals": 10,
+						"score": 10
+					},
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-14",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2024-12-15T00:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 539,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686586898,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 8,
+						"score": 8
+					},
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-14",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-15T01:00:00.000Z"
+			},
+			"status": {
+				"period": 5,
+				"periodSecs": 437,
+				"periodDisplay": "Full Time",
+				"periodTime": "07:17",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"winningSquadId": 540,
+			"week": {
+				"code": "WK03",
+				"phaseNumber": 3,
+				"id": 29280,
+				"name": "Week 03",
+				"number": 3
+			}
+		},
+		{
+			"id": 686601504,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 15,
+						"score": 15
+					},
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-20",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2024-12-21T03:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"winningSquadId": 541,
+			"week": {
+				"code": "WK04",
+				"phaseNumber": 4,
+				"id": 29281,
+				"name": "Week 04",
+				"number": 4
+			}
+		},
+		{
+			"id": 686600737,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 14,
+						"score": 14
+					},
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-22T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 540,
+			"week": {
+				"code": "WK04",
+				"phaseNumber": 4,
+				"id": 29281,
+				"name": "Week 04",
+				"number": 4
+			}
+		},
+		{
+			"id": 686603521,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 14,
+						"score": 14
+					},
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"score": {
+						"goals": 19,
+						"score": 19
+					},
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-22T02:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"winningSquadId": 525,
+			"week": {
+				"code": "WK04",
+				"phaseNumber": 4,
+				"id": 29281,
+				"name": "Week 04",
+				"number": 4
+			}
+		},
+		{
+			"id": 686603793,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"score": {
+						"goals": 8,
+						"score": 8
+					},
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-22T03:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"winningSquadId": 539,
+			"week": {
+				"code": "WK04",
+				"phaseNumber": 4,
+				"id": 29281,
+				"name": "Week 04",
+				"number": 4
+			}
+		},
+		{
+			"id": 686616608,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 9,
+						"score": 9
+					},
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"score": {
+						"goals": 13,
+						"score": 13
+					},
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-28T23:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"winningSquadId": 544,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 686620144,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 6,
+						"score": 6
+					},
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"score": {
+						"goals": 13,
+						"score": 13
+					},
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-28",
+				"startTime": "18:30:00",
+				"utcMatchStart": "2024-12-28T23:30:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"winningSquadId": 509,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 686617344,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-29T00:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"winningSquadId": 545,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 686619664,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"score": {
+						"goals": 11,
+						"score": 11
+					},
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-29T01:00:00.000Z"
+			},
+			"status": {
+				"period": 5,
+				"periodSecs": 95,
+				"periodDisplay": "Full Time",
+				"periodTime": "01:35",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"winningSquadId": 541,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 686619648,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 14,
+						"score": 14
+					},
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"score": {
+						"goals": 10,
+						"score": 10
+					},
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2024-12-29T02:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"winningSquadId": 543,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 686619905,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"score": {
+						"goals": 13,
+						"score": 13
+					},
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"score": {
+						"goals": 12,
+						"score": 12
+					},
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2024-12-29",
+				"startTime": "14:00:00",
+				"utcMatchStart": "2024-12-29T21:00:00.000Z"
+			},
+			"status": {
+				"period": 4,
+				"periodSecs": 900,
+				"periodDisplay": "Full Time",
+				"periodTime": "15:00",
+				"remainingSecs": 0,
+				"remainingDisplay": "Full Time",
+				"remainingTime": "00:00",
+				"id": 22,
+				"name": "Complete",
+				"code": "COMP",
+				"typeId": 4,
+				"typeName": "Complete"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"winningSquadId": 539,
+			"week": {
+				"code": "WK05",
+				"phaseNumber": 5,
+				"id": 29282,
+				"name": "Week 05",
+				"number": 5
+			}
+		},
+		{
+			"id": 703144992,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-04",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-05T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK06",
+				"phaseNumber": 6,
+				"id": 29283,
+				"name": "Week 06",
+				"number": 6
+			}
+		},
+		{
+			"id": 703146768,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-04",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-01-05T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK06",
+				"phaseNumber": 6,
+				"id": 29283,
+				"name": "Week 06",
+				"number": 6
+			}
+		},
+		{
+			"id": 703147536,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-04",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-05T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK06",
+				"phaseNumber": 6,
+				"id": 29283,
+				"name": "Week 06",
+				"number": 6
+			}
+		},
+		{
+			"id": 703154962,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-10",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-01-11T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703155698,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-10",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-01-11T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703155986,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-10",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-11T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703155475,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-11",
+				"startTime": "13:00:00",
+				"utcMatchStart": "2025-01-11T18:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703152675,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-11",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-12T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703155219,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-11",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-12T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703155459,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-11",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-12T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK07",
+				"phaseNumber": 7,
+				"id": 29284,
+				"name": "Week 07",
+				"number": 7
+			}
+		},
+		{
+			"id": 703168801,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-17",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-18T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703168546,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-18T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703169282,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-19T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703169570,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-19T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703172082,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-01-19T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703171586,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-19T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703169826,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-19T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703171859,
+			"weekOrder": 8,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-19",
+				"startTime": "18:00:00",
+				"utcMatchStart": "2025-01-19T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK08",
+				"phaseNumber": 8,
+				"id": 29285,
+				"name": "Week 08",
+				"number": 8
+			}
+		},
+		{
+			"id": 703187968,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-24",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-25T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK09",
+				"phaseNumber": 9,
+				"id": 29286,
+				"name": "Week 09",
+				"number": 9
+			}
+		},
+		{
+			"id": 703188752,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-24",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-25T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK09",
+				"phaseNumber": 9,
+				"id": 29286,
+				"name": "Week 09",
+				"number": 9
+			}
+		},
+		{
+			"id": 703185441,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-25",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-26T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK09",
+				"phaseNumber": 9,
+				"id": 29286,
+				"name": "Week 09",
+				"number": 9
+			}
+		},
+		{
+			"id": 703187985,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-25",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-01-26T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK09",
+				"phaseNumber": 9,
+				"id": 29286,
+				"name": "Week 09",
+				"number": 9
+			}
+		},
+		{
+			"id": 703193123,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-31",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-01-31T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703193379,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-01-31",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-01T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703204849,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-01",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-02T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703204625,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-01",
+				"startTime": "20:00:00",
+				"utcMatchStart": "2025-02-02T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703204609,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-01",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-02T02:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703202593,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-01",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-02T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703204881,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-01",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-02T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK10",
+				"phaseNumber": 10,
+				"id": 29287,
+				"name": "Week 10",
+				"number": 10
+			}
+		},
+		{
+			"id": 703212307,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-07",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-08T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK11",
+				"phaseNumber": 11,
+				"id": 29288,
+				"name": "Week 11",
+				"number": 11
+			}
+		},
+		{
+			"id": 703213331,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-07",
+				"startTime": "18:00:00",
+				"utcMatchStart": "2025-02-08T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK11",
+				"phaseNumber": 11,
+				"id": 29288,
+				"name": "Week 11",
+				"number": 11
+			}
+		},
+		{
+			"id": 703221008,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-08",
+				"startTime": "13:00:00",
+				"utcMatchStart": "2025-02-08T18:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK11",
+				"phaseNumber": 11,
+				"id": 29288,
+				"name": "Week 11",
+				"number": 11
+			}
+		},
+		{
+			"id": 703218432,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-08",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-09T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK11",
+				"phaseNumber": 11,
+				"id": 29288,
+				"name": "Week 11",
+				"number": 11
+			}
+		},
+		{
+			"id": 703226626,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-14",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-15T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703228930,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-14",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-15T02:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703227170,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-14",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-15T03:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703225891,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-15",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-15T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703226915,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-15",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-16T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703229427,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-15",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-16T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703228947,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-15",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-16T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703237120,
+			"weekOrder": 8,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-16",
+				"startTime": "17:00:00",
+				"utcMatchStart": "2025-02-17T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK12",
+				"phaseNumber": 12,
+				"id": 29289,
+				"name": "Week 12",
+				"number": 12
+			}
+		},
+		{
+			"id": 703242529,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-21",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-02-22T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703245569,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-22T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703246097,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-22T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703243010,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-23T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703243298,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-23T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703245314,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-23T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703245842,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-02-23T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK13",
+				"phaseNumber": 13,
+				"id": 29290,
+				"name": "Week 13",
+				"number": 13
+			}
+		},
+		{
+			"id": 703258912,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-01T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK14",
+				"phaseNumber": 14,
+				"id": 29291,
+				"name": "Week 14",
+				"number": 14
+			}
+		},
+		{
+			"id": 703259168,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-02-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-01T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK14",
+				"phaseNumber": 14,
+				"id": 29291,
+				"name": "Week 14",
+				"number": 14
+			}
+		},
+		{
+			"id": 703269905,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-01",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-02T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK14",
+				"phaseNumber": 14,
+				"id": 29291,
+				"name": "Week 14",
+				"number": 14
+			}
+		},
+		{
+			"id": 703270145,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-01",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-02T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK14",
+				"phaseNumber": 14,
+				"id": 29291,
+				"name": "Week 14",
+				"number": 14
+			}
+		},
+		{
+			"id": 703268129,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-01",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-02T03:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK14",
+				"phaseNumber": 14,
+				"id": 29291,
+				"name": "Week 14",
+				"number": 14
+			}
+		},
+		{
+			"id": 703275043,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-07",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-07T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703276323,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-07",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-08T03:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703278611,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-07",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-08T03:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703286768,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-08",
+				"startTime": "18:30:00",
+				"utcMatchStart": "2025-03-08T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703286544,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-08",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-09T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703286032,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-08",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-09T00:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK15",
+				"phaseNumber": 15,
+				"id": 29292,
+				"name": "Week 15",
+				"number": 15
+			}
+		},
+		{
+			"id": 703291426,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-14",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-14T22:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703295250,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-14",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-15T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703294739,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-15",
+				"startTime": "13:00:00",
+				"utcMatchStart": "2025-03-15T17:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703291683,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-15",
+				"startTime": "15:00:00",
+				"utcMatchStart": "2025-03-15T19:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703292451,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-15",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-15T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703294467,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-15",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-16T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703303184,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-16",
+				"startTime": "14:00:00",
+				"utcMatchStart": "2025-03-16T21:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK16",
+				"phaseNumber": 16,
+				"id": 29293,
+				"name": "Week 16",
+				"number": 16
+			}
+		},
+		{
+			"id": 703307809,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-21",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-21T22:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703311345,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-21",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-21T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703308546,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-22T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703308834,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-22T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703310850,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-23T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703311634,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-22",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-23T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703308067,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-23",
+				"startTime": "15:00:00",
+				"utcMatchStart": "2025-03-23T19:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK17",
+				"phaseNumber": 17,
+				"id": 29294,
+				"name": "Week 17",
+				"number": 17
+			}
+		},
+		{
+			"id": 703327504,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-28",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-28T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK18",
+				"phaseNumber": 18,
+				"id": 29295,
+				"name": "Week 18",
+				"number": 18
+			}
+		},
+		{
+			"id": 703324705,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-29",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-29T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK18",
+				"phaseNumber": 18,
+				"id": 29295,
+				"name": "Week 18",
+				"number": 18
+			}
+		},
+		{
+			"id": 703327729,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-29",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-03-29T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK18",
+				"phaseNumber": 18,
+				"id": 29295,
+				"name": "Week 18",
+				"number": 18
+			}
+		},
+		{
+			"id": 703327249,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-29",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-03-30T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK18",
+				"phaseNumber": 18,
+				"id": 29295,
+				"name": "Week 18",
+				"number": 18
+			}
+		},
+		{
+			"id": 703326994,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-03-30",
+				"startTime": "15:00:00",
+				"utcMatchStart": "2025-03-30T19:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK18",
+				"phaseNumber": 18,
+				"id": 29295,
+				"name": "Week 18",
+				"number": 18
+			}
+		},
+		{
+			"id": 703343632,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-04",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-05T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703344400,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-04",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-05T02:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703340577,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-05",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-05T22:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 648,
+				"code": "SC",
+				"name": "Scotiabank Centre",
+				"timeZone": "Canada/Atlantic"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703341089,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-05",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-05T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703343377,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-05",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-04-05T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703343873,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-05",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-06T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703341858,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-06",
+				"startTime": "14:00:00",
+				"utcMatchStart": "2025-04-06T21:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK19",
+				"phaseNumber": 19,
+				"id": 29296,
+				"name": "Week 19",
+				"number": 19
+			}
+		},
+		{
+			"id": 703349507,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-11",
+				"startTime": "20:00:00",
+				"utcMatchStart": "2025-04-12T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703357216,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				},
+				"home": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-12",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-12T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 622,
+				"code": "CTC",
+				"name": "Canadian Tire Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703357984,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				},
+				"home": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-12",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-12T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 618,
+				"code": "MA",
+				"name": "MVP Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703360272,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				},
+				"home": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-12",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-12T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 614,
+				"code": "WFC",
+				"name": "Wells Fargo Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703360496,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-12",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-04-12T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 613,
+				"code": "KBC",
+				"name": "KeyBank Center",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703360257,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				},
+				"home": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-13",
+				"startTime": "14:00:00",
+				"utcMatchStart": "2025-04-13T20:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 626,
+				"code": "BA",
+				"name": "Ball Arena",
+				"timeZone": "US/Mountain"
+			},
+			"week": {
+				"code": "WK20",
+				"phaseNumber": 20,
+				"id": 29297,
+				"name": "Week 20",
+				"number": 20
+			}
+		},
+		{
+			"id": 703365890,
+			"weekOrder": 1,
+			"squads": {
+				"away": {
+					"id": 544,
+					"code": "HFX",
+					"name": "Halifax",
+					"nickname": "Thunderbirds",
+					"displayName": "Halifax Thunderbirds"
+				},
+				"home": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-18",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-18T23:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4098,
+				"code": "PFFC",
+				"name": "Paramount Fine Foods Centre",
+				"timeZone": "Canada/Eastern"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703366434,
+			"weekOrder": 2,
+			"squads": {
+				"away": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				},
+				"home": {
+					"id": 549,
+					"code": "LV",
+					"name": "Las Vegas",
+					"nickname": "Desert Dogs",
+					"displayName": "Las Vegas Desert Dogs"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-18",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-04-19T02:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 4095,
+				"code": "LFF",
+				"name": "Lee's Family Forum",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703368722,
+			"weekOrder": 3,
+			"squads": {
+				"away": {
+					"id": 548,
+					"code": "ALB",
+					"name": "Albany",
+					"nickname": "FireWolves",
+					"displayName": "Albany FireWolves"
+				},
+				"home": {
+					"id": 542,
+					"code": "SD",
+					"name": "San Diego",
+					"nickname": "Seals",
+					"displayName": "San Diego Seals"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-18",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-04-19T02:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 646,
+				"code": "PA",
+				"name": "Pechanga Arena",
+				"timeZone": "US/Pacific"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703365667,
+			"weekOrder": 4,
+			"squads": {
+				"away": {
+					"id": 515,
+					"code": "TOR",
+					"name": "Toronto",
+					"nickname": "Rock",
+					"displayName": "Toronto Rock"
+				},
+				"home": {
+					"id": 546,
+					"code": "ROC",
+					"name": "Rochester",
+					"nickname": "Knighthawks",
+					"displayName": "Rochester Knighthawks"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-19",
+				"startTime": "18:00:00",
+				"utcMatchStart": "2025-04-19T22:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 610,
+				"code": "BCA",
+				"name": "Blue Cross Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703367955,
+			"weekOrder": 5,
+			"squads": {
+				"away": {
+					"id": 509,
+					"code": "BUF",
+					"name": "Buffalo",
+					"nickname": "Bandits",
+					"displayName": "Buffalo Bandits"
+				},
+				"home": {
+					"id": 539,
+					"code": "GA",
+					"name": "Georgia",
+					"nickname": "Swarm",
+					"displayName": "Georgia Swarm"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-19",
+				"startTime": "19:30:00",
+				"utcMatchStart": "2025-04-19T23:30:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 645,
+				"code": "GSA",
+				"name": "Gas South Arena",
+				"timeZone": "US/Eastern"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703368979,
+			"weekOrder": 6,
+			"squads": {
+				"away": {
+					"id": 541,
+					"code": "PHI",
+					"name": "Philadelphia",
+					"nickname": "Wings",
+					"displayName": "Philadelphia Wings"
+				},
+				"home": {
+					"id": 543,
+					"code": "VAN",
+					"name": "Vancouver",
+					"nickname": "Warriors",
+					"displayName": "Vancouver Warriors"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-19",
+				"startTime": "17:00:00",
+				"utcMatchStart": "2025-04-20T00:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 625,
+				"code": "RA",
+				"name": "Rogers Arena",
+				"timeZone": "Canada/Pacific"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703368195,
+			"weekOrder": 7,
+			"squads": {
+				"away": {
+					"id": 525,
+					"code": "COL",
+					"name": "Colorado",
+					"nickname": "Mammoth",
+					"displayName": "Colorado Mammoth"
+				},
+				"home": {
+					"id": 524,
+					"code": "CGY",
+					"name": "Calgary",
+					"nickname": "Roughnecks",
+					"displayName": "Calgary Roughnecks"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-19",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-20T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 623,
+				"code": "WJFSS",
+				"name": "WestJet Field at Scotiabank Saddledome",
+				"timeZone": "Canada/Mountain"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		},
+		{
+			"id": 703368211,
+			"weekOrder": 8,
+			"squads": {
+				"away": {
+					"id": 545,
+					"code": "OBB",
+					"name": "Ottawa",
+					"nickname": "Black Bears",
+					"displayName": "Ottawa Black Bears"
+				},
+				"home": {
+					"id": 540,
+					"code": "SAS",
+					"name": "Saskatchewan",
+					"nickname": "Rush",
+					"displayName": "Saskatchewan Rush"
+				}
+			},
+			"date": {
+				"startDate": "2025-04-19",
+				"startTime": "19:00:00",
+				"utcMatchStart": "2025-04-20T01:00:00.000Z"
+			},
+			"status": {
+				"id": 8,
+				"name": "Scheduled",
+				"code": "SCHED",
+				"typeId": 2,
+				"typeName": "Upcoming"
+			},
+			"type": {
+				"id": 1,
+				"name": "Regular Season",
+				"code": "REG"
+			},
+			"venue": {
+				"id": 644,
+				"code": "STC",
+				"name": "SaskTel Centre",
+				"timeZone": "Canada/Saskatchewan"
+			},
+			"week": {
+				"code": "WK21",
+				"phaseNumber": 21,
+				"id": 29298,
+				"name": "Week 21",
+				"number": 21
+			}
+		}
+	]
+}
