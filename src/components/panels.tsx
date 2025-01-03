@@ -12,7 +12,7 @@ import MobileMenu from "./mobile-menu";
 export default function Panels({
 	teamsList,
 	allTransactions,
-	allTeams,
+	// allTeams,
 	schedule,
 }: {
 	teamsList: string[];
@@ -33,7 +33,7 @@ export default function Panels({
 					<ScheduleList schedule={schedule} selected={selected} />
 				</div>
 				<TransactionsPanel content={allTransactions} selected={selected} />
-				<Panel title="Date" content={allTeams} />
+				<Panel title="Date" />
 			</div>
 			{/* Mobile layout */}
 			<div className="w-full flex border-red-50 flex-col md:hidden relative">
