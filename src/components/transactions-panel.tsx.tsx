@@ -66,9 +66,9 @@ export default function TransactionsPanel({
 
 	return (
 		<div className="border-l-2 border-r-2 w-full flex flex-col items-center justify-start text-center relative gap-4 px-6">
-			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap border-b-2 border-input">
-				<h2 className="text-xl text-left font-bold w-full">Transactions</h2>
-				<div className="flex justify-end items-center gap-4 w-full">
+			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap border-b-2 border-input flex-col">
+				<h2 className="text-xl text-center font-bold w-full">Transactions</h2>
+				<div className="flex justify-center items-center gap-4 w-full">
 					<Button onClick={handleShowAll} disabled={showAll} size={"sm"}>
 						Show All
 					</Button>
@@ -97,7 +97,7 @@ export default function TransactionsPanel({
 				</div>
 			</div>
 			<div
-				className="flex flex-col gap-4 items-center justify-center max-h-[480px] overflow-scroll "
+				className="flex flex-col gap-4 items-center justify-center max-h-[70vh] overflow-scroll "
 				ref={scrollContainerRef}
 			>
 				<ul className="w-full text-left list-inside max-w-md px-2 flex flex-col gap-4 max-h-full">

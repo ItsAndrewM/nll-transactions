@@ -2,11 +2,9 @@ import { cn } from "@/lib/utils";
 
 export default function Panel({
 	title,
-	content,
 	border,
 }: {
 	title: string;
-	content: Record<string, Record<string, string[]>>;
 	border?: boolean;
 }) {
 	return (

@@ -6,6 +6,8 @@ import TransactionsPanel from "./transactions-panel.tsx";
 import { Transactions } from "@/types/transactions";
 import { OutgoingMatch } from "@/types/schedule";
 import ScheduleList from "./schedule-list";
+import SchedulePage from "./schedule-page";
+import MobileMenu from "./mobile-menu";
 
 export default function Panels({
 	teamsList,
@@ -21,7 +23,7 @@ export default function Panels({
 	const [selected, setSelected] = useState("");
 	return (
 		<div className="w-full h-full flex ">
-			<div className={"w-full grid border-red-50 grid-cols-3"}>
+			<div className="w-full hidden md:grid border-red-50 grid-cols-2 lg:grid-cols-3">
 				<div className="px-8 py-4 flex flex-col gap-4">
 					<SelectTeams
 						teams={teamsList}
@@ -32,6 +34,11 @@ export default function Panels({
 				</div>
 				<TransactionsPanel content={allTransactions} selected={selected} />
 				<Panel title="Date" content={allTeams} />
+			</div>
+			{/* Mobile layout */}
+			<div className="w-full flex border-red-50 flex-col md:hidden relative">
+				<SchedulePage teamsList={teamsList} schedule={schedule} />
+				<MobileMenu />
 			</div>
 		</div>
 	);
