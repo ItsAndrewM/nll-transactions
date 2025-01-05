@@ -10,6 +10,12 @@ const nextConfig: NextConfig = {
 				port: "",
 				pathname: "/wp-content/uploads/**",
 			},
+			{
+				protocol: "https",
+				hostname: "nllmetaserver.aordev.com",
+				port: "",
+				pathname: "/wp-content/uploads/**",
+			},
 		],
 	},
 };

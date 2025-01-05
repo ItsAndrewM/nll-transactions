@@ -1,30 +1,36 @@
 "use client";
+
 import { useState } from "react";
-import Panel from "./panel";
 import { SelectTeams } from "./select-team";
-import TransactionsPanel from "./transactions-panel.tsx";
+import TransactionsPanel from "./transactions-panel";
 import { Transactions } from "@/types/transactions";
 import { OutgoingMatch } from "@/types/schedule";
 import ScheduleList from "./schedule-list";
 import SchedulePage from "./schedule-page";
-import MobileMenu from "./mobile-menu";
+import Standings from "./standings";
+import { Standing } from "@/types/standings";
+import SelectedTitle from "./selected-title";
 
 export default function Panels({
 	teamsList,
 	allTransactions,
-	// allTeams,
 	schedule,
+	standings,
 }: {
 	teamsList: string[];
 	allTransactions: Transactions;
 	allTeams: Record<string, Record<string, string[]>>;
 	schedule: OutgoingMatch[];
+	standings: Standing[];
 }) {
 	const [selected, setSelected] = useState("");
 	return (
 		<div className="w-full h-full flex ">
 			<div className="w-full hidden md:grid border-red-50 grid-cols-2 lg:grid-cols-3">
 				<div className="px-8 py-4 flex flex-col gap-4">
+					{selected ? (
+						<SelectedTitle selected={selected} standings={standings} />
+					) : null}
 					<SelectTeams
 						teams={teamsList}
 						setSelected={setSelected}
@@ -33,12 +39,15 @@ export default function Panels({
 					<ScheduleList schedule={schedule} selected={selected} />
 				</div>
 				<TransactionsPanel content={allTransactions} selected={selected} />
-				<Panel title="Date" />
+				<Standings standings={standings} />
 			</div>
 			{/* Mobile layout */}
 			<div className="w-full flex border-red-50 flex-col md:hidden relative">
-				<SchedulePage teamsList={teamsList} schedule={schedule} />
-				<MobileMenu />
+				<SchedulePage
+					teamsList={teamsList}
+					schedule={schedule}
+					standings={standings}
+				/>
 			</div>
 		</div>
 	);

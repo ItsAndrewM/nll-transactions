@@ -1,5 +1,6 @@
 import Panels from "@/components/panels";
 import { getSchedule } from "@/server/schedule";
+import { getStandings } from "@/server/standings";
 import { getAllTeamsTransactions, getListOfTeams } from "@/server/teams";
 import { getAllTransactions } from "@/server/transactions";
 
@@ -14,18 +15,21 @@ export default async function Home(props: {
 	const order =
 		typeof searchParams.order === "string" ? searchParams.order : "dsc";
 	const team = typeof searchParams.team === "string" ? searchParams.team : "";
-	const [teamsList, allTransactions, allTeams, schedule] = await Promise.all([
-		getListOfTeams(),
-		getAllTransactions(order, team),
-		getAllTeamsTransactions(),
-		getSchedule(),
-	]);
+	const [teamsList, allTransactions, allTeams, schedule, standings] =
+		await Promise.all([
+			getListOfTeams(),
+			getAllTransactions(order, team),
+			getAllTeamsTransactions(),
+			getSchedule(),
+			getStandings(),
+		]);
 	return (
 		<Panels
 			teamsList={teamsList}
 			allTransactions={allTransactions}
 			allTeams={allTeams}
 			schedule={schedule}
+			standings={standings}
 		/>
 	);
 }

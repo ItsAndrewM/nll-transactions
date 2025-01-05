@@ -48,3 +48,22 @@ export function filterTransactionsByTeam({ data, teamName }: FilterData) {
 
 	return filtered;
 }
+
+export const calculateGamesBack = (
+	firstPlace: string,
+	teamRecord: string
+): string => {
+	const [firstPlaceWins, firstPlaceLosses] = firstPlace.split("-");
+	const [teamWins, teamLosses] = teamRecord.split("-");
+
+	const gamesBack =
+		(Number(firstPlaceWins) -
+			Number(teamWins) +
+			(Number(teamLosses) - Number(firstPlaceLosses))) /
+		2;
+	if (gamesBack === 0) return "-";
+
+	if (gamesBack % 1 === 0) return gamesBack.toString();
+
+	return gamesBack.toFixed(1);
+};

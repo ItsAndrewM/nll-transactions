@@ -9,7 +9,7 @@ import Link from "next/link";
 import { cn, filterTransactionsByTeam } from "@/lib/utils";
 import { Transactions } from "@/types/transactions";
 
-interface TransactionsPanelProps {
+export interface TransactionsPanelProps {
 	selected: string;
 	content: Transactions;
 }
@@ -66,7 +66,7 @@ export default function TransactionsPanel({
 
 	return (
 		<div className="border-l-2 border-r-2 w-full flex flex-col items-center justify-start text-center relative gap-4 px-6">
-			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap border-b-2 border-input flex-col">
+			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap flex-col">
 				<h2 className="text-xl text-center font-bold w-full">Transactions</h2>
 				<div className="flex justify-center items-center gap-4 w-full">
 					<Button onClick={handleShowAll} disabled={showAll} size={"sm"}>
