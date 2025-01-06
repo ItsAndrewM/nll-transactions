@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Standings({ standings }: { standings: Standing[] }) {
 	return (
-		<div className="w-full flex flex-col items-center justify-start text-center relative gap-4 px-6 pb-24 md:pb-0 lg:h-[1280px]">
+		<div className="w-full flex flex-col items-center justify-start text-center relative gap-4 px-6 pb-24 md:pb-0">
 			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap flex-col">
 				<h2 className="text-xl text-center font-bold w-full">Standings</h2>
 			</div>

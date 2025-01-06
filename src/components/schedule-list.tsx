@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
 
 export default function ScheduleList({
 	schedule,
@@ -14,7 +13,6 @@ export default function ScheduleList({
 	selected: string;
 }) {
 	const scrollContainerRef = useRef<HTMLDivElement | null>(null);
-	const pathname = usePathname();
 	const filtered = schedule.filter(
 		(match) =>
 			match.squads.away.displayName === selected ||
@@ -23,17 +21,13 @@ export default function ScheduleList({
 	return (
 		<div
 			className={cn(
-				"flex flex-col gap-4 items-center justify-center py-6 w-full",
-				pathname.includes("schedule")
-					? "overflow-auto h-full"
-					: "max-h-[85vh] overflow-scroll"
+				"flex flex-col gap-4 items-center justify-center py-6 w-full max-h-full overflow-visible md:max-h-[70vh] md:overflow-scroll"
 			)}
 			ref={scrollContainerRef}
 		>
 			<ul
 				className={cn(
-					pathname.includes("schedule") ? "" : "max-w-md",
-					"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full"
+					"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full max-w-md md:max-w-full"
 				)}
 			>
 				{!selected || selected === "all"

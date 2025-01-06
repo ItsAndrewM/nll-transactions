@@ -65,7 +65,7 @@ export default function MobileTransactions({
 	};
 
 	return (
-		<div className="w-full flex flex-col items-center justify-start text-center relative gap-4 px-6 pb-24 lg:pb-0">
+		<div className="w-full flex flex-col items-center justify-start text-center relative gap-4  pb-24 lg:pb-0">
 			<div className="flex gap-4 items-center justify-between w-full py-4 relative flex-nowrap flex-col">
 				<h2 className="text-xl text-center font-bold w-full">Transactions</h2>
 				<div className="flex justify-center items-center gap-4 w-full">

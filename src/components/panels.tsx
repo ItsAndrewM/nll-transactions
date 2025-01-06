@@ -6,10 +6,10 @@ import TransactionsPanel from "./transactions-panel";
 import { Transactions } from "@/types/transactions";
 import { OutgoingMatch } from "@/types/schedule";
 import ScheduleList from "./schedule-list";
-import SchedulePage from "./schedule-page";
 import Standings from "./standings";
 import { Standing } from "@/types/standings";
 import SelectedTitle from "./selected-title";
+import ScheduleNext from "./schedule-next";
 
 export default function Panels({
 	teamsList,
@@ -29,7 +29,14 @@ export default function Panels({
 			<div className="w-full hidden md:grid border-red-50 grid-cols-2 lg:grid-cols-3">
 				<div className="px-8 py-4 flex flex-col gap-4">
 					{selected ? (
-						<SelectedTitle selected={selected} standings={standings} />
+						<>
+							<SelectedTitle selected={selected} standings={standings} />
+							<ScheduleNext
+								schedule={schedule}
+								selected={selected}
+								standings={standings}
+							/>
+						</>
 					) : null}
 					<SelectTeams
 						teams={teamsList}
@@ -42,12 +49,23 @@ export default function Panels({
 				<Standings standings={standings} />
 			</div>
 			{/* Mobile layout */}
-			<div className="w-full flex border-red-50 flex-col md:hidden relative">
-				<SchedulePage
-					teamsList={teamsList}
-					schedule={schedule}
-					standings={standings}
+			<div className="w-full flex border-red-50 flex-col md:hidden max-w-lg mx-auto relative pt-6">
+				{selected ? (
+					<>
+						<SelectedTitle selected={selected} standings={standings} />
+						<ScheduleNext
+							schedule={schedule}
+							selected={selected}
+							standings={standings}
+						/>
+					</>
+				) : null}
+				<SelectTeams
+					teams={teamsList}
+					setSelected={setSelected}
+					selected={selected}
 				/>
+				<ScheduleList schedule={schedule} selected={selected} />
 			</div>
 		</div>
 	);
