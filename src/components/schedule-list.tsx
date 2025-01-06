@@ -55,7 +55,9 @@ export default function ScheduleList({
 										height={28}
 									/>
 									<p className="font-bold  text-xs">
-										{match.squads.away.name} @ {match.squads.home.name}
+										{match.squads.away.name}{" "}
+										{match.squads.away.displayName === selected ? "@" : "vs"}{" "}
+										{match.squads.home.name}
 									</p>
 									<Image
 										className="w-7 h-7"
@@ -116,7 +118,9 @@ export default function ScheduleList({
 											height={28}
 										/>
 										<p className="font-bold  text-xs">
-											{match.squads.away.name} @ {match.squads.home.name}
+											{match.squads.away.name}{" "}
+											{match.squads.away.displayName === selected ? "@" : "vs"}{" "}
+											{match.squads.home.name}
 										</p>
 										<Image
 											className="w-7 h-7"
@@ -144,7 +148,9 @@ export default function ScheduleList({
 											height={28}
 										/>
 										<p className="font-bold  text-xs">
-											{match.squads.home.name} @ {match.squads.away.name}
+											{match.squads.home.name}{" "}
+											{match.squads.away.displayName === selected ? "@" : "vs"}{" "}
+											{match.squads.away.name}
 										</p>
 										<Image
 											className="w-7 h-7"
