@@ -3,7 +3,8 @@ import { OutgoingMatch } from "@/types/schedule";
 import { useRef } from "react";
 import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, generateGameUrl } from "@/lib/utils";
+import Link from "next/link";
 
 export default function MobileScheduleList({
 	schedule,
@@ -91,6 +92,12 @@ export default function MobileScheduleList({
 										</span>
 									</div>
 								)}
+								<Link
+									href={generateGameUrl(match)}
+									className="absolute inset-0 z-[1] cursor-pointer"
+									target="_blank"
+									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+								/>
 							</li>
 					  ))
 					: filtered.map((match) => (
@@ -220,6 +227,12 @@ export default function MobileScheduleList({
 										</span>
 									</div>
 								)}
+								<Link
+									href={generateGameUrl(match)}
+									className="absolute inset-0 z-[1] cursor-pointer"
+									target="_blank"
+									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+								/>
 							</li>
 					  ))}
 			</ul>
