@@ -49,7 +49,7 @@ export default function Panels({
 				<Standings standings={standings} />
 			</div>
 			{/* Mobile layout */}
-			<div className="w-full flex border-red-50 flex-col md:hidden max-w-lg mx-auto relative pt-6">
+			<div className="w-full flex border-red-50 flex-col md:hidden max-w-lg mx-auto relative pt-6 p-8 md:px-0">
 				{selected ? (
 					<>
 						<SelectedTitle selected={selected} standings={standings} />
