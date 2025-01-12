@@ -1,3 +1,4 @@
+import { OutgoingMatch } from "@/types/schedule";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -144,4 +145,12 @@ export function searchTransactions({
 		total: Object.keys(filteredTransactions).length,
 		transactions: filteredTransactions,
 	};
+}
+
+export function generateGameUrl(match: OutgoingMatch) {
+	const date = match.date.startDate;
+	const id = match.id;
+	const away = match.squads.away.displayName.replaceAll(" ", "-");
+	const home = match.squads.home.displayName.replaceAll(" ", "-");
+	return `https://www.nll.com/game/${id}/${away}-vs-${home}/${date}`.toLowerCase();
 }

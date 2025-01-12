@@ -3,7 +3,8 @@ import { OutgoingMatch } from "@/types/schedule";
 import { useRef } from "react";
 import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, generateGameUrl } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ScheduleList({
 	schedule,
@@ -18,6 +19,7 @@ export default function ScheduleList({
 			match.squads.away.displayName === selected ||
 			match.squads.home.displayName === selected
 	);
+
 	return (
 		<div
 			className={cn(
@@ -34,7 +36,7 @@ export default function ScheduleList({
 					? schedule.map((match) => (
 							<li
 								key={match.id}
-								className="border px-4 py-6 rounded-md flex justify-between items-center"
+								className="border px-4 py-6 rounded-md flex justify-between items-center relative"
 							>
 								<div className="flex justify-between items-center gap-2 w-fit">
 									<Image
@@ -91,12 +93,18 @@ export default function ScheduleList({
 										</span>
 									</div>
 								)}
+								<Link
+									href={generateGameUrl(match)}
+									className="absolute inset-0 z-[1] cursor-pointer"
+									target="_blank"
+									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+								/>
 							</li>
 					  ))
 					: filtered.map((match) => (
 							<li
 								key={match.id}
-								className="border px-4 py-6 rounded-md flex justify-between items-center"
+								className="border px-4 py-6 rounded-md flex justify-between items-center relative"
 							>
 								{match.squads.away.displayName === selected ? (
 									<div className="flex justify-between items-center gap-2 w-fit">
@@ -220,6 +228,12 @@ export default function ScheduleList({
 										</span>
 									</div>
 								)}
+								<Link
+									href={generateGameUrl(match)}
+									className="absolute inset-0 z-[1] cursor-pointer"
+									target="_blank"
+									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+								/>
 							</li>
 					  ))}
 			</ul>
