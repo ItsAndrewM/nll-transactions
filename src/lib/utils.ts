@@ -1,6 +1,25 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
+export const CORRECT_TEAM_NAMES = [
+	"Rochester Knighthawks",
+	"Saskatchewan Rush",
+	"Halifax Thunderbirds",
+	"Las Vegas Desert Dogs",
+	"Buffalo Bandits",
+	"Georgia Swarm",
+	"Philadelphia Wings",
+	"San Diego Seals",
+	"Ottawa Black Bears",
+	"Albany FireWolves",
+	"Colorado Mammoth",
+	"Vancouver Warriors",
+	"Toronto Rock",
+	"Calgary Roughnecks",
+	"Panther City Lacrosse Club",
+	"New York Riptide",
+];
+
 interface FilterData {
 	data: {
 		transactions: {
@@ -12,6 +31,19 @@ interface FilterData {
 		total: number;
 	};
 	teamName: string;
+}
+
+interface SearchTransactions {
+	transactionData: {
+		transactions: {
+			[date: string]: {
+				[teamName: string]: string[];
+			};
+		};
+		order: string;
+		total: number;
+	};
+	search: string;
 }
 
 export function cn(...inputs: ClassValue[]) {
@@ -67,3 +99,49 @@ export const calculateGamesBack = (
 
 	return gamesBack.toFixed(1);
 };
+
+export function searchTransactions({
+	search,
+	transactionData,
+}: SearchTransactions) {
+	if (!search.trim()) return transactionData;
+	const checkedTeamNames = CORRECT_TEAM_NAMES.find((team) =>
+		team.toLowerCase().includes(search.toLowerCase())
+	);
+
+	if (checkedTeamNames) {
+		return filterTransactionsByTeam({
+			data: transactionData,
+			teamName: checkedTeamNames,
+		});
+	}
+
+	const filteredTransactions = {} as typeof transactionData.transactions;
+
+	Object.entries(transactionData.transactions).forEach(([date, teams]) => {
+		const filteredTeams = Object.entries(teams).reduce(
+			(acc, [teamName, transactions]) => {
+				const found = transactions.filter((item) =>
+					item.toLowerCase().includes(search.toLowerCase())
+				);
+
+				if (found.length > 0) {
+					acc[teamName] = found;
+				}
+				return acc;
+			},
+			{} as { [teamName: string]: string[] }
+		);
+
+		// Only add the date if there are teams with matching transactions
+		if (Object.keys(filteredTeams).length > 0) {
+			filteredTransactions[date] = filteredTeams;
+		}
+	});
+
+	return {
+		...transactionData,
+		total: Object.keys(filteredTransactions).length,
+		transactions: filteredTransactions,
+	};
+}

@@ -21,7 +21,7 @@ export default function ScheduleList({
 	return (
 		<div
 			className={cn(
-				"flex flex-col gap-4 items-center justify-center py-6 w-full max-h-full overflow-visible md:max-h-[70vh] md:overflow-scroll"
+				"flex flex-col gap-4 items-center justify-center py-6 w-full max-h-full overflow-visible md:max-h-[90vh] md:overflow-scroll "
 			)}
 			ref={scrollContainerRef}
 		>

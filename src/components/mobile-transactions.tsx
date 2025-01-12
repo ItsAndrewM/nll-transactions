@@ -6,8 +6,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { cn, filterTransactionsByTeam } from "@/lib/utils";
+import { cn, filterTransactionsByTeam, searchTransactions } from "@/lib/utils";
 import { Transactions } from "@/types/transactions";
+import { Input } from "./ui/input";
+import { useDebounce } from "@/hooks/useDebounce";
 
 export interface TransactionsPanelProps {
 	selected: string;
@@ -26,13 +28,25 @@ export default function MobileTransactions({
 	const [limit, setLimit] = useState(10);
 	const [showAll, setShowAll] = useState(false);
 	const [newlyLoadedCount, setNewlyLoadedCount] = useState(0);
+	const [searchTerm, setSearchTerm] = useState("");
+
+	const handleSearch = useDebounce((value: string) => {
+		setSearchTerm(value);
+	}, 300);
+
 	const selectedTeam = filterTransactionsByTeam({
 		data: content,
 		teamName: selected,
 	});
-	const allEntries = Object.entries(selectedTeam.transactions);
 
-	const totalEntries = content.total;
+	const searchedTeam = searchTransactions({
+		search: searchTerm,
+		transactionData: selectedTeam,
+	});
+
+	const allEntries = Object.entries(searchedTeam.transactions);
+
+	const totalEntries = searchedTeam.total;
 
 	const handleShowMore = () => {
 		const newLimit = Math.min(limit + 10, totalEntries);
@@ -94,6 +108,14 @@ export default function MobileTransactions({
 							)}
 						</Link>
 					</Button>
+				</div>
+				<div className="flex justify-center items-center gap-4 w-full">
+					<Input
+						type="text"
+						placeholder="Search transactions"
+						className="max-w-md rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+						onChange={(e) => handleSearch(e.target.value)}
+					/>
 				</div>
 			</div>
 			<div
