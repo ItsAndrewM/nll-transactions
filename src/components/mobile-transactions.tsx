@@ -115,6 +115,11 @@ export default function MobileTransactions({
 						placeholder="Search transactions"
 						className="max-w-md rounded-md border border-input bg-background px-3 py-2 text-sm shadow-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
 						onChange={(e) => handleSearch(e.target.value)}
+						onKeyDown={(e) => {
+							if (e.key === "Enter") {
+								handleSearch(searchTerm);
+							}
+						}}
 					/>
 				</div>
 			</div>
