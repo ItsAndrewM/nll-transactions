@@ -5,7 +5,8 @@ import { SelectTeams } from "./select-team";
 import { OutgoingMatch } from "@/types/schedule";
 import { Standing } from "@/types/standings";
 import SelectedTitle from "./selected-title";
-import MobileScheduleList from "./mobile-schedule-list";
+// import MobileScheduleList from "./mobile-schedule-list";
+import ScheduleList from "./schedule-list";
 
 export default function SchedulePage({
 	teamsList,
@@ -31,7 +32,7 @@ export default function SchedulePage({
 				setSelected={setSelected}
 				selected={selected}
 			/>
-			<MobileScheduleList schedule={schedule} selected={selected} />
+			<ScheduleList schedule={schedule} selected={selected} />
 		</div>
 	);
 }

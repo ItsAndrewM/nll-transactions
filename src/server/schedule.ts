@@ -1,5 +1,11 @@
 import { env } from "@/env";
 
+import "server-only";
+
+export const preload = () => {
+	void getSchedule();
+};
+
 export const getSchedule = async () => {
 	try {
 		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule`);

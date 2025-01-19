@@ -19,6 +19,7 @@ export default function MobileScheduleList({
 			match.squads.away.displayName === selected ||
 			match.squads.home.displayName === selected
 	);
+
 	return (
 		<div
 			className={cn(
@@ -35,7 +36,7 @@ export default function MobileScheduleList({
 					? schedule.map((match) => (
 							<li
 								key={match.id}
-								className="border px-4 py-6 rounded-md flex justify-between items-center"
+								className="border px-4 py-6 rounded-md flex justify-between items-center relative"
 							>
 								<div className="flex justify-between items-center gap-2 w-fit">
 									<Image
@@ -103,7 +104,7 @@ export default function MobileScheduleList({
 					: filtered.map((match) => (
 							<li
 								key={match.id}
-								className="border px-4 py-6 rounded-md flex justify-between items-center"
+								className="border px-4 py-6 rounded-md flex justify-between items-center relative"
 							>
 								{match.squads.away.displayName === selected ? (
 									<div className="flex justify-between items-center gap-2 w-fit">

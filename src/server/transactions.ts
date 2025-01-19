@@ -1,6 +1,12 @@
 import { env } from "@/env";
 import { filterTransactionsByTeam } from "@/lib/utils";
 
+import "server-only";
+
+export const preload = () => {
+	void Promise.all([getAllTransactions("dsc", "all")]);
+};
+
 export const getAllTransactions = async (order: string, team: string) => {
 	try {
 		const response = await fetch(

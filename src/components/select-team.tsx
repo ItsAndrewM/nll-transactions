@@ -47,16 +47,6 @@ export function SelectTeams({
 								decoding="async"
 								loading="lazy"
 							/>
-							{/* <Avatar className="w-6 h-6">
-								<AvatarImage
-									src={
-										"https://www.nll.com/wp-content/uploads/2021/12/NLL-Shield-Logo.png"
-									}
-								/>
-								<AvatarFallback>
-									<span className="font-bold">All</span>
-								</AvatarFallback>
-							</Avatar> */}
 							<span className="">All</span>
 						</div>
 					</SelectItem>

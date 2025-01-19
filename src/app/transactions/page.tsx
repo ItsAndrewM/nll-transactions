@@ -3,6 +3,8 @@ import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
 import { getAllTransactions } from "@/server/transactions";
 
+export const revalidate = 3600;
+
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 

@@ -5,6 +5,7 @@ import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
 import { cn, generateGameUrl } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function ScheduleList({
 	schedule,
@@ -14,22 +15,34 @@ export default function ScheduleList({
 	selected: string;
 }) {
 	const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+	const pathname = usePathname();
 	const filtered = schedule.filter(
 		(match) =>
 			match.squads.away.displayName === selected ||
 			match.squads.home.displayName === selected
 	);
 
+	const homePageStyles = {
+		div: "md:max-h-[90vh] md:overflow-scroll",
+		ul: "max-w-md md:max-w-full",
+	};
+
+	const isHomePage = !pathname.includes("schedule") ? homePageStyles : null;
+
+	console.log(isHomePage);
+
 	return (
 		<div
 			className={cn(
-				"flex flex-col gap-4 items-center justify-center py-6 w-full max-h-full overflow-visible md:max-h-[90vh] md:overflow-scroll "
+				"flex flex-col gap-4 items-center justify-center py-6 w-full max-h-full overflow-visible",
+				isHomePage?.div
 			)}
 			ref={scrollContainerRef}
 		>
 			<ul
 				className={cn(
-					"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full max-w-md md:max-w-full"
+					"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full",
+					isHomePage?.ul
 				)}
 			>
 				{!selected || selected === "all"

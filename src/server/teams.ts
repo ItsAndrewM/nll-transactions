@@ -1,4 +1,9 @@
 import { env } from "@/env";
+import "server-only";
+
+export const preload = () => {
+	void Promise.all([getListOfTeams(), getAllTeamsTransactions()]);
+};
 
 export const getAllTeamsTransactions = async () => {
 	try {
