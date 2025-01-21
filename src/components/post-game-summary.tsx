@@ -18,8 +18,6 @@ export function PostGameSummary({ gameData }: { gameData: GameData }) {
 		game_leaders,
 	} = gameData;
 
-	console.log(team_stats);
-
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<GameHeader gameInfo={game_info} />

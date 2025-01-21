@@ -16,12 +16,14 @@ export default async function Page(props: { params: Params }) {
 		<div className="container mx-auto py-10">
 			{status === "Scheduled" ? (
 				<>
-					<h1 className="text-3xl font-bold mb-8">Pre-Game Information</h1>
+					<h1 className="text-3xl font-bold text-center">
+						Pre-Game Information
+					</h1>
 					<PreGameInfo data={game} />{" "}
 				</>
 			) : (
 				<>
-					<h1 className="text-3xl font-bold mb-8">Post Game Summary</h1>
+					<h1 className="text-3xl font-bold text-center">Post-Game Summary</h1>
 					<PostGameSummary gameData={game} />
 				</>
 			)}
