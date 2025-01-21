@@ -3,7 +3,7 @@ import { OutgoingMatch } from "@/types/schedule";
 import { useRef } from "react";
 import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
-import { cn, generateGameUrl } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -28,8 +28,6 @@ export default function ScheduleList({
 	};
 
 	const isHomePage = !pathname.includes("schedule") ? homePageStyles : null;
-
-	console.log(isHomePage);
 
 	return (
 		<div
@@ -107,10 +105,10 @@ export default function ScheduleList({
 									</div>
 								)}
 								<Link
-									href={generateGameUrl(match)}
+									href={`/games/${match.id}`}
 									className="absolute inset-0 z-[1] cursor-pointer"
-									target="_blank"
 									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+									prefetch
 								/>
 							</li>
 					  ))
@@ -242,10 +240,10 @@ export default function ScheduleList({
 									</div>
 								)}
 								<Link
-									href={generateGameUrl(match)}
+									href={`/games/${match.id}`}
 									className="absolute inset-0 z-[1] cursor-pointer"
-									target="_blank"
 									aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
+									prefetch
 								/>
 							</li>
 					  ))}
