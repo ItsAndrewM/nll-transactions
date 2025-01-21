@@ -17,6 +17,8 @@ export default function SelectedTitle({
 					height={28}
 					src={team?.logo_url || selected}
 					alt={selected}
+					loading="lazy"
+					decoding="async"
 				/>
 				<small className="text-slate-400 font-bold">{team?.position}</small>
 				<h2 className="text-xl text-left font-bold w-full">{selected}</h2>

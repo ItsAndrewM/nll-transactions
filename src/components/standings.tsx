@@ -27,6 +27,8 @@ export default function Standings({ standings }: { standings: Standing[] }) {
 									alt={team.name}
 									width={28}
 									height={28}
+									loading="lazy"
+									decoding="async"
 								/>
 								<p className="font-bold">{team.name}</p>
 								<span className="text-slate-400">

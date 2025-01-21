@@ -24,6 +24,8 @@ export function GameHeader({ gameInfo }: { gameInfo: GameInfo }) {
 							alt={gameInfo.away.title}
 							width={100}
 							height={100}
+							loading="eager"
+							decoding="sync"
 						/>
 					</div>
 					<div className="text-center">
@@ -45,6 +47,8 @@ export function GameHeader({ gameInfo }: { gameInfo: GameInfo }) {
 							alt={gameInfo.home.title}
 							width={100}
 							height={100}
+							loading="eager"
+							decoding="sync"
 						/>
 					</div>
 				</div>

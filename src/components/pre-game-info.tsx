@@ -19,6 +19,8 @@ const gameInfoColumns: ColumnDef<GameInfo>[] = [
 					width={32}
 					height={32}
 					className="rounded-full"
+					loading="eager"
+					decoding="sync"
 				/>
 				<span>{row.original.away.title}</span>
 			</div>
@@ -35,6 +37,8 @@ const gameInfoColumns: ColumnDef<GameInfo>[] = [
 					width={32}
 					height={32}
 					className="rounded-full"
+					loading="eager"
+					decoding="sync"
 				/>
 				<span>{row.original.home.title}</span>
 			</div>

@@ -67,6 +67,8 @@ export default function ScheduleNext({
 						alt="NLL Logo"
 						width={28}
 						height={28}
+						loading="lazy"
+						decoding="async"
 					/>
 					<small className="text-slate-400 font-bold">{position}</small>
 					<p>{name}</p>

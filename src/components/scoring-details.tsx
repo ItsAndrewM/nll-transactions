@@ -57,6 +57,8 @@ export function ScoringDetails({ scoring }: ScoringDetailsProps) {
 													alt={goal.team}
 													width={32}
 													height={32}
+													loading="lazy"
+													decoding="async"
 												/>
 											</TableCell>
 											<TableCell className="w-14">{goal.time}</TableCell>

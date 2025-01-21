@@ -45,6 +45,8 @@ export function GameLeaders({ gameLeaders }: { gameLeaders: GameLeader[] }) {
 												width={64}
 												height={64}
 												className="rounded-full border-2 border-slate-50 w-16 h-16 object-cover object-top"
+												loading="lazy"
+												decoding="async"
 											/>
 										</div>
 										<div className="flex flex-col items-end justify-start w-full">
@@ -91,6 +93,8 @@ export function GameLeaders({ gameLeaders }: { gameLeaders: GameLeader[] }) {
 												width={64}
 												height={64}
 												className="rounded-full border-2 border-slate-50 w-16 h-16 object-cover object-top"
+												loading="lazy"
+												decoding="async"
 											/>
 										</div>
 									</div>

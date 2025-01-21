@@ -49,6 +49,8 @@ export function PenaltySummary({ penalties }: { penalties: Penalty }) {
 													alt={penalty.team}
 													width={32}
 													height={32}
+													loading="lazy"
+													decoding="async"
 												/>
 											</TableCell>
 											<TableCell className="w-14">{penalty.time}</TableCell>

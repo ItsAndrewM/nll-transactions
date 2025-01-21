@@ -49,6 +49,8 @@ export default function MobileScheduleList({
 										alt={match.squads.away.displayName}
 										width={28}
 										height={28}
+										loading="lazy"
+										decoding="async"
 									/>
 									<p className="font-bold  text-xs">
 										{match.squads.away.name}{" "}
@@ -65,6 +67,8 @@ export default function MobileScheduleList({
 										alt={match.squads.away.displayName}
 										width={28}
 										height={28}
+										loading="lazy"
+										decoding="async"
 									/>
 								</div>
 								{match.status.typeName === "Complete" ? (
@@ -118,6 +122,8 @@ export default function MobileScheduleList({
 											alt={match.squads.away.displayName}
 											width={28}
 											height={28}
+											loading="lazy"
+											decoding="async"
 										/>
 										<p className="font-bold  text-xs">
 											{match.squads.away.name}{" "}
@@ -134,6 +140,8 @@ export default function MobileScheduleList({
 											alt={match.squads.away.displayName}
 											width={28}
 											height={28}
+											loading="lazy"
+											decoding="async"
 										/>
 									</div>
 								) : (
@@ -148,6 +156,8 @@ export default function MobileScheduleList({
 											alt={match.squads.away.displayName}
 											width={28}
 											height={28}
+											loading="lazy"
+											decoding="async"
 										/>
 										<p className="font-bold  text-xs">
 											{match.squads.home.name}{" "}
@@ -164,6 +174,8 @@ export default function MobileScheduleList({
 											alt={match.squads.away.displayName}
 											width={28}
 											height={28}
+											loading="lazy"
+											decoding="async"
 										/>
 									</div>
 								)}
