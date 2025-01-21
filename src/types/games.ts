@@ -69,8 +69,10 @@ interface Boxscore {
 }
 
 interface TeamStats {
-	away: { fo: string; pp: string; pim: number; sog: number };
-	home: { fo: string; pp: string; pim: number; sog: number };
+	fo: string;
+	pp: string;
+	pim: number;
+	sog: number;
 }
 
 interface Scoring {

@@ -7,11 +7,11 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TeamStatsTeam } from "@/types/games";
+import { TeamStats as TeamStatsType } from "@/types/games";
 
 interface TeamStatsProps {
-	home: TeamStatsTeam;
-	away: TeamStatsTeam;
+	home: TeamStatsType;
+	away: TeamStatsType;
 }
 
 export function TeamStats({ home, away }: TeamStatsProps) {
