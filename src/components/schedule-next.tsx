@@ -11,6 +11,9 @@ export default function ScheduleNext({
 	selected: string;
 	standings: Standing[];
 }) {
+	if (selected === "all") {
+		return null;
+	}
 	const next = schedule
 		.filter((match) => match.status.typeName === "Upcoming")
 		.filter(

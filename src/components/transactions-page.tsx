@@ -18,7 +18,7 @@ export default function TransactionsPage({
 }) {
 	const [selected, setSelected] = useState("");
 	return (
-		<div className="w-full h-full flex ">
+		<div className="w-full h-full flex max-w-3xl mx-auto">
 			<div className="px-8 py-4 flex flex-col gap-4 mx-auto">
 				{selected ? (
 					<SelectedTitle selected={selected} standings={standings} />
