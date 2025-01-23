@@ -37,11 +37,28 @@ export default function ScheduleList({
 			ref={scrollContainerRef}
 		>
 			<div className="w-full flex justify-between items-center">
-				<Tabs defaultValue="all" className="w-full">
+				<Tabs defaultValue="all" className="w-full max-w-md mx-auto">
 					<TabsList>
-						<TabsTrigger value="all">All Games</TabsTrigger>
-						<TabsTrigger value="completed">Completed Games</TabsTrigger>
-						<TabsTrigger value="scheduled">Scheduled Games</TabsTrigger>
+						<TabsTrigger
+							value="all"
+							className="text-xs lg:text-sm flex xl:gap-1"
+						>
+							<span>All</span> <span className="hidden xl:block">Games</span>
+						</TabsTrigger>
+						<TabsTrigger
+							value="completed"
+							className="text-xs md:text-sm flex xl:gap-1"
+						>
+							<span>Completed</span>
+							<span className="hidden xl:block">Games</span>
+						</TabsTrigger>
+						<TabsTrigger
+							value="scheduled"
+							className="text-xs md:text-sm flex xl:gap-1"
+						>
+							<span>Scheduled</span>{" "}
+							<span className="hidden xl:block">Games</span>
+						</TabsTrigger>
 					</TabsList>
 					<TabsContent value="completed">
 						<h3 className="text-lg font-semibold mt-4 mb-2">Completed Games</h3>
