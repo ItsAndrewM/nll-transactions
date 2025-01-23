@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "NLL Transactions, Schedule, and Standings",
-	description: "NLL Transactions, Schedule, and Standings",
+	title: "NLL Tracker by andamonium",
+	description: "NLL Transactions, Stats & Updates",
 };
 
 export default function RootLayout({
@@ -30,14 +30,8 @@ export default function RootLayout({
 				<meta charSet="UTF-8" />
 
 				{/* <!-- Primary Meta Tags --> */}
-				<meta
-					name="title"
-					content="NLL Transactions, Schedule, and Standings"
-				/>
-				<meta
-					name="description"
-					content="NLL Transactions, Schedule, and Standings"
-				/>
+				<meta name="title" content="NLL Tracker by andamonium" />
+				<meta name="description" content="NLL Transactions, Stats & Updates" />
 
 				{/* <!-- DNS prefetch for socials --> */}
 				<link rel="dns-prefetch" href="https://github.com" />
@@ -50,27 +44,27 @@ export default function RootLayout({
 				/>
 
 				{/* <!-- Open Graph / Facebook --> */}
-				<meta property="og:title" content="NLL Transactions by andamonium" />
+				<meta property="og:title" content="NLL Tracker by andamonium" />
 				<meta
 					property="og:description"
-					content="NLL Transactions, Schedule, and Standings"
+					content="NLL Transactions, Stats & Updates"
 				/>
-				<meta property="og:image" content="https://github.com/itsandrewm.png" />
-				<meta property="og:url" content="https://nll-transactions.vercel.app" />
+				<meta
+					property="og:image"
+					content="https://nlltracker.com/og/facebook-og-image.png"
+				/>
+				<meta property="og:url" content="https://nlltracker.com" />
 				<meta property="og:type" content="website" />
 				<meta property="twitter:card" content="summary" />
-				<meta
-					property="twitter:url"
-					content="https://nll-transactions.vercel.app"
-				/>
+				<meta property="twitter:url" content="https://nlltracker.com" />
 				<meta property="twitter:title" content="@andamonium_dev" />
 				<meta
 					property="twitter:description"
-					content="NLL Transactions, Schedule, and Standings"
+					content="NLL Transactions, Stats & Updates"
 				/>
 				<meta
 					property="twitter:image"
-					content="https://github.com/itsandrewm.png"
+					content="https://nlltracker.com/og/twitter-og-image.png"
 				/>
 				<meta name="theme-color" content="#242424" />
 				<meta
@@ -80,12 +74,12 @@ export default function RootLayout({
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-capable" content="yes" />
 				<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-				<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+				<meta httpEquiv="X-Content-Type-Options" content="nosniff" />
 				<link rel="icon" type="image/svg+xml" href="/robotman.jpg" />
 				<link
 					rel="preload"
 					as="image"
-					href="https://github.com/itsandrewm.png"
+					href="https://nlltracker.com/og/facebook-og-image.png"
 				/>
 			</head>
 			<body

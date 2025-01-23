@@ -6,37 +6,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 	return [
 		{
-			url: "https://nll-transactions.vercel.app",
+			url: "https://nlltracker.com",
 			lastModified: new Date(),
 			changeFrequency: "daily",
 			priority: 1,
 		},
 		{
-			url: "https://nll-transactions.vercel.app/standings",
+			url: "https://nlltracker.com/standings",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.8,
 		},
 		{
-			url: "https://nll-transactions.vercel.app/schedule",
+			url: "https://nlltracker.com/schedule",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.8,
 		},
 		{
-			url: "https://nll-transactions.vercel.app/games",
+			url: "https://nlltracker.com/games",
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,
 		},
 		{
-			url: "https://nll-transactions.vercel.app/transactions",
+			url: "https://nlltracker.com/transactions",
 			lastModified: new Date(),
 			changeFrequency: "daily",
 			priority: 0.8,
 		},
 		...gameIds.map((gameId: number) => ({
-			url: `https://nll-transactions.vercel.app/games/${gameId}`,
+			url: `https://nlltracker.com/games/${gameId}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,

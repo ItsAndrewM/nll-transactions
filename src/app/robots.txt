@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://nll-transactions.vercel.app/sitemap.xml
+Sitemap: https://nlltracker.com/sitemap.xml
