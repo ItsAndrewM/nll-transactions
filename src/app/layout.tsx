@@ -55,6 +55,7 @@ export default function RootLayout({
 				/>
 				<meta property="og:url" content="https://nlltracker.com" />
 				<meta property="og:type" content="website" />
+				<meta property="og:site_name" content="https://nlltracker.com"></meta>
 				<meta property="twitter:card" content="summary" />
 				<meta property="twitter:url" content="https://nlltracker.com" />
 				<meta property="twitter:title" content="@andamonium_dev" />
