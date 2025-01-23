@@ -26,6 +26,12 @@ export function SelectTeams({
 		setSelected(value);
 	};
 
+	const removedNonScheduledTeams = teams.filter(
+		(team) =>
+			!team.toLowerCase().includes("new york riptide") &&
+			!team.toLowerCase().includes("panther")
+	);
+
 	return (
 		<Select onValueChange={handleValueChange} value={selected}>
 			<SelectTrigger className="w-full">
@@ -50,7 +56,7 @@ export function SelectTeams({
 							<span className="">All</span>
 						</div>
 					</SelectItem>
-					{teams.map((team) => (
+					{removedNonScheduledTeams.map((team) => (
 						<SelectItem key={team} value={team}>
 							<div className="w-full flex justify-between items-center gap-4">
 								<Avatar className="w-7 h-7">
