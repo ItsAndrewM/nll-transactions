@@ -1,6 +1,7 @@
-import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "./ui/separator";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { createFallbackName } from "@/lib/utils";
 
 interface GameLeader {
 	stat: string;
@@ -48,15 +49,18 @@ export function GameLeaders({ gameLeaders }: { gameLeaders: GameLeader[] }) {
 									<div className="flex justify-end md:justify-between items-center">
 										<div className="grid grid-cols-2 gap-6">
 											<div className="flex items-center flex-col justify-center">
-												<Image
-													src={leader.awayPlayer.imageUrl || "/placeholder.svg"}
-													alt={leader.awayPlayer.name}
-													width={64}
-													height={64}
-													className="rounded-full border-2 border-slate-50 w-16 h-16 object-cover object-top"
-													loading="lazy"
-													decoding="async"
-												/>
+												<Avatar className="h-16 w-16 object-cover object-top">
+													<AvatarImage
+														src={leader.awayPlayer.imageUrl || undefined}
+														alt={leader.awayPlayer.name}
+														loading="lazy"
+														decoding="async"
+														className="object-cover object-top"
+													/>
+													<AvatarFallback>
+														{createFallbackName(leader.awayPlayer.name)}
+													</AvatarFallback>
+												</Avatar>
 												<span className="text-xs sm:hidden font-bold text-center">
 													#{leader.awayPlayer.number}
 												</span>
@@ -95,7 +99,19 @@ export function GameLeaders({ gameLeaders }: { gameLeaders: GameLeader[] }) {
 												</p>
 											</div>
 											<div className="flex items-center flex-col justify-center">
-												<Image
+												<Avatar className="h-16 w-16 object-cover object-top">
+													<AvatarImage
+														src={leader.homePlayer.imageUrl || undefined}
+														alt={leader.homePlayer.name}
+														loading="lazy"
+														decoding="async"
+														className="object-cover object-top"
+													/>
+													<AvatarFallback>
+														{createFallbackName(leader.homePlayer.name)}
+													</AvatarFallback>
+												</Avatar>
+												{/* <Image
 													src={leader.homePlayer.imageUrl || "/placeholder.svg"}
 													alt={leader.homePlayer.name}
 													width={64}
@@ -103,7 +119,7 @@ export function GameLeaders({ gameLeaders }: { gameLeaders: GameLeader[] }) {
 													className="rounded-full border-2 border-slate-50 w-16 h-16 object-cover object-top"
 													loading="lazy"
 													decoding="async"
-												/>
+												/> */}
 												<span className="text-xs sm:hidden font-bold text-center">
 													#{leader.homePlayer.number}
 												</span>

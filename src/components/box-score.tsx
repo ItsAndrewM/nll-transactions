@@ -33,14 +33,12 @@ export function BoxScore({ boxScore }: { boxScore: Boxscore }) {
 							{boxScore.away.map((score: number, index: number) => (
 								<TableCell key={index}>{score}</TableCell>
 							))}
-							<TableCell>{boxScore.away.reduce((a, b) => a + b, 0)}</TableCell>
 						</TableRow>
 						<TableRow>
 							<TableCell>Home</TableCell>
 							{boxScore.home.map((score: number, index: number) => (
 								<TableCell key={index}>{score}</TableCell>
 							))}
-							<TableCell>{boxScore.home.reduce((a, b) => a + b, 0)}</TableCell>
 						</TableRow>
 					</TableBody>
 				</Table>
