@@ -68,7 +68,7 @@ export default function GamesList({
 									/>
 								</div>
 								{match.status.typeName === "Complete" ? (
-									<div className="flex flex-end gap-2 text-sm">
+									<div className="md:flex flex-end gap-2 text-sm hidden">
 										{Number(match.date.startDate.split("-")[2]).toString() +
 											"/" +
 											Number(match.date.startDate.split("-")[1]).toString()}
