@@ -1,3 +1,32 @@
+interface AllStats {
+	name: string;
+	team: {
+		name: string;
+		logo: string;
+	};
+	position: string;
+	games_played: number;
+	id: string;
+	gp: number;
+	pts: number;
+	g: number;
+	a: number;
+	pims: number;
+	ppg: number;
+	ppa: number;
+	shg: number;
+	lb: number;
+	to: number;
+	cto: number;
+	bs: number;
+	sog: number;
+	fo: {
+		wins: number;
+		attempts: number;
+	};
+	foPercent: number;
+}
+
 interface GameInfo {
 	date: string;
 	home: GameInfoTeam;
@@ -25,7 +54,13 @@ interface PreGameTeamStats {
 	wins: number;
 	losses: number;
 	winPerc: string;
+	fo?: string;
+	pp?: string;
+	pim?: number;
+	sog?: number;
 }
+
+type GameState = PreGameData | GameData;
 
 interface PreGameData {
 	id: string;
@@ -49,8 +84,8 @@ interface GameData {
 	status: string;
 	game_info: GameInfo;
 	team_stats: {
-		away: TeamStats;
-		home: TeamStats;
+		away: TeamStats | PreGameTeamStats;
+		home: TeamStats | PreGameTeamStats;
 	};
 	box_score: Boxscore;
 	scoring: Scoring;
@@ -73,6 +108,15 @@ interface TeamStats {
 	pp: string;
 	pim: number;
 	sog: number;
+	ga?: string;
+	gd?: string;
+	gf?: string;
+	gp?: number;
+	gpg?: string;
+	gapg?: string;
+	wins?: number;
+	losses?: number;
+	winPerc?: string;
 }
 
 interface Scoring {
@@ -176,4 +220,6 @@ export type {
 	Penalty,
 	PlayerStats,
 	GameLeaders,
+	AllStats,
+	GameState,
 };

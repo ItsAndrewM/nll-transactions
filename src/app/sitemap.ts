@@ -35,6 +35,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: "daily",
 			priority: 0.8,
 		},
+		{
+			url: "https://nlltracker.com/stats",
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.8,
+		},
 		...gameIds.map((gameId: number) => ({
 			url: `https://nlltracker.com/games/${gameId}`,
 			lastModified: new Date(),

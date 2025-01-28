@@ -1,14 +1,10 @@
-import MobileMenu from "./mobile-menu";
+import { NavMenu } from "./nav-menu";
 
-export default function MobileLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function NavLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<>
+			<NavMenu />
 			{children}
-			<MobileMenu />
 		</>
 	);
 }

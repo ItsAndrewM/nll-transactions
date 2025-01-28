@@ -5,7 +5,7 @@ import { ScoringDetails } from "./scoring-details";
 import { PenaltySummary } from "./penalty-summary";
 import { PlayerStats } from "./player-stats";
 import { GameLeaders } from "./game-leaders";
-import { GameData } from "@/types/games";
+import { GameData, TeamStats as TeamStatsType } from "@/types/games";
 
 export function PostGameSummary({ gameData }: { gameData: GameData }) {
 	const {
@@ -23,7 +23,12 @@ export function PostGameSummary({ gameData }: { gameData: GameData }) {
 			<GameHeader gameInfo={game_info} />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
 				<BoxScore boxScore={box_score} />
-				<TeamStats home={team_stats.home} away={team_stats.away} />
+				{"fo" in team_stats.home && "fo" in team_stats.away && (
+					<TeamStats
+						home={team_stats.home as TeamStatsType}
+						away={team_stats.away as TeamStatsType}
+					/>
+				)}
 			</div>
 			<ScoringDetails scoring={scoring} />
 			<PenaltySummary penalties={penalties} />

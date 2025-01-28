@@ -154,3 +154,16 @@ export function generateGameUrl(match: OutgoingMatch) {
 	const home = match.squads.home.displayName.replaceAll(" ", "-");
 	return `https://www.nll.com/game/${id}/${away}-vs-${home}/${date}`.toLowerCase();
 }
+export function shareToFacebook(url: string) {
+	const encodedUrl = encodeURIComponent(url);
+	return `https://www.facebook.com/sharer.php?u=${encodedUrl}`;
+}
+
+export function shareToX(url: string) {
+	const encodedUrl = encodeURIComponent(url);
+	return `https://twitter.com/intent/tweet?url=${encodedUrl}`;
+}
+
+export function shareToInstagram() {
+	window.location.href = `instagram://story-camera`;
+}
