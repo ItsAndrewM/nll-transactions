@@ -1,8 +1,10 @@
 import Panels from "@/components/panels";
+import { Spinner } from "@/components/spinner";
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
 import { getAllTeamsTransactions, getListOfTeams } from "@/server/teams";
 import { getAllTransactions } from "@/server/transactions";
+import { Suspense } from "react";
 
 export const revalidate = 3600;
 
@@ -26,12 +28,22 @@ export default async function Home(props: {
 			getStandings(),
 		]);
 	return (
-		<Panels
-			teamsList={teamsList}
-			allTransactions={allTransactions}
-			allTeams={allTeams}
-			schedule={schedule}
-			standings={standings}
-		/>
+		<Suspense
+			fallback={
+				<div className="w-full h-full flex ">
+					<div className="w-full flex justify-center items-center gap-4 p-8">
+						<Spinner size="large" />
+					</div>
+				</div>
+			}
+		>
+			<Panels
+				teamsList={teamsList}
+				allTransactions={allTransactions}
+				allTeams={allTeams}
+				schedule={schedule}
+				standings={standings}
+			/>
+		</Suspense>
 	);
 }
