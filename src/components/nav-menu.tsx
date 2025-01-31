@@ -41,12 +41,18 @@ export function NavMenu() {
 	};
 	return (
 		<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 ">
-			<div className="bg-white rounded-full shadow-lg p-2 flex items-center space-x-2 px-4">
-				<Link href="/transactions" className="text-slate-600 hover:text-black">
+			<div className="bg-white rounded-full shadow-lg p-2 flex items-center gap-4 space-x-2 px-4">
+				<Link
+					href="/transactions"
+					className="text-slate-600 hover:text-black"
+					prefetch
+				>
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger>
-								<FileText size={20} />
+								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
+									<FileText size={20} />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent className="bg-black">
 								<p>Standings</p>
@@ -54,11 +60,17 @@ export function NavMenu() {
 						</Tooltip>
 					</TooltipProvider>
 				</Link>
-				<Link href="/schedule" className="text-slate-600 hover:text-black">
+				<Link
+					href="/schedule"
+					className="text-slate-600 hover:text-black"
+					prefetch
+				>
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger>
-								<Calendar1 size={20} />
+								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
+									<Calendar1 size={20} />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent className="bg-black">
 								<p>Schedule</p>
@@ -66,11 +78,17 @@ export function NavMenu() {
 						</Tooltip>
 					</TooltipProvider>
 				</Link>
-				<Link href="/standings" className="text-slate-600 hover:text-black">
+				<Link
+					href="/standings"
+					className="text-slate-600 hover:text-black"
+					prefetch
+				>
 					<TooltipProvider>
 						<Tooltip>
 							<TooltipTrigger>
-								<Trophy size={20} />
+								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
+									<Trophy size={20} />
+								</div>
 							</TooltipTrigger>
 							<TooltipContent className="bg-black">
 								<p>Standings</p>
@@ -79,8 +97,8 @@ export function NavMenu() {
 					</TooltipProvider>
 				</Link>
 				<Sheet key={"left"}>
-					<SheetTrigger asChild className="pb-3">
-						<Button variant="ghost">
+					<SheetTrigger asChild className="flex items-center ">
+						<Button variant="outline" className="p-2">
 							<Menu />
 						</Button>
 					</SheetTrigger>

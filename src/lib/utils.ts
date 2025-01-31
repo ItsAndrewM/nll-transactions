@@ -167,3 +167,43 @@ export function shareToX(url: string) {
 export function shareToInstagram() {
 	window.location.href = `instagram://story-camera`;
 }
+
+export function reformatTransaction(transaction: string): string {
+	const parts = transaction.replace("The ", "").split(" ");
+
+	const teamNameEndIndex = parts.indexOf("have");
+
+	const transactionWithoutTeam = parts.slice(teamNameEndIndex + 1).join(" ");
+
+	if (transactionWithoutTeam.includes("signed")) {
+		const [, firstName, lastName, ...rest] = transactionWithoutTeam.split(" ");
+		const destination = rest.join(" ");
+		return trimPeriods(`${firstName} ${lastName} signed ${destination}.`);
+	} else if (transactionWithoutTeam.includes("released")) {
+		const [, firstName, lastName, ...rest] = transactionWithoutTeam.split(" ");
+		const source = rest.join(" ");
+		return trimPeriods(`${firstName} ${lastName} released ${source}.`);
+	} else if (transactionWithoutTeam.includes("placed")) {
+		const [players, destination] = removePlaced(transactionWithoutTeam).split(
+			" on "
+		);
+		return trimPeriods(`${players} placed on ${destination}.`);
+	} else if (transactionWithoutTeam.includes("removed")) {
+		const [, ...rest] = transactionWithoutTeam.split("removed the ");
+		const [player, destination] = rest.join(" ").split(" and have ");
+		return trimPeriods(`${player} removed and ${destination}.`);
+	} else {
+		return transaction;
+	}
+}
+
+export const trimPeriods = (text: string): string => {
+	return text.replace(/\.{2,}/g, ".");
+};
+
+export const removePlaced = (text: string): string => {
+	return text
+		.replace(/\bplaced\b/gi, "")
+		.replace(/\s+/g, " ")
+		.trim();
+};

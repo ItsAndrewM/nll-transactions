@@ -6,10 +6,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { cn, filterTransactionsByTeam, searchTransactions } from "@/lib/utils";
+import {
+	cn,
+	filterTransactionsByTeam,
+	reformatTransaction,
+	searchTransactions,
+} from "@/lib/utils";
 import { Transactions } from "@/types/transactions";
 import { Input } from "./ui/input";
 import { useDebounce } from "@/hooks/useDebounce";
+import Image from "next/image";
+import { imageUrls } from "@/data/image-urls";
 
 export interface TransactionsPanelProps {
 	selected: string;
@@ -151,10 +158,26 @@ export default function MobileTransactions({
 										{Object.entries(value as Record<string, string[]>).map(
 											([subKey, subValue]) => (
 												<li key={subKey} className="ml-4">
-													<span className="font-bold">{subKey}:</span>{" "}
+													<div className="flex gap-2">
+														<Image
+															className="w-7 h-7"
+															src={
+																imageUrls.find((img) => img.name === subKey)
+																	?.imageUrl || "/placeholder.svg"
+															}
+															alt={subKey}
+															width={28}
+															height={28}
+															loading="lazy"
+															decoding="async"
+														/>
+														<span className="font-bold">{subKey}:</span>
+													</div>
 													<ul className="list-disc w-full list-inside ml-4">
 														{subValue.map((transaction: string) => (
-															<li key={transaction}>{transaction}</li>
+															<li key={transaction}>
+																{reformatTransaction(transaction)}
+															</li>
 														))}
 													</ul>
 												</li>
