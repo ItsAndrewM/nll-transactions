@@ -207,3 +207,29 @@ export const removePlaced = (text: string): string => {
 		.replace(/\s+/g, " ")
 		.trim();
 };
+
+export function convertESTtoLocal(estTime: string): string {
+	const [hours, minutes] = estTime.split(":").map(Number);
+	if (!hours || !minutes) return estTime;
+	const gmtHours = hours + 5 - 24;
+	const gmtMinutes = minutes;
+	const utcDate = new Date(Date.UTC(0, 0, 0, gmtHours, gmtMinutes));
+
+	const time = utcDate.toLocaleTimeString("en-US", {
+		hour: "numeric",
+		minute: "numeric",
+		hour12: true,
+	});
+	const offset = new Date().getTimezoneOffset();
+
+	// Map common US timezone offsets to abbreviations
+	const timezoneMap: Record<number, string> = {
+		420: "PDT", // -7 hours
+		480: "PST", // -8 hours
+		360: "CDT", // -6 hours
+		300: "EDT", // -5 hours
+		240: "EDT", // -4 hours
+	};
+
+	return `${time} ${timezoneMap[offset] || `GMT${offset / -60}`}`;
+}

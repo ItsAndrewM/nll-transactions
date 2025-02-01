@@ -23,7 +23,7 @@ export default function GamesList({
 	return (
 		<ul
 			className={cn(
-				"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full",
+				"w-full text-left list-inside px-2 flex flex-col gap-4 max-h-full pb-24",
 				isHomePage?.ul
 			)}
 		>

@@ -55,27 +55,32 @@ export default async function Page() {
 				Upcoming and Completed Regular Season Games
 			</h1>
 			<Tabs defaultValue="all" className="space-y-4">
-				<TabsList>
-					<TabsTrigger value="all" className="text-xs lg:text-sm flex xl:gap-1">
-						<span>All</span> <span className="hidden xl:block">Games</span>
-					</TabsTrigger>
-					<TabsTrigger
-						value="completed"
-						className="text-xs md:text-sm flex xl:gap-1"
-					>
-						<span>Completed</span>
-						<span className="hidden xl:block">Games</span>
-					</TabsTrigger>
-					<TabsTrigger
-						value="scheduled"
-						className="text-xs md:text-sm flex xl:gap-1"
-					>
-						<span>Scheduled</span>{" "}
-						<span className="hidden xl:block">Games</span>
-					</TabsTrigger>
-				</TabsList>
+				<div className="w-full flex justify-center md:justify-start items-center">
+					<TabsList>
+						<TabsTrigger
+							value="all"
+							className="text-xs lg:text-sm flex xl:gap-1"
+						>
+							<span>All</span> <span className="hidden xl:block">Games</span>
+						</TabsTrigger>
+						<TabsTrigger
+							value="completed"
+							className="text-xs md:text-sm flex xl:gap-1"
+						>
+							<span>Completed</span>
+							<span className="hidden xl:block">Games</span>
+						</TabsTrigger>
+						<TabsTrigger
+							value="scheduled"
+							className="text-xs md:text-sm flex xl:gap-1"
+						>
+							<span>Scheduled</span>{" "}
+							<span className="hidden xl:block">Games</span>
+						</TabsTrigger>
+					</TabsList>
+				</div>
 				<TabsContent value="completed" className="space-y-4">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6">
+					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">Completed Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{games
@@ -88,7 +93,7 @@ export default async function Page() {
 					</div>
 				</TabsContent>
 				<TabsContent value="scheduled">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6">
+					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">Scheduled Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{games
@@ -101,7 +106,7 @@ export default async function Page() {
 					</div>
 				</TabsContent>
 				<TabsContent value="all">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6">
+					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">All Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{games.reverse().map((game: GameData) => (

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import {
 	Sheet,
+	SheetClose,
 	SheetContent,
 	SheetFooter,
 	SheetHeader,
@@ -41,7 +42,7 @@ export function NavMenu() {
 	};
 	return (
 		<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 ">
-			<div className="bg-white rounded-full shadow-lg p-2 flex items-center gap-4 space-x-2 px-4">
+			<div className="bg-background rounded-full shadow-lg p-2 flex items-center gap-4 space-x-2 px-4">
 				<Link
 					href="/transactions"
 					className="text-slate-600 hover:text-black"
@@ -143,60 +144,70 @@ export function NavMenu() {
 										<FileText />
 										<span>Transactions</span>
 									</div>
-									<Link
-										href="/transactions"
-										className="absolute inset-0 z-[1]"
-										prefetch
-										aria-label="Go to Transactions"
-									/>
+									<SheetClose asChild>
+										<Link
+											href="/transactions"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to Transactions"
+										/>
+									</SheetClose>
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
 										<Calendar1 />
 										<span>Schedule</span>
 									</div>
-									<Link
-										href="/schedule"
-										className="absolute inset-0 z-[1]"
-										prefetch
-										aria-label="Go to Schedule"
-									/>
+									<SheetClose asChild>
+										<Link
+											href="/schedule"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to Schedule"
+										/>
+									</SheetClose>
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
 										<Trophy />
 										<span>Standings</span>
 									</div>
-									<Link
-										href="/standings"
-										className="absolute inset-0 z-[1]"
-										prefetch
-										aria-label="Go to Standings"
-									/>
+									<SheetClose asChild>
+										<Link
+											href="/standings"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to Standings"
+										/>
+									</SheetClose>
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
 										<Swords />
 										<span>Games</span>
 									</div>
-									<Link
-										href="/games"
-										className="absolute inset-0 z-[1]"
-										prefetch
-										aria-label="Go to Games"
-									/>
+									<SheetClose asChild>
+										<Link
+											href="/games"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to Games"
+										/>
+									</SheetClose>
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
 										<ChartBarBigIcon />
 										<span>Stats</span>
 									</div>
-									<Link
-										href="/stats"
-										className="absolute inset-0 z-[1]"
-										prefetch
-										aria-label="Go to stats"
-									/>
+									<SheetClose asChild>
+										<Link
+											href="/stats"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to stats"
+										/>
+									</SheetClose>
 								</li>
 							</ul>
 						</div>
@@ -206,7 +217,7 @@ export function NavMenu() {
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
 										<Facebook />
-										<small className="text-center text-nowrap">
+										<small className="text-center text-nowrap hidden md:block">
 											Share to Facebook
 										</small>
 									</div>
@@ -220,7 +231,7 @@ export function NavMenu() {
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
 										<XIcon className="h-6 w-6 p-0" />
-										<small className="text-center text-nowrap">
+										<small className="text-center text-nowrap hidden md:block">
 											Share to X
 										</small>
 									</div>
@@ -234,7 +245,7 @@ export function NavMenu() {
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
 										<Instagram />
-										<small className="text-center text-nowrap">
+										<small className="text-center text-nowrap hidden md:block">
 											Share to Instagram
 										</small>
 									</div>

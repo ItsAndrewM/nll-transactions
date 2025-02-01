@@ -1,3 +1,4 @@
+import { AndaHeader } from "@/components/anda-header";
 import { PostGameSummary } from "@/components/post-game-summary";
 import { PreGameInfo } from "@/components/pre-game-info";
 import { getGame } from "@/server/games";
@@ -120,18 +121,11 @@ export default async function Page(props: { params: Params }) {
 
 	return (
 		<div className="container mx-auto py-10">
+			<AndaHeader />
 			{status === "Scheduled" ? (
-				<>
-					<h1 className="text-3xl font-bold text-center">
-						Pre-Game Information
-					</h1>
-					<PreGameInfo data={game} />{" "}
-				</>
+				<PreGameInfo data={game} />
 			) : (
-				<>
-					<h1 className="text-3xl font-bold text-center">Post-Game Summary</h1>
-					<PostGameSummary gameData={game} />
-				</>
+				<PostGameSummary gameData={game} />
 			)}
 		</div>
 	);

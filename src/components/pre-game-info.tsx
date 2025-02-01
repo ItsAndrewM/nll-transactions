@@ -5,6 +5,7 @@ import { DataTable } from "./data-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
 import { GameInfo, PreGameData, PreGameTeamStats } from "@/types/games";
+import { GameHeader } from "./game-header";
 
 const gameInfoColumns: ColumnDef<GameInfo>[] = [
 	{ accessorKey: "date", header: "Date" },
@@ -78,22 +79,24 @@ const teamStatsColumns: ColumnDef<
 ];
 
 export function PreGameInfo({ data }: { data: PreGameData }) {
-	const gameInfoData = [data.game_info];
+	const { game_info, team_stats } = data || {};
+	const gameInfoData = [game_info];
 	const teamStatsData = [
 		{
-			...data.team_stats.away,
-			team: data.game_info.away.title,
-			logo: data.game_info.away.logo,
+			...team_stats.away,
+			team: game_info.away.title,
+			logo: game_info.away.logo,
 		},
 		{
-			...data.team_stats.home,
-			team: data.game_info.home.title,
-			logo: data.game_info.home.logo,
+			...team_stats.home,
+			team: game_info.home.title,
+			logo: game_info.home.logo,
 		},
 	];
 
 	return (
 		<div className="space-y-8">
+			<GameHeader gameInfo={game_info} />
 			<Card>
 				<CardHeader>
 					<CardTitle>Game Information</CardTitle>
