@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GameState } from "@/types/games";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, convertESTtoLocal } from "@/lib/utils";
 
 export function GameCard({ game }: { game: GameState }) {
 	const { game_info, team_stats, status, id } = game || {};
@@ -26,7 +26,7 @@ export function GameCard({ game }: { game: GameState }) {
 			<CardHeader>
 				<CardTitle className="text-lg font-semibold text-center flex flex-col gap-2">
 					<span>{date}</span>
-					<span>{time}</span>
+					<span>{convertESTtoLocal(time)}</span>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
