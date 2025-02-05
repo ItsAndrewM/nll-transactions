@@ -22,11 +22,12 @@ export function PostGameSummary({ gameData }: { gameData: GameData }) {
 		<div className="container mx-auto px-4 py-8">
 			<GameHeader gameInfo={game_info} />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-				<BoxScore boxScore={box_score} />
+				<BoxScore boxScore={box_score} gameInfo={game_info} />
 				{"fo" in team_stats.home && "fo" in team_stats.away && (
 					<TeamStats
 						home={team_stats.home as TeamStatsType}
 						away={team_stats.away as TeamStatsType}
+						gameInfo={game_info}
 					/>
 				)}
 			</div>

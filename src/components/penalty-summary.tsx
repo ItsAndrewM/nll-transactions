@@ -29,12 +29,10 @@ export function PenaltySummary({ penalties }: { penalties: Penalty }) {
 						<h3 className="text-lg font-semibold mb-2">{quarter}</h3>
 						<Table>
 							<TableHeader>
-								<TableRow>
-									<TableHead aria-label="Logo"></TableHead>
+								<TableRow className="w-full grid grid-cols-5 gap-20 sm:gap-4">
+									<TableHead aria-label="Logo">Team</TableHead>
 									<TableHead>Time</TableHead>
-									<TableHead className="w-14"></TableHead>
 									<TableHead>Player</TableHead>
-									<TableHead>Team</TableHead>
 									<TableHead>Duration</TableHead>
 									<TableHead>Infraction</TableHead>
 								</TableRow>
@@ -42,8 +40,11 @@ export function PenaltySummary({ penalties }: { penalties: Penalty }) {
 							<TableBody>
 								{penalties[quarter as keyof Penalty]?.map(
 									(penalty: PenaltyEvent, index: number) => (
-										<TableRow key={index}>
-											<TableCell className="w-14">
+										<TableRow
+											key={index}
+											className="w-full grid grid-cols-5 gap-20 sm:gap-4"
+										>
+											<TableCell className="flex items-center relative flex-nowrap gap-2 pr-10 sm:pr-0 min-w-0">
 												<Image
 													src={penalty.logo}
 													alt={penalty.team}
@@ -51,12 +52,13 @@ export function PenaltySummary({ penalties }: { penalties: Penalty }) {
 													height={32}
 													loading="lazy"
 													decoding="async"
+													className="flex-none w-8 h-8 shrink-0 min-w-8 min-h-8"
 												/>
+
+												<span className="hidden sm:block">{penalty.team}</span>
 											</TableCell>
 											<TableCell className="w-14">{penalty.time}</TableCell>
-											<TableCell className="w-14"></TableCell>
 											<TableCell>{penalty.player}</TableCell>
-											<TableCell>{penalty.team}</TableCell>
 											<TableCell>{penalty.duration}</TableCell>
 											<TableCell>{penalty.infraction}</TableCell>
 										</TableRow>
