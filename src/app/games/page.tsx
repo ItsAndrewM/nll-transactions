@@ -49,6 +49,13 @@ export const metadata: Metadata = {
 
 export default async function Page() {
 	const games = await getGames();
+	const completedGames = games
+		.filter((game: GameData) => game.status === "Complete")
+		.reverse();
+	const scheduledGames = games
+		.filter((game: GameData) => game.status === "Scheduled")
+		.reverse();
+	const allGames = games.reverse();
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<h1 className="text-3xl font-bold mb-6 text-center">
@@ -83,12 +90,9 @@ export default async function Page() {
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">Completed Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{games
-								.filter((match: GameData) => match.status === "Complete")
-								.reverse()
-								.map((game: GameData) => (
-									<GameCard key={game.id} game={game} />
-								))}
+							{completedGames.map((game: GameData) => (
+								<GameCard key={game.id} game={game} />
+							))}
 						</div>
 					</div>
 				</TabsContent>
@@ -96,12 +100,9 @@ export default async function Page() {
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">Scheduled Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{games
-								.filter((match: GameData) => match.status === "Scheduled")
-								.reverse()
-								.map((game: GameData) => (
-									<GameCard key={game.id} game={game} />
-								))}
+							{scheduledGames.map((game: GameData) => (
+								<GameCard key={game.id} game={game} />
+							))}
 						</div>
 					</div>
 				</TabsContent>
@@ -109,7 +110,7 @@ export default async function Page() {
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
 						<h3 className="text-lg font-semibold mt-4 mb-2">All Games</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{games.reverse().map((game: GameData) => (
+							{allGames.map((game: GameData) => (
 								<GameCard key={game.id} game={game} />
 							))}
 						</div>
