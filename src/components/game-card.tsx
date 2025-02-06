@@ -97,7 +97,7 @@ export function GameCard({ game }: { game: GameState }) {
 			</CardContent>
 			<Link
 				href={`/games/${id}`}
-				className="absolute inset-0 z-[1] cursor-pointer hover:"
+				className="absolute inset-0 z-[1] cursor-pointer"
 				aria-label={`New tab link to ${awayTitle} vs ${homeTitle}`}
 				prefetch
 			/>

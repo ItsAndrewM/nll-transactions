@@ -13,7 +13,7 @@ export default function ScheduleGameCard({
 	return (
 		<li
 			key={match.id}
-			className="border px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative"
+			className="border px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg"
 		>
 			<div className="flex justify-center items-between gap-2 w-fit flex-col">
 				<div className="flex justify-between items-center gap-2 w-fit">
