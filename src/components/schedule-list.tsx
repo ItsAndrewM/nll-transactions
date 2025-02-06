@@ -32,7 +32,6 @@ export default function ScheduleList({
 
 	const liveGames =
 		schedule.filter((game) => game.status.typeName === "Live") || [];
-	console.log(liveGames);
 
 	const filteredLiveGames = liveGames.filter(
 		(match) =>
