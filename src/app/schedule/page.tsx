@@ -1,4 +1,5 @@
 import SchedulePage from "@/components/schedule-page";
+import { liveGame } from "@/data/live-game";
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
@@ -58,7 +59,20 @@ export default async function Page() {
 		getListOfTeams(),
 		getStandings(),
 	]);
+	const { id } = liveGame;
+	const gameIndex = schedule.findIndex(
+		(game: { id: number }) => game.id === id
+	);
+	const scheduleWithLiveGame = [
+		...schedule.slice(0, gameIndex),
+		...schedule.slice(gameIndex + 1),
+		liveGame,
+	];
 	return (
-		<SchedulePage schedule={schedule} teamsList={teams} standings={standings} />
+		<SchedulePage
+			schedule={scheduleWithLiveGame}
+			teamsList={teams}
+			standings={standings}
+		/>
 	);
 }
