@@ -210,6 +210,7 @@ export const removePlaced = (text: string): string => {
 
 export function convertESTtoLocal(estTime: string): string {
 	const [hours, minutes] = estTime.split(":").map(Number);
+	if (hours === undefined || minutes === undefined) return estTime;
 	if (hours < 0 || minutes < 0) return estTime;
 	const gmtHours = hours + 5 - 24;
 	const gmtMinutes = minutes;
