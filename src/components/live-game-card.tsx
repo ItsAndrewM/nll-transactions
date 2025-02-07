@@ -35,7 +35,7 @@ export default function LiveGameCard({
 	return (
 		<li key={currentMatch.id} className="relative">
 			<div className="absolute inset-0 rounded-lg animate-pulse border border-primary" />
-			<div className="px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg">
+			<div className="px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
 				<div className="flex justify-center items-between gap-2 w-fit flex-col">
 					<div className="flex justify-between items-center gap-2 w-fit">
 						<Image
