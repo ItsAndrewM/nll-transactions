@@ -52,6 +52,8 @@ export const metadata: Metadata = {
 	},
 };
 
+export const revalidate = 3600;
+
 export default async function Page() {
 	const [games, schedule] = await Promise.all([getGames(), getSchedule()]);
 
