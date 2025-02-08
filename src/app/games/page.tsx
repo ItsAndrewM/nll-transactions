@@ -1,8 +1,13 @@
-import { GameCard } from "@/components/game-card";
 import { getGames } from "@/server/games";
 import { GameData } from "@/types/games";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Metadata } from "next";
+import { getSchedule } from "@/server/schedule";
+import { OutgoingMatch } from "@/types/schedule";
+import LiveIndicator from "@/components/live-indicator";
+import LiveGamesGameCard from "@/components/live-games-game-card";
+import { Separator } from "@/components/ui/separator";
+import GamesCardList from "@/components/games-card-list";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -48,14 +53,32 @@ export const metadata: Metadata = {
 };
 
 export default async function Page() {
-	const games = await getGames();
-	const completedGames = games
-		.filter((game: GameData) => game.status === "Complete")
-		.reverse();
-	const scheduledGames = games
-		.filter((game: GameData) => game.status === "Scheduled")
-		.reverse();
-	const allGames = games.reverse();
+	const [games, schedule] = await Promise.all([getGames(), getSchedule()]);
+
+	const liveGames =
+		schedule.filter((game: OutgoingMatch) => game.status.typeName === "Live") ||
+		[];
+	const completedGames = games.filter(
+		(game: GameData) =>
+			game.status === "Complete" &&
+			!liveGames.some(
+				(liveGame: OutgoingMatch) => Number(liveGame.id) === Number(game.id)
+			)
+	);
+	const scheduledGames = games.filter(
+		(game: GameData) =>
+			game.status === "Scheduled" &&
+			!liveGames.some(
+				(liveGame: OutgoingMatch) => Number(liveGame.id) === Number(game.id)
+			)
+	);
+	const allGames = games.filter(
+		(game: GameData) =>
+			!liveGames.some(
+				(liveGame: OutgoingMatch) => Number(liveGame.id) === Number(game.id)
+			)
+	);
+
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<h1 className="text-3xl font-bold mb-6 text-center">
@@ -84,38 +107,57 @@ export default async function Page() {
 							<span>Scheduled</span>{" "}
 							<span className="hidden xl:block">Games</span>
 						</TabsTrigger>
+						{liveGames.length > 0 ? (
+							<TabsTrigger
+								value="live"
+								className="text-xs md:text-sm flex xl:gap-1"
+							>
+								<span>Live</span>{" "}
+								<LiveIndicator className="ml-2 block xl:hidden" />
+								<span className="hidden xl:block">Games</span>
+								<LiveIndicator className="ml-2 hidden xl:block" />
+							</TabsTrigger>
+						) : null}
 					</TabsList>
 				</div>
 				<TabsContent value="completed" className="space-y-4">
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
-						<h3 className="text-lg font-semibold mt-4 mb-2">Completed Games</h3>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{completedGames.map((game: GameData) => (
-								<GameCard key={game.id} game={game} />
-							))}
-						</div>
+						<GamesCardList gamesList={completedGames} title="Completed" />
 					</div>
 				</TabsContent>
 				<TabsContent value="scheduled">
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
-						<h3 className="text-lg font-semibold mt-4 mb-2">Scheduled Games</h3>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{scheduledGames.map((game: GameData) => (
-								<GameCard key={game.id} game={game} />
-							))}
-						</div>
+						<GamesCardList gamesList={scheduledGames} title="Scheduled" />
 					</div>
 				</TabsContent>
 				<TabsContent value="all">
 					<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
-						<h3 className="text-lg font-semibold mt-4 mb-2">All Games</h3>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{allGames.map((game: GameData) => (
-								<GameCard key={game.id} game={game} />
-							))}
-						</div>
+						{liveGames.length > 0 ? (
+							<>
+								<h3 className="text-lg font-semibold mt-4 mb-2">
+									Live <LiveIndicator />
+								</h3>
+								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+									{liveGames.map((game: OutgoingMatch) => (
+										<LiveGamesGameCard key={game.id} game={game} />
+									))}
+								</div>
+								<Separator className="my-4" />
+							</>
+						) : null}
+						<GamesCardList gamesList={allGames} title="All" />
 					</div>
 				</TabsContent>
+				{liveGames.length > 0 ? (
+					<TabsContent value="live">
+						<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{liveGames.map((game: OutgoingMatch) => (
+								<LiveGamesGameCard key={game.id} game={game} />
+							))}
+						</div>
+					</TabsContent>
+				) : null}
 			</Tabs>
 		</div>
 	);

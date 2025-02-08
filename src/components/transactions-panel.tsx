@@ -128,7 +128,7 @@ export default function TransactionsPanel({
 				</div>
 			</div>
 			<div
-				className="flex flex-col gap-4 items-center justify-center max-h-[68vh] overflow-scroll "
+				className="flex flex-col gap-4 items-center justify-center max-h-[68vh] overflow-scroll no-scrollbar"
 				ref={scrollContainerRef}
 			>
 				<ul className="w-full text-left list-inside max-w-md px-2 flex flex-col gap-4 max-h-full">

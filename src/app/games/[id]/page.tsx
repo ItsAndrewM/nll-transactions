@@ -2,6 +2,7 @@ import { AndaHeader } from "@/components/anda-header";
 import { PostGameSummary } from "@/components/post-game-summary";
 import { PreGameInfo } from "@/components/pre-game-info";
 import { getGame } from "@/server/games";
+import { getScheduleGameById } from "@/server/schedule";
 
 import type { Metadata } from "next";
 
@@ -115,7 +116,12 @@ type Params = Promise<{ id: string }>;
 
 export default async function Page(props: { params: Params }) {
 	const params = await props.params;
-	const game = await getGame(params.id);
+	const [game, scheduledGame] = await Promise.all([
+		getGame(params.id),
+		getScheduleGameById(params.id),
+	]);
+
+	console.log(scheduledGame);
 
 	const { status } = game || {};
 

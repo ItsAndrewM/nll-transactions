@@ -42,7 +42,7 @@ export default function ScheduleList({
 	return (
 		<div
 			className={cn(
-				"flex flex-col gap-6 items-center justify-start py-6 w-full max-h-full overflow-visible",
+				"flex flex-col gap-6 items-center justify-start py-6 w-full max-h-full overflow-visible no-scrollbar",
 				isHomePage?.div
 			)}
 			ref={scrollContainerRef}
@@ -50,31 +50,19 @@ export default function ScheduleList({
 			<div className="w-full flex justify-between items-center">
 				<Tabs defaultValue="all" className="w-full max-w-md mx-auto">
 					<TabsList>
-						<TabsTrigger
-							value="all"
-							className="text-xs lg:text-sm flex xl:gap-1"
-						>
+						<TabsTrigger value="all" className="text-xs  flex xl:gap-1">
 							<span>All</span> <span className="hidden xl:block">Games</span>
 						</TabsTrigger>
-						<TabsTrigger
-							value="completed"
-							className="text-xs md:text-sm flex xl:gap-1"
-						>
+						<TabsTrigger value="completed" className="text-xs  flex xl:gap-1">
 							<span>Completed</span>
 							<span className="hidden xl:block">Games</span>
 						</TabsTrigger>
-						<TabsTrigger
-							value="scheduled"
-							className="text-xs md:text-sm flex xl:gap-1"
-						>
+						<TabsTrigger value="scheduled" className="text-xs  flex xl:gap-1">
 							<span>Scheduled</span>{" "}
 							<span className="hidden xl:block">Games</span>
 						</TabsTrigger>
 						{liveGames.length > 0 ? (
-							<TabsTrigger
-								value="live"
-								className="text-xs md:text-sm flex xl:gap-1"
-							>
+							<TabsTrigger value="live" className="text-xs flex xl:gap-1">
 								<span>Live</span>{" "}
 								<LiveIndicator className="ml-2 block xl:hidden" />
 								<span className="hidden xl:block">Games</span>
