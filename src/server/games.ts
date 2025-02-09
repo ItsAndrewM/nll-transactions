@@ -1,11 +1,15 @@
 import { env } from "@/env";
 
 import "server-only";
+import { getScheduleGameById } from "./schedule";
+import { getRecrawlById } from "./live";
+import { revalidatePath } from "next/cache";
 
 export const preload = (id: string) => {
 	void getGames();
 	void getGame(id);
 	void getGameIds();
+	void syncGames(id);
 };
 
 export const getGames = async () => {
@@ -49,3 +53,28 @@ export const getGameIds = async () => {
 		return [];
 	}
 };
+
+export async function syncGames(id: string) {
+	try {
+		const [game, scheduledGame] = await Promise.all([
+			getGame(id),
+			getScheduleGameById(id),
+		]);
+		const { status: gameStatus } = game || {};
+		const { status: scheduledStatus } = scheduledGame || {};
+
+		if (scheduledStatus.typeName.toLowerCase() === "live") {
+			return { ...game, status: scheduledStatus.name };
+		}
+
+		if (gameStatus?.toLowerCase() !== scheduledStatus?.name?.toLowerCase()) {
+			console.log("wrong status");
+			getRecrawlById(id);
+			revalidatePath(`/games/${id}`);
+		}
+		return game;
+	} catch (error) {
+		console.error(error);
+		return {};
+	}
+}

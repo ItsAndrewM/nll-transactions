@@ -1,10 +1,10 @@
 import { AndaHeader } from "@/components/anda-header";
+// import LiveGameSummary from "@/components/live-game-summary";
 import { PostGameSummary } from "@/components/post-game-summary";
 import { PreGameInfo } from "@/components/pre-game-info";
-import { getGame } from "@/server/games";
-import { getScheduleGameById } from "@/server/schedule";
-
+import { syncGames } from "@/server/games";
 import type { Metadata } from "next";
+import { Suspense } from "react";
 
 type Props = {
 	params: Promise<{ id: string }>;
@@ -13,7 +13,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const id = (await params).id;
-	const game = await getGame(id);
+	const game = await syncGames(id);
 	const { status } = game || {};
 
 	if (status !== "Scheduled") {
@@ -116,23 +116,27 @@ type Params = Promise<{ id: string }>;
 
 export default async function Page(props: { params: Params }) {
 	const params = await props.params;
-	const [game, scheduledGame] = await Promise.all([
-		getGame(params.id),
-		getScheduleGameById(params.id),
-	]);
 
-	console.log(scheduledGame);
+	const game = await syncGames(params.id);
 
 	const { status } = game || {};
+
+	console.log(status);
+
+	// if (status?.toLowerCase() === "Live") {
+	// 	return <LiveGameSummary gameData={game} />;
+	// }
 
 	return (
 		<div className="container mx-auto py-10">
 			<AndaHeader />
-			{status === "Scheduled" ? (
-				<PreGameInfo data={game} />
-			) : (
-				<PostGameSummary gameData={game} />
-			)}
+			<Suspense fallback={<div>Loading...</div>}>
+				{status === "Scheduled" ? (
+					<PreGameInfo data={game} />
+				) : (
+					<PostGameSummary gameData={game} />
+				)}
+			</Suspense>
 		</div>
 	);
 }

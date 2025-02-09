@@ -2,8 +2,9 @@ import { env } from "@/env";
 
 import "server-only";
 
-export const preload = () => {
+export const preload = (id: string) => {
 	void getSchedule();
+	void getScheduleGameById(id);
 };
 
 export const getSchedule = async () => {
@@ -33,7 +34,7 @@ export const getScheduleGameById = async (id: string) => {
 		if (data.success === false) {
 			throw new Error("Failed to fetch schedule");
 		}
-		return data.schedule;
+		return data.scheduleById;
 	} catch (error) {
 		console.error(error);
 		return [];
