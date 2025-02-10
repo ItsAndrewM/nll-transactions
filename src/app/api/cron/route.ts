@@ -158,26 +158,29 @@ async function handleGame(gameId: string) {
 export async function GET() {
 	try {
 		console.log("Starting cron job...");
-		// Process games in chunks of 10
-		const BATCH_SIZE = 10;
-		const chunks = [];
 
-		for (let i = 0; i < gameIds.length; i += BATCH_SIZE) {
-			chunks.push(gameIds.slice(i, i + BATCH_SIZE));
-		}
+		// Get current hour and use it to select games
+		// This way, different games will be processed each hour
+		const currentHour = new Date().getHours();
+		const gamesPerRun = 2; // Process 2 games per run
+		const startIndex = (currentHour * gamesPerRun) % gameIds.length;
+		const gamesToProcess = gameIds.slice(startIndex, startIndex + gamesPerRun);
 
-		// Process each chunk
-		const currentChunkIndex = new Date().getHours() % chunks.length;
-		const currentChunk = chunks[currentChunkIndex];
+		console.log(
+			`Processing games at indices ${startIndex}-${startIndex + gamesPerRun}`
+		);
 
-		console.log(`Processing chunk ${currentChunkIndex + 1}/${chunks.length}`);
-
-		for (const gameId of currentChunk) {
+		for (const gameId of gamesToProcess) {
 			await handleGame(gameId.toString());
 		}
 
-		console.log("Chunk processing complete");
-		return NextResponse.json({ ok: true });
+		console.log("Games processing complete");
+		return NextResponse.json({
+			ok: true,
+			processed: gamesToProcess,
+			startIndex,
+			hour: currentHour,
+		});
 	} catch (error) {
 		console.log(error);
 		return NextResponse.json({ ok: false });
