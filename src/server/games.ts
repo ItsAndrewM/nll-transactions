@@ -64,7 +64,7 @@ export async function syncGames(id: string) {
 		const { status: scheduledStatus } = scheduledGame || {};
 
 		if (scheduledStatus.typeName.toLowerCase() === "live") {
-			return { ...game, status: scheduledStatus.name };
+			return { game_summary: game, live_game: scheduledGame };
 		}
 
 		if (gameStatus?.toLowerCase() !== scheduledStatus?.name?.toLowerCase()) {
@@ -72,7 +72,7 @@ export async function syncGames(id: string) {
 			getRecrawlById(id);
 			revalidatePath(`/games/${id}`);
 		}
-		return game;
+		return { game_summary: game, live_game: scheduledGame };
 	} catch (error) {
 		console.error(error);
 		return {};

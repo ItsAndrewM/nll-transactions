@@ -4,10 +4,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Metadata } from "next";
 import { getSchedule } from "@/server/schedule";
 import { OutgoingMatch } from "@/types/schedule";
-import LiveIndicator from "@/components/live-indicator";
-import LiveGamesGameCard from "@/components/live-games-game-card";
+import LiveIndicator from "@/components/live/live-indicator";
+import LiveGamesGameCard from "@/components/live/live-games-game-card";
 import { Separator } from "@/components/ui/separator";
-import GamesCardList from "@/components/games-card-list";
+import GamesCardList from "@/components/games/games-card-list";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -152,11 +152,13 @@ export default async function Page() {
 				</TabsContent>
 				{liveGames.length > 0 ? (
 					<TabsContent value="live">
-						<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
-						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-							{liveGames.map((game: OutgoingMatch) => (
-								<LiveGamesGameCard key={game.id} game={game} />
-							))}
+						<div className="rounded-lg md:border md:bg-card md:text-card-foreground md:shadow-sm px-6 pb-16">
+							<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
+							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+								{liveGames.map((game: OutgoingMatch) => (
+									<LiveGamesGameCard key={game.id} game={game} />
+								))}
+							</div>
 						</div>
 					</TabsContent>
 				) : null}

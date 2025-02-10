@@ -234,3 +234,29 @@ export function convertESTtoLocal(estTime: string): string {
 
 	return `${time} ${timezoneMap[offset] || `GMT${offset / -60}`}`;
 }
+
+export const liveGameFetcher = async (url: string) => {
+	try {
+		const res = await fetch(url);
+		if (!res.ok) throw new Error("Failed to fetch game data");
+		const data = await res.json();
+		if (!data.success) throw new Error("Failed to fetch game data");
+		return data.scheduleById;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+};
+
+export const recrawledFetcher = async (url: string) => {
+	try {
+		const res = await fetch(url, { method: "POST" });
+		if (!res.ok) throw new Error("Failed to fetch game data");
+		const data = await res.json();
+		if (!data.success) throw new Error("Failed to fetch game data");
+		return data.scheduleById;
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+};

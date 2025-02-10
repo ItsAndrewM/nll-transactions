@@ -2,14 +2,14 @@
 
 import { useState } from "react";
 import { SelectTeams } from "./select-team";
-import TransactionsPanel from "./transactions-panel";
 import { Transactions } from "@/types/transactions";
 import { OutgoingMatch } from "@/types/schedule";
-import ScheduleList from "./schedule-list";
-import Standings from "./standings";
+import Standings from "./standings/standings";
 import { Standing } from "@/types/standings";
 import SelectedTitle from "./selected-title";
-import ScheduleNext from "./schedule-next";
+import ScheduleNext from "./scheduled/schedule-next";
+import ScheduleList from "./scheduled/schedule-list";
+import TransactionsPanel from "./transactions/transactions-panel";
 
 export default function Panels({
 	teamsList,

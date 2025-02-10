@@ -1,5 +1,5 @@
 import { allRunnerColumns } from "@/components/data-table/all-runners-columns";
-import { StatsDataTable } from "@/components/stats-data-table";
+import { StatsDataTable } from "@/components/data-table/stats-data-table";
 import { getStats } from "@/server/stats";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Glossary from "@/components/glossary";

@@ -1,4 +1,4 @@
-import Standings from "@/components/standings";
+import Standings from "@/components/standings/standings";
 import { getStandings } from "@/server/standings";
 import { Metadata } from "next";
 

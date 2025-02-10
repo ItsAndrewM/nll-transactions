@@ -11,8 +11,6 @@ export default function ReverseToggle({
 	setChecked: React.Dispatch<React.SetStateAction<boolean>>;
 	checked: boolean;
 }) {
-	console.log(checked);
-
 	return (
 		<div className="flex items-center space-x-2 my-4">
 			<Switch

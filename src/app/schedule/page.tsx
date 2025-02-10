@@ -1,4 +1,4 @@
-import SchedulePage from "@/components/schedule-page";
+import SchedulePage from "@/components/scheduled/schedule-page";
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
