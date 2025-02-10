@@ -150,8 +150,6 @@ export function parseGame(html: string) {
 							$(play).find("img").attr("data-lazy-src") ||
 							$(play).find("img").attr("src");
 						const teamTitle = $(play).find("img").attr("alt")?.split(" ")[2];
-						console.log("summary_item title", teamTitle);
-						console.log("summary_item logo", teamLogo);
 						const scorerText = cleanText($(play).find(".player").text() || "");
 						// Parse scorer and assists
 						const [scorer, ...assisters] = scorerText.split("(");
