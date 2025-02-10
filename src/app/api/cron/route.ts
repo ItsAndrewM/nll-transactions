@@ -139,13 +139,44 @@ async function handleGame(gameId: string) {
 	}
 }
 
+// export async function GET() {
+// 	try {
+// 		console.log("Starting cron job...");
+// 		for (const gameId of gameIds) {
+// 			await handleGame(gameId.toString());
+// 		}
+// 		console.log("Cron job complete");
+// 		return NextResponse.json({ ok: true });
+// 	} catch (error) {
+// 		console.log(error);
+// 		return NextResponse.json({ ok: false });
+// 	} finally {
+// 		await pool.end();
+// 	}
+// }
+
 export async function GET() {
 	try {
 		console.log("Starting cron job...");
-		for (const gameId of gameIds) {
+		// Process games in chunks of 10
+		const BATCH_SIZE = 10;
+		const chunks = [];
+
+		for (let i = 0; i < gameIds.length; i += BATCH_SIZE) {
+			chunks.push(gameIds.slice(i, i + BATCH_SIZE));
+		}
+
+		// Process each chunk
+		const currentChunkIndex = new Date().getHours() % chunks.length;
+		const currentChunk = chunks[currentChunkIndex];
+
+		console.log(`Processing chunk ${currentChunkIndex + 1}/${chunks.length}`);
+
+		for (const gameId of currentChunk) {
 			await handleGame(gameId.toString());
 		}
-		console.log("Cron job complete");
+
+		console.log("Chunk processing complete");
 		return NextResponse.json({ ok: true });
 	} catch (error) {
 		console.log(error);
