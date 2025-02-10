@@ -15,8 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://nlltracker.com"),
 	title: "NLL Tracker by andamonium",
 	description: "NLL Transactions, Stats & Updates",
+	alternates: {
+		canonical: "/",
+		languages: {
+			"en-US": "/en-US",
+		},
+	},
 };
 
 export default function RootLayout({

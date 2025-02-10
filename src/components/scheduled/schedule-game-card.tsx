@@ -1,4 +1,5 @@
 import { imageUrls } from "@/data/image-urls";
+import { cn } from "@/lib/utils";
 import { OutgoingMatch } from "@/types/schedule";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,14 +7,19 @@ import Link from "next/link";
 export default function ScheduleGameCard({
 	match,
 	selected,
+	className,
 }: {
 	match: OutgoingMatch;
 	selected: string;
+	className?: string;
 }) {
 	return (
 		<li
 			key={match.id}
-			className="border px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out"
+			className={cn(
+				"border px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out",
+				className
+			)}
 		>
 			<div className="flex justify-center items-between gap-2 w-fit flex-col">
 				<div className="flex justify-between items-center gap-2 w-fit">

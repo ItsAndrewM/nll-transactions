@@ -108,21 +108,21 @@ export function NavMenu() {
 							<SheetTitle className="flex items-center justify-between gap-2 mt-2">
 								<div className="flex flex-col">
 									<Link
-										href={"https://nlltracker.com"}
-										className="hover:text-slate-500 transition-colors"
+										href={"/"}
+										className="hover:text-slate-500 transition-colors duration-300 ease-in-out"
 									>
 										<span>NLLTracker.com</span>{" "}
 									</Link>
 									<Link
 										href={"https://andamonium.dev"}
-										className="text-slate-500 hover:text-black transition-colors"
+										className="text-slate-500 hover:text-black transition-colors duration-300 ease-in-out"
 									>
 										<small>by andamonium</small>
 									</Link>
 								</div>
 								<Link
 									href={"https://github.com/itsandrewm/"}
-									className="hover:opacity-80 transition-opacity"
+									className="hover:opacity-80 transition-opacity duration-300 ease-in-out"
 								>
 									<Avatar className="h-12 w-12">
 										<AvatarImage

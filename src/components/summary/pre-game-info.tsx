@@ -4,8 +4,15 @@ import { PreGameData } from "@/types/games";
 import { gameInfoColumns } from "../data-table/pre-game-info-columns";
 import { teamStatsColumns } from "../data-table/pre-game-team-stats-columns";
 import { GameHeader } from "../games/game-header";
+import { Standing } from "@/types/standings";
 
-export function PreGameInfo({ data }: { data: PreGameData }) {
+export function PreGameInfo({
+	data,
+	teams,
+}: {
+	data: PreGameData;
+	teams: { home: Standing; away: Standing };
+}) {
 	const { game_info, team_stats } = data || {};
 	const gameInfoData = [game_info];
 	const teamStatsData = [
@@ -24,7 +31,7 @@ export function PreGameInfo({ data }: { data: PreGameData }) {
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<div className="space-y-8">
-				<GameHeader gameInfo={game_info} />
+				<GameHeader gameInfo={game_info} teams={teams} />
 				<Card>
 					<CardHeader>
 						<CardTitle>Game Information</CardTitle>

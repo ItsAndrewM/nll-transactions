@@ -3,8 +3,16 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { OutgoingMatch } from "@/types/schedule";
 import { imageUrls } from "@/data/image-urls";
+import { Standing } from "@/types/standings";
+import Link from "next/link";
 
-export function LiveGameHeader({ gameInfo }: { gameInfo: OutgoingMatch }) {
+export function LiveGameHeader({
+	gameInfo,
+	teams,
+}: {
+	gameInfo: OutgoingMatch;
+	teams: { home: Standing; away: Standing };
+}) {
 	const { date: matchDate, id, squads, status, venue } = gameInfo || {};
 
 	const { utcMatchStart } = matchDate || {};
@@ -27,24 +35,33 @@ export function LiveGameHeader({ gameInfo }: { gameInfo: OutgoingMatch }) {
 			<CardHeader>
 				<CardTitle className=" font-bold text-center">
 					<h3 className="text-2xl">
-						{squads?.away?.displayName} vs {squads?.home?.displayName}
+						<Link href={`/teams/${teams?.away?.team_id}`}>
+							{squads?.away?.displayName}
+						</Link>{" "}
+						vs{" "}
+						<Link href={`/teams/${teams?.home?.team_id}`}>
+							{squads?.home?.displayName}
+						</Link>
 					</h3>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<div className="justify-center md:gap-8 flex items-center">
 					<div className="flex flex-col items-center">
-						<Image
-							src={
-								imageUrls.find((img) => img.name === squads?.away?.displayName)
-									?.imageUrl || squads?.away?.displayName
-							}
-							alt={squads?.away?.displayName}
-							width={100}
-							height={100}
-							loading="eager"
-							decoding="sync"
-						/>
+						<Link href={`/teams/${teams?.away?.team_id}`}>
+							<Image
+								src={
+									imageUrls.find(
+										(img) => img.name === squads?.away?.displayName
+									)?.imageUrl || squads?.away?.displayName
+								}
+								alt={squads?.away?.displayName}
+								width={100}
+								height={100}
+								loading="eager"
+								decoding="sync"
+							/>
+						</Link>
 					</div>
 					<div className="text-center">
 						<div className="text-xl font-semibold">{date}</div>
@@ -87,17 +104,20 @@ export function LiveGameHeader({ gameInfo }: { gameInfo: OutgoingMatch }) {
 						</div>
 					</div>
 					<div className="flex flex-col items-center">
-						<Image
-							src={
-								imageUrls.find((img) => img.name === squads?.home?.displayName)
-									?.imageUrl || squads?.home?.displayName
-							}
-							alt={squads?.home?.displayName}
-							width={100}
-							height={100}
-							loading="eager"
-							decoding="sync"
-						/>
+						<Link href={`/teams/${teams?.home?.team_id}`}>
+							<Image
+								src={
+									imageUrls.find(
+										(img) => img.name === squads?.home?.displayName
+									)?.imageUrl || squads?.home?.displayName
+								}
+								alt={squads?.home?.displayName}
+								width={100}
+								height={100}
+								loading="eager"
+								decoding="sync"
+							/>
+						</Link>
 					</div>
 				</div>
 			</CardContent>

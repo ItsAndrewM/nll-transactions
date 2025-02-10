@@ -10,6 +10,7 @@ type GamesListProps = {
 		ul: string;
 	} | null;
 	filtered: OutgoingMatch[];
+	className?: string;
 };
 
 export default function GamesList({
@@ -17,6 +18,7 @@ export default function GamesList({
 	selected,
 	isHomePage,
 	filtered,
+	className,
 }: GamesListProps) {
 	return (
 		<ul
@@ -31,6 +33,7 @@ export default function GamesList({
 							match={match}
 							selected={selected}
 							key={match.id}
+							className={className}
 						/>
 				  ))
 				: filtered.map((match) => (
@@ -38,6 +41,7 @@ export default function GamesList({
 							match={match}
 							selected={selected}
 							key={match.id}
+							className={className}
 						/>
 				  ))}
 		</ul>

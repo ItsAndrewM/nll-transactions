@@ -2,8 +2,16 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn, convertESTtoLocal } from "@/lib/utils";
 import { GameInfo } from "@/types/games";
+import { Standing } from "@/types/standings";
+import Link from "next/link";
 
-export function GameHeader({ gameInfo }: { gameInfo: GameInfo }) {
+export function GameHeader({
+	gameInfo,
+	teams,
+}: {
+	gameInfo: GameInfo;
+	teams: { home: Standing; away: Standing };
+}) {
 	const {
 		finalScore,
 		away: awayTeam,
@@ -30,21 +38,24 @@ export function GameHeader({ gameInfo }: { gameInfo: GameInfo }) {
 						{!finalScore ? "Pre-Game Information" : "Post-Game Summary"}
 					</h2>
 					<h3 className="text-2xl">
-						{awayTitle} vs {homeTitle}
+						<Link href={`/teams/${teams?.away?.team_id}`}>{awayTitle}</Link> vs{" "}
+						<Link href={`/teams/${teams?.home?.team_id}`}>{homeTitle}</Link>
 					</h3>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
 				<div className="justify-center md:gap-8 flex items-center">
 					<div className="flex flex-col items-center">
-						<Image
-							src={awayLogo || "/placeholder.svg"}
-							alt={awayTitle}
-							width={100}
-							height={100}
-							loading="eager"
-							decoding="sync"
-						/>
+						<Link href={`/teams/${teams?.away?.team_id}`}>
+							<Image
+								src={awayLogo || "/placeholder.svg"}
+								alt={awayTitle}
+								width={100}
+								height={100}
+								loading="eager"
+								decoding="sync"
+							/>
+						</Link>
 					</div>
 					<div className="text-center">
 						<div className="text-xl font-semibold">{date}</div>
@@ -62,14 +73,16 @@ export function GameHeader({ gameInfo }: { gameInfo: GameInfo }) {
 						</div>
 					</div>
 					<div className="flex flex-col items-center">
-						<Image
-							src={homeLogo || "/placeholder.svg"}
-							alt={homeTitle}
-							width={100}
-							height={100}
-							loading="eager"
-							decoding="sync"
-						/>
+						<Link href={`/teams/${teams?.home?.team_id}`}>
+							<Image
+								src={homeLogo || "/placeholder.svg"}
+								alt={homeTitle}
+								width={100}
+								height={100}
+								loading="eager"
+								decoding="sync"
+							/>
+						</Link>
 					</div>
 				</div>
 			</CardContent>

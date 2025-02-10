@@ -11,6 +11,7 @@ type GamesListProps = {
 		ul: string;
 	} | null;
 	filtered: OutgoingMatch[];
+	className?: string;
 };
 
 export default function LiveGamesList({
@@ -18,6 +19,7 @@ export default function LiveGamesList({
 	selected,
 	isHomePage,
 	filtered,
+	className,
 }: GamesListProps) {
 	return (
 		<ul
@@ -28,11 +30,21 @@ export default function LiveGamesList({
 		>
 			{!selected || selected === "all" ? (
 				schedule.map((match) => (
-					<LiveGameCard match={match} selected={selected} key={match.id} />
+					<LiveGameCard
+						match={match}
+						selected={selected}
+						key={match.id}
+						className={className}
+					/>
 				))
 			) : filtered.length > 0 ? (
 				filtered.map((match) => (
-					<LiveGameCard match={match} selected={selected} key={match.id} />
+					<LiveGameCard
+						match={match}
+						selected={selected}
+						key={match.id}
+						className={className}
+					/>
 				))
 			) : (
 				<>
@@ -41,7 +53,12 @@ export default function LiveGamesList({
 					</li>
 					<Separator />
 					{schedule.map((match) => (
-						<LiveGameCard match={match} selected={selected} key={match.id} />
+						<LiveGameCard
+							match={match}
+							selected={selected}
+							key={match.id}
+							className={className}
+						/>
 					))}
 				</>
 			)}

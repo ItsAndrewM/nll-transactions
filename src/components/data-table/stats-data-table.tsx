@@ -46,7 +46,6 @@ export function StatsDataTable<TData>({
 		{ id: "pts", desc: true },
 	]);
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-
 	const table = useReactTable({
 		data,
 		columns,
@@ -143,7 +142,8 @@ export function StatsDataTable<TData>({
 					)}
 				</TableBody>
 			</Table>
-			<DataTablePagination table={table} />
+
+			{paginate ? <DataTablePagination table={table} /> : null}
 		</div>
 	);
 }

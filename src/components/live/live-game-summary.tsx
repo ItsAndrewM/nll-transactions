@@ -12,13 +12,16 @@ import { PenaltySummary } from "../summary/penalty-summary";
 import { PlayerStats } from "../stats/player-stats";
 import { GameLeaders } from "../games/game-leaders";
 import { LiveGameHeader } from "./live-game-header";
+import { Standing } from "@/types/standings";
 
 export default function LiveGameSummary({
 	gameData,
 	liveGame,
+	teams,
 }: {
 	gameData: GameData;
 	liveGame: OutgoingMatch;
+	teams: { home: Standing; away: Standing };
 }) {
 	const { data: liveMatch } = useSWR<OutgoingMatch>(
 		gameData?.status?.toLowerCase() === "live"
@@ -60,7 +63,7 @@ export default function LiveGameSummary({
 
 	return (
 		<div className="container mx-auto px-4 py-8">
-			<LiveGameHeader gameInfo={currentMatch} />
+			<LiveGameHeader gameInfo={currentMatch} teams={teams} />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
 				<BoxScore boxScore={box_score} gameInfo={game_info} />
 				{"fo" in team_stats.home && "fo" in team_stats.away && (

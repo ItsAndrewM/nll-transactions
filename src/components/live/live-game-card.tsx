@@ -1,17 +1,21 @@
+"use client";
+
 import { imageUrls } from "@/data/image-urls";
 import { OutgoingMatch } from "@/types/schedule";
 import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
 import { env } from "@/env";
-import { liveGameFetcher } from "@/lib/utils";
+import { cn, liveGameFetcher } from "@/lib/utils";
 
 export default function LiveGameCard({
 	match,
 	selected,
+	className,
 }: {
 	match: OutgoingMatch;
 	selected: string;
+	className?: string;
 }) {
 	const { data: liveMatch } = useSWR<OutgoingMatch>(
 		match.status.typeName === "Live"
@@ -29,7 +33,12 @@ export default function LiveGameCard({
 	return (
 		<li key={currentMatch.id} className="relative">
 			<div className="absolute inset-0 rounded-lg animate-pulse border border-primary" />
-			<div className="px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out">
+			<div
+				className={cn(
+					"px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out",
+					className
+				)}
+			>
 				<div className="flex justify-center items-between gap-2 w-fit flex-col">
 					<div className="flex justify-between items-center gap-2 w-fit">
 						<Image

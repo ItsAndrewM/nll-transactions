@@ -6,8 +6,15 @@ import { GameHeader } from "../games/game-header";
 import { TeamStats } from "./team-stats";
 import { ScoringDetails } from "./scoring-details";
 import { GameLeaders } from "../games/game-leaders";
+import { Standing } from "@/types/standings";
 
-export function PostGameSummary({ gameData }: { gameData: GameData }) {
+export function PostGameSummary({
+	gameData,
+	teams,
+}: {
+	gameData: GameData;
+	teams: { home: Standing; away: Standing };
+}) {
 	const {
 		game_info,
 		box_score,
@@ -20,7 +27,7 @@ export function PostGameSummary({ gameData }: { gameData: GameData }) {
 
 	return (
 		<div className="container mx-auto px-4 py-8">
-			<GameHeader gameInfo={game_info} />
+			<GameHeader gameInfo={game_info} teams={teams} />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
 				<BoxScore boxScore={box_score} gameInfo={game_info} />
 				{"fo" in team_stats.home && "fo" in team_stats.away && (

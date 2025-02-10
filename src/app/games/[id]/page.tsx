@@ -3,6 +3,7 @@ import LiveGameSummary from "@/components/live/live-game-summary";
 import { PostGameSummary } from "@/components/summary/post-game-summary";
 import { PreGameInfo } from "@/components/summary/pre-game-info";
 import { syncGames } from "@/server/games";
+import { getVsTeamsWithoutId } from "@/server/team";
 import type { Metadata } from "next";
 import { Suspense } from "react";
 
@@ -22,7 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	if (status !== "Scheduled") {
 		const { away, home, finalScore, date, location } = game.game_info;
 
-		const title = `${away.title} ${finalScore.away} at ${home.title} ${finalScore.home} | NLL Game Recap`;
+		const title = `${away.title} ${finalScore.away} at ${home.title} ${finalScore.home} | NLL Tracker Game Recap`;
 		const description = `Full game recap and stats from ${away.title} (${finalScore.away}) at ${home.title} (${finalScore.home}) played on ${date} at ${location}. View box score, game leaders, and complete team statistics.`;
 
 		return {
@@ -124,6 +125,11 @@ export default async function Page(props: { params: Params }) {
 
 	const { game_summary: game, live_game: liveGame } = data || {};
 
+	const teams = await getVsTeamsWithoutId(
+		game?.game_info?.home?.title,
+		game?.game_info?.away?.title
+	);
+
 	const { status } = game || {};
 
 	if (status?.toLowerCase() === "live") {
@@ -131,7 +137,7 @@ export default async function Page(props: { params: Params }) {
 			<div className="container mx-auto py-10">
 				<AndaHeader />
 				<Suspense fallback={<div>Loading...</div>}>
-					<LiveGameSummary gameData={game} liveGame={liveGame} />{" "}
+					<LiveGameSummary gameData={game} liveGame={liveGame} teams={teams} />{" "}
 				</Suspense>
 			</div>
 		);
@@ -142,9 +148,9 @@ export default async function Page(props: { params: Params }) {
 			<AndaHeader />
 			<Suspense fallback={<div>Loading...</div>}>
 				{status === "Scheduled" ? (
-					<PreGameInfo data={game} />
+					<PreGameInfo data={game} teams={teams} />
 				) : (
-					<PostGameSummary gameData={game} />
+					<PostGameSummary gameData={game} teams={teams} />
 				)}
 			</Suspense>
 		</div>
