@@ -2,7 +2,8 @@
 	"crons": [
 		{
 			"path": "/api/cron",
-			"schedule": "0 0 * * 5,6,0"
+			"schedule": "0 0 * * 5,6,0",
+			"method": "POST"
 		},
 		{
 			"path": "/api/health",
