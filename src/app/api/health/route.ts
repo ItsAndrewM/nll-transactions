@@ -9,6 +9,7 @@ export async function GET() {
 			throw new Error("Failed to fetch health");
 		}
 		const data = await response.json();
+		console.log(data);
 		return NextResponse.json(data);
 	} catch (error) {
 		console.error(error);
