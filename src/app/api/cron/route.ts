@@ -51,30 +51,6 @@ const pool = new Pool({
 
 // Database inserter
 async function insertGameData(gameData: GameData) {
-	if (!gameData.id) {
-		throw new Error("Game ID is required");
-	}
-	if (!gameData.gameInfo) {
-		throw new Error("Game info is required");
-	}
-	if (!gameData.teamStats) {
-		throw new Error("Team stats are required");
-	}
-	if (!gameData.boxScore) {
-		throw new Error("Box score is required");
-	}
-	if (!gameData.scoring) {
-		throw new Error("Scoring is required");
-	}
-	if (!gameData.penalties) {
-		throw new Error("Penalties are required");
-	}
-	if (!gameData.playerStats) {
-		throw new Error("Player stats are required");
-	}
-	if (!gameData.gameLeaders) {
-		throw new Error("Game leaders are required");
-	}
 	const client = await pool.connect();
 	try {
 		const query = `
