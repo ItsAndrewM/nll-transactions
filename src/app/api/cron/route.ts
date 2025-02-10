@@ -139,7 +139,7 @@ async function handleGame(gameId: string) {
 	}
 }
 
-export async function POST() {
+export async function GET() {
 	try {
 		console.log("Starting cron job...");
 		for (const gameId of gameIds) {
