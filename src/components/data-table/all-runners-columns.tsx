@@ -4,6 +4,8 @@ import { AllStats } from "@/types/games";
 import { ColumnDef } from "@tanstack/react-table";
 import ColumnHeader from "./column-header";
 import Image from "next/image";
+import Link from "next/link";
+import { imageUrls } from "@/data/image-urls";
 
 export const allRunnerColumns: ColumnDef<AllStats>[] = [
 	{
@@ -19,7 +21,16 @@ export const allRunnerColumns: ColumnDef<AllStats>[] = [
 			const team = row.getValue("team") as { name: string; logo: string };
 			return (
 				<div className="flex justify-center items-center w-full">
-					<Image src={team.logo} alt={team.name} width={32} height={32} />
+					<Link
+						href={`/teams/${
+							imageUrls.find((url) =>
+								url?.name?.toLowerCase().includes(team?.name?.toLowerCase())
+							)?.id
+						}`}
+						className="transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
+					>
+						<Image src={team.logo} alt={team.name} width={32} height={32} />
+					</Link>
 				</div>
 			);
 		},

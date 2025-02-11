@@ -14,8 +14,7 @@ export interface Standing {
 	goals_against: number;
 	goals_against_avg: string;
 	goal_diff: number;
-	goals_diff_avg: number;
+	goal_diff_avg: number;
 	position: number;
 	team_cell_data: string;
-	points: number;
 }

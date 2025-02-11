@@ -17,6 +17,7 @@ import { useDebounce } from "@/hooks/useDebounce";
 import { Input } from "../ui/input";
 import Image from "next/image";
 import { imageUrls } from "@/data/image-urls";
+import { Card } from "../ui/card";
 
 export interface TransactionsPanelProps {
 	selected: string;
@@ -134,7 +135,7 @@ export default function TransactionsPanel({
 				<ul className="w-full text-left list-inside max-w-md px-2 flex flex-col gap-4 max-h-full">
 					<AnimatePresence>
 						{visibleEntries.map(([key, value], index) => (
-							<div id={String(index)} key={key}>
+							<Card id={String(index)} key={key}>
 								<motion.li
 									initial={
 										index >= visibleEntries.length - newlyLoadedCount
@@ -144,7 +145,7 @@ export default function TransactionsPanel({
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.5 }}
 									className={cn(
-										"border p-6 rounded-md",
+										"p-6 ",
 										index >= visibleEntries.length - newlyLoadedCount
 											? "bg-blue-50"
 											: ""
@@ -155,7 +156,12 @@ export default function TransactionsPanel({
 										{Object.entries(value as Record<string, string[]>).map(
 											([subKey, subValue]) => (
 												<li key={subKey} className="ml-4">
-													<div className="flex gap-2">
+													<Link
+														href={`/teams/${
+															imageUrls.find((img) => img.name === subKey)?.id
+														}`}
+														className="flex w-fit gap-2 hover:text-primary transition-colors duration-300 ease-in-out"
+													>
 														<Image
 															className="w-7 h-7"
 															src={
@@ -169,7 +175,7 @@ export default function TransactionsPanel({
 															decoding="async"
 														/>
 														<span className="font-bold">{subKey}:</span>
-													</div>
+													</Link>
 													<ul className="list-disc w-full list-inside ml-4">
 														{subValue.map((transaction: string) => (
 															<li key={transaction}>
@@ -182,12 +188,12 @@ export default function TransactionsPanel({
 										)}
 									</ul>
 								</motion.li>
-							</div>
+							</Card>
 						))}
 					</AnimatePresence>
 				</ul>
 			</div>
-			<div className="flex flex-col w-full gap-4 border-t-2 border-input pt-6">
+			<div className="flex justify-between items-start w-full gap-4 border-t-2 border-input pt-2">
 				{!showAll && limit < totalEntries && (
 					<div className="text-center">
 						<Button onClick={handleShowMore}>

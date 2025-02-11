@@ -1,10 +1,14 @@
 import { allRunnerColumns } from "@/components/data-table/all-runners-columns";
 import { StatsDataTable } from "@/components/data-table/stats-data-table";
-import { getStats } from "@/server/stats";
+import { getGoalieStats, getStats } from "@/server/stats";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Glossary from "@/components/glossary";
 
 import { Metadata } from "next";
+import { AndaHeader } from "@/components/anda-header";
+import { allGoalieColumns } from "@/components/data-table/all-goalie-columns";
+import { getStandings } from "@/server/standings";
+import Standings from "@/components/standings/standings";
 
 export const metadata: Metadata = {
 	title: "NLL Stats | Player and Goalie Statistics | NLL Tracker by andamonium",
@@ -54,27 +58,44 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function StatsPage() {
-	const allStats = await getStats();
+	const [allStats, goalieStats, standings] = await Promise.all([
+		getStats(),
+		getGoalieStats(),
+		getStandings(),
+	]);
 
 	return (
-		<div className="container mx-auto py-6 space-y-8">
-			<div className="space-y-4">
-				<h1 className="text-3xl font-bold tracking-tight">Player Statistics</h1>
-			</div>
+		<div className="container mx-auto px-4 py-8 pb-20">
+			<AndaHeader />
+			<h1 className="text-3xl font-bold mb-6 text-center">Player Statistics</h1>
 
-			<Tabs defaultValue="stats" className="space-y-4">
+			<Tabs defaultValue="stats" className="space-y-4 ">
 				<TabsList>
 					<TabsTrigger value="stats">All Player Stats</TabsTrigger>
 					<TabsTrigger value="glossary">Stats Glossary</TabsTrigger>
 				</TabsList>
 				<TabsContent value="stats" className="space-y-4">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm">
-						<div className="p-6">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+						<h3 className="text-xl font-semibold mt-4 mb-2">All Positions</h3>
+						<div>
 							<StatsDataTable
 								data={allStats.players}
 								columns={allRunnerColumns}
 								paginate={true}
 								filter={true}
+							/>
+						</div>
+					</div>
+					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+						<h3 className="text-xl font-semibold mt-4 mb-2">Goalies</h3>
+						<div>
+							<StatsDataTable
+								data={goalieStats}
+								columns={allGoalieColumns}
+								paginate={true}
+								filter={true}
+								defaultSort="wins"
+								defaultSortDirection="desc"
 							/>
 						</div>
 					</div>
@@ -87,6 +108,7 @@ export default async function StatsPage() {
 					</div>
 				</TabsContent>
 			</Tabs>
+			<Standings standings={standings} />
 		</div>
 	);
 }

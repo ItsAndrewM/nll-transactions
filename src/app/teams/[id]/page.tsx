@@ -90,8 +90,6 @@ export default async function TeamPage(props: { params: Params }) {
 		(standing: Standing) => standing.team_id === Number(params.id)
 	);
 
-	console.log(teamData);
-
 	return (
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />

@@ -5,7 +5,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { PlayerStats as PlayerStatsType } from "@/types/games";
 
 import { StatsDataTable } from "../data-table/stats-data-table";
-import { GoalieDataTable } from "../data-table/goalie-data-table";
 import { runnerColumns } from "../data-table/runner-columns";
 import { goalieColumns } from "../data-table/goalie-columns";
 
@@ -28,9 +27,11 @@ export function PlayerStats({ playerStats }: { playerStats: PlayerStatsType }) {
 							data={playerStats.away.runners}
 						/>
 						<h3 className="text-lg font-semibold mt-4 mb-2">Goalies</h3>
-						<GoalieDataTable
+						<StatsDataTable
 							columns={goalieColumns}
 							data={playerStats.away.goalies}
+							defaultSort="min"
+							defaultSortDirection="desc"
 						/>
 					</TabsContent>
 					<TabsContent value="home">
@@ -40,9 +41,11 @@ export function PlayerStats({ playerStats }: { playerStats: PlayerStatsType }) {
 							data={playerStats.home.runners}
 						/>
 						<h3 className="text-lg font-semibold mt-4 mb-2">Goalies</h3>
-						<GoalieDataTable
+						<StatsDataTable
 							columns={goalieColumns}
 							data={playerStats.home.goalies}
+							defaultSort="min"
+							defaultSortDirection="desc"
 						/>
 					</TabsContent>
 				</Tabs>

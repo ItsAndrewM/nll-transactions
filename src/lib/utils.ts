@@ -1,4 +1,5 @@
 import { OutgoingMatch } from "@/types/schedule";
+import { Standing } from "@/types/standings";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -20,6 +21,15 @@ export const CORRECT_TEAM_NAMES = [
 	"Panther City Lacrosse Club",
 	"New York Riptide",
 ];
+
+interface TeamRankings {
+	goalsForRanking: Map<number, number>; // teamId -> rank
+	goalsAgainstRanking: Map<number, number>; // teamId -> rank
+	goalsForAvgRanking: Map<number, number>; // teamId -> rank
+	goalsAgainstAvgRanking: Map<number, number>; // teamId -> rank
+	goalDiffRanking: Map<number, number>; // teamId -> rank
+	goalDiffAvgRanking: Map<number, number>; // teamId -> rank
+}
 
 interface FilterData {
 	data: {
@@ -260,3 +270,76 @@ export const recrawledFetcher = async (url: string) => {
 		return null;
 	}
 };
+
+export function calculateTeamRankings(teams: Standing[]): TeamRankings {
+	function assignRankings(
+		sortedTeams: Standing[],
+		getValue: (team: Standing) => number
+	): Map<number, number> {
+		const rankings = new Map<number, number>();
+		let currentRank = 1;
+		let currentValue = getValue(sortedTeams[0]);
+		let sameRankCount = 0;
+
+		sortedTeams.forEach((team) => {
+			const value = getValue(team);
+
+			if (value === currentValue) {
+				// Same value as previous team, use same rank
+				sameRankCount++;
+			} else {
+				// Different value, update rank to skip tied positions
+				currentRank += sameRankCount;
+				currentValue = value;
+				sameRankCount = 1;
+			}
+
+			rankings.set(team.team_id, currentRank);
+		});
+
+		return rankings;
+	}
+
+	const sortedByGoalsFor = [...teams].sort((a, b) => b.goals_for - a.goals_for);
+
+	const sortedByGoalsAgainst = [...teams].sort(
+		(a, b) => a.goals_against - b.goals_against
+	);
+
+	const sortedByGoalsForAvg = [...teams].sort(
+		(a, b) =>
+			Number.parseFloat(b.goals_for_avg) - Number.parseFloat(a.goals_for_avg)
+	);
+
+	const sortedByGoalsAgainstAvg = [...teams].sort(
+		(a, b) =>
+			Number.parseFloat(a.goals_against_avg) -
+			Number.parseFloat(b.goals_against_avg)
+	);
+
+	const sortedByGoalDiff = [...teams].sort((a, b) => b.goal_diff - a.goal_diff);
+
+	const sortedByGoalDiffAvg = [...teams].sort(
+		(a, b) => b.goal_diff_avg - a.goal_diff_avg
+	);
+
+	return {
+		goalsForRanking: assignRankings(sortedByGoalsFor, (team) =>
+			Number.parseFloat(team.goals_for.toString())
+		),
+		goalsAgainstRanking: assignRankings(sortedByGoalsAgainst, (team) =>
+			Number.parseFloat(team.goals_against.toString())
+		),
+		goalsForAvgRanking: assignRankings(sortedByGoalsForAvg, (team) =>
+			Number.parseFloat(team.goals_for_avg)
+		),
+		goalsAgainstAvgRanking: assignRankings(sortedByGoalsAgainstAvg, (team) =>
+			Number.parseFloat(team.goals_against_avg)
+		),
+		goalDiffRanking: assignRankings(sortedByGoalDiff, (team) => team.goal_diff),
+		goalDiffAvgRanking: assignRankings(
+			sortedByGoalDiffAvg,
+			(team) => team.goal_diff_avg
+		),
+	};
+}

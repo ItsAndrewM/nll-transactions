@@ -1,3 +1,4 @@
+import { AndaHeader } from "@/components/anda-header";
 import Standings from "@/components/standings/standings";
 import { getStandings } from "@/server/standings";
 import { Metadata } from "next";
@@ -49,5 +50,10 @@ export const revalidate = 3600;
 
 export default async function Page() {
 	const standings = await getStandings();
-	return <Standings standings={standings} />;
+	return (
+		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20">
+			<AndaHeader />
+			<Standings standings={standings} />
+		</div>
+	);
 }

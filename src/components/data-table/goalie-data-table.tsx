@@ -41,7 +41,7 @@ export function GoalieDataTable<TData>({
 	});
 
 	return (
-		<div className="rounded-md border">
+		<div className="rounded-md border bg-background">
 			<Table>
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (

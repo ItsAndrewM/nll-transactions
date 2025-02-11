@@ -36,14 +36,18 @@ export function StatsDataTable<TData>({
 	data,
 	paginate = false,
 	filter = false,
+	defaultSort = "pts",
+	defaultSortDirection = "desc",
 }: {
 	columns: ColumnDef<TData>[];
 	data: TData[];
 	paginate?: boolean;
 	filter?: boolean;
+	defaultSort?: string;
+	defaultSortDirection?: "asc" | "desc";
 }) {
 	const [sorting, setSorting] = useState<SortingState>([
-		{ id: "pts", desc: true },
+		{ id: defaultSort || "pts", desc: defaultSortDirection === "desc" },
 	]);
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
 	const table = useReactTable({
@@ -63,9 +67,9 @@ export function StatsDataTable<TData>({
 	});
 
 	return (
-		<div className="rounded-md border">
+		<div className="rounded-md border bg-background">
 			{filter ? (
-				<div className="flex items-center p-4">
+				<div className="sm:flex grid grid-cols-2 sm:flex-row gap-2 items-center p-4">
 					<Input
 						placeholder="Filter names..."
 						value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}

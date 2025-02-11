@@ -1,3 +1,4 @@
+import { AndaHeader } from "@/components/anda-header";
 import TransactionsPage from "@/components/transactions/transactions-page";
 import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
@@ -22,10 +23,13 @@ export default async function Page(props: {
 		getStandings(),
 	]);
 	return (
-		<TransactionsPage
-			teamsList={teamsList}
-			allTransactions={allTransactions}
-			standings={standings}
-		/>
+		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20">
+			<AndaHeader />
+			<TransactionsPage
+				teamsList={teamsList}
+				allTransactions={allTransactions}
+				standings={standings}
+			/>
+		</div>
 	);
 }

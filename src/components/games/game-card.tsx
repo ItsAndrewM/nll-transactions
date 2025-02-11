@@ -22,7 +22,7 @@ export function GameCard({ game }: { game: GameState }) {
 	const { wins: awayWins, losses: awayLosses } = awayScore || {};
 	const { wins: homeWins, losses: homeLosses } = homeScore || {};
 	return (
-		<Card className="w-full max-w-md mx-auto transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg relative">
+		<Card className="w-full max-w-md mx-auto transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg relative bg-background">
 			<CardHeader>
 				<CardTitle className="text-lg font-semibold text-center flex flex-col gap-2">
 					<span>{date}</span>

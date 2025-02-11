@@ -26,7 +26,7 @@ export function DataTablePagination<TData>({
 		<div className="flex items-center justify-center px-2 py-4">
 			<div className="flex items-center space-x-6 lg:space-x-8">
 				<div className="flex items-center space-x-2">
-					<p className="text-sm font-medium">Rows per page</p>
+					<p className="text-sm font-medium hidden sm:block">Rows per page</p>
 					<Select
 						value={`${table.getState().pagination.pageSize}`}
 						onValueChange={(value) => {
@@ -45,9 +45,8 @@ export function DataTablePagination<TData>({
 						</SelectContent>
 					</Select>
 				</div>
-				<div className="flex w-[100px] items-center justify-center text-sm font-medium">
-					Page {table.getState().pagination.pageIndex + 1} of{" "}
-					{table.getPageCount()}
+				<div className="flex sm:w-[100px] items-center justify-center text-sm font-medium">
+					{table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
 				</div>
 				<div className="flex items-center space-x-2">
 					<Button
@@ -61,7 +60,7 @@ export function DataTablePagination<TData>({
 					</Button>
 					<Button
 						variant="outline"
-						className="h-8 w-8 p-0"
+						className="size-6 sm:size-8 p-0"
 						onClick={() => table.previousPage()}
 						disabled={!table.getCanPreviousPage()}
 					>
@@ -70,7 +69,7 @@ export function DataTablePagination<TData>({
 					</Button>
 					<Button
 						variant="outline"
-						className="h-8 w-8 p-0"
+						className="size-6 sm:size-8 p-0"
 						onClick={() => table.nextPage()}
 						disabled={!table.getCanNextPage()}
 					>

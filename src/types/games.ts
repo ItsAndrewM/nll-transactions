@@ -174,6 +174,24 @@ interface GoalieStat {
 	saves: number;
 }
 
+interface AllGoalieStats {
+	name: string;
+	team: {
+		name: string;
+		logo: string;
+	};
+	position: string;
+	id: string;
+	gp: number;
+	mins: number;
+	saves: number;
+	wins: number;
+	losses: number;
+	goals_against: number;
+	goals_against_average: number;
+	save_percentage: number;
+}
+
 interface RunnerStat {
 	name: string;
 	number: string;
@@ -221,5 +239,6 @@ export type {
 	PlayerStats,
 	GameLeaders,
 	AllStats,
+	AllGoalieStats,
 	GameState,
 };

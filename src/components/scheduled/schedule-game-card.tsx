@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { OutgoingMatch } from "@/types/schedule";
 import Image from "next/image";
 import Link from "next/link";
+import { Card } from "../ui/card";
 
 export default function ScheduleGameCard({
 	match,
@@ -14,10 +15,10 @@ export default function ScheduleGameCard({
 	className?: string;
 }) {
 	return (
-		<li
+		<Card
 			key={match.id}
 			className={cn(
-				"border px-4 py-6 rounded-md flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out",
+				"px-4 py-6 flex sm:flex-row flex-col justify-between items-center relative hover:scale-105 hover:shadow-lg transition-all duration-300 ease-in-out",
 				className
 			)}
 		>
@@ -101,6 +102,6 @@ export default function ScheduleGameCard({
 				aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
 				prefetch
 			/>
-		</li>
+		</Card>
 	);
 }

@@ -34,7 +34,7 @@ export default function Glossary({
 	const goaltenderStats: GlossaryItem[] = [
 		{ abbr: "P", description: "Position" },
 		{ abbr: "GP", description: "Games Played" },
-		{ abbr: "MIN", description: "Minutes Played" },
+		{ abbr: "MINS", description: "Minutes Played" },
 		{ abbr: "W", description: "Wins" },
 		{ abbr: "L", description: "Losses" },
 		{ abbr: "GA", description: "Goals Allowed" },
@@ -47,7 +47,7 @@ export default function Glossary({
 		<div className="container mx-auto p-4">
 			<h1 className="text-2xl font-bold text-center mb-8">{title}</h1>
 			<div className="grid md:grid-cols-2 gap-8">
-				<Card>
+				<Card className="bg-background">
 					<CardHeader>
 						<CardTitle className="text-xl font-bold tracking-tight">
 							RUNNER STATS:
@@ -58,16 +58,14 @@ export default function Glossary({
 							{runnerStats.map((stat) => (
 								<div key={stat.abbr} className="flex gap-2">
 									<dt className="font-bold min-w-[60px]">{stat.abbr}</dt>
-									<dd className="text-muted-foreground">
-										– {stat.description}
-									</dd>
+									<dd className="text-muted-foreground">{stat.description}</dd>
 								</div>
 							))}
 						</dl>
 					</CardContent>
 				</Card>
 
-				<Card>
+				<Card className="bg-background">
 					<CardHeader>
 						<CardTitle className="text-xl font-bold tracking-tight">
 							GOALTENDER STATS:
@@ -78,9 +76,7 @@ export default function Glossary({
 							{goaltenderStats.map((stat) => (
 								<div key={stat.abbr} className="flex gap-2">
 									<dt className="font-bold min-w-[60px]">{stat.abbr}</dt>
-									<dd className="text-muted-foreground">
-										– {stat.description}
-									</dd>
+									<dd className="text-muted-foreground">{stat.description}</dd>
 								</div>
 							))}
 						</dl>

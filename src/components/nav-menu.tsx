@@ -10,28 +10,29 @@ import {
 	SheetTitle,
 	SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-	Calendar1,
-	ChartBarBigIcon,
-	Facebook,
-	FileText,
-	Instagram,
-	Menu,
-	Swords,
-	Trophy,
-} from "lucide-react";
+import { ChartBarBigIcon, Menu } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import Link from "next/link";
 import { Separator } from "./ui/separator";
 import { usePathname } from "next/navigation";
 import { shareToFacebook, shareToX } from "@/lib/utils";
-import XIcon from "./icons/x-icon";
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+	Calendar01Icon,
+	Facebook02Icon,
+	InstagramIcon,
+	NewTwitterIcon,
+	RankingIcon,
+	TransactionIcon,
+	UserGroupIcon,
+	VersusIcon,
+} from "@hugeicons/core-free-icons";
 
 export function NavMenu() {
 	const pathname = usePathname();
@@ -42,64 +43,158 @@ export function NavMenu() {
 	};
 	return (
 		<div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 ">
-			<div className="bg-background rounded-full shadow-lg p-2 flex items-center gap-4 space-x-2 px-4">
-				<Link
-					href="/transactions"
-					className="text-slate-600 hover:text-black"
-					prefetch
-				>
-					<TooltipProvider>
-						<Tooltip>
-							<TooltipTrigger>
-								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
-									<FileText size={20} />
-								</div>
-							</TooltipTrigger>
-							<TooltipContent className="bg-black">
-								<p>Standings</p>
-							</TooltipContent>
-						</Tooltip>
-					</TooltipProvider>
-				</Link>
-				<Link
-					href="/schedule"
-					className="text-slate-600 hover:text-black"
-					prefetch
-				>
-					<TooltipProvider>
-						<Tooltip>
-							<TooltipTrigger>
-								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
-									<Calendar1 size={20} />
-								</div>
-							</TooltipTrigger>
-							<TooltipContent className="bg-black">
-								<p>Schedule</p>
-							</TooltipContent>
-						</Tooltip>
-					</TooltipProvider>
-				</Link>
-				<Link
-					href="/standings"
-					className="text-slate-600 hover:text-black"
-					prefetch
-				>
-					<TooltipProvider>
-						<Tooltip>
-							<TooltipTrigger>
-								<div className="justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 flex items-center p-2">
-									<Trophy size={20} />
-								</div>
-							</TooltipTrigger>
-							<TooltipContent className="bg-black">
-								<p>Standings</p>
-							</TooltipContent>
-						</Tooltip>
-					</TooltipProvider>
-				</Link>
+			<div className="bg-background rounded-full shadow-lg p-2 flex items-center gap-2 space-x-2 px-4 justify-center">
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground"
+							>
+								<Link href="/transactions" prefetch>
+									<HugeiconsIcon
+										icon={TransactionIcon}
+										size={20}
+										strokeWidth={0.5}
+									/>
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Transactions</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground"
+							>
+								<Link
+									href="/schedule"
+									className="text-slate-600 hover:text-black"
+									prefetch
+								>
+									<HugeiconsIcon
+										icon={Calendar01Icon}
+										size={20}
+										strokeWidth={0.5}
+									/>
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Schedule</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground"
+							>
+								<Link
+									href="/standings"
+									className="text-slate-600 hover:text-black"
+									prefetch
+								>
+									<HugeiconsIcon
+										icon={RankingIcon}
+										size={20}
+										strokeWidth={0.5}
+									/>
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Standings</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground hidden sm:block"
+							>
+								<Link
+									href="/stats"
+									className="text-slate-600 hover:text-black"
+									prefetch
+								>
+									<ChartBarBigIcon />
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Stats</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground hidden sm:block"
+							>
+								<Link href="/teams" className="" prefetch>
+									<HugeiconsIcon
+										icon={UserGroupIcon}
+										size={20}
+										strokeWidth={0.5}
+									/>
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Teams</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+				<TooltipProvider>
+					<Tooltip>
+						<TooltipTrigger>
+							<Button
+								asChild
+								variant="secondary"
+								className="bg-card text-slate-600 hover:text-card-foreground hidden sm:block"
+							>
+								<Link href="/games" className="" prefetch>
+									<HugeiconsIcon
+										icon={VersusIcon}
+										size={20}
+										strokeWidth={0.5}
+									/>
+								</Link>
+							</Button>
+						</TooltipTrigger>
+						<TooltipContent className="bg-black">
+							<p>Games</p>
+						</TooltipContent>
+					</Tooltip>
+				</TooltipProvider>
+
 				<Sheet key={"left"}>
 					<SheetTrigger asChild className="flex items-center ">
-						<Button variant="outline" className="p-2">
+						<Button
+							variant="secondary"
+							className="hover:text-card-foreground bg-card"
+						>
 							<Menu />
 						</Button>
 					</SheetTrigger>
@@ -107,12 +202,14 @@ export function NavMenu() {
 						<SheetHeader>
 							<SheetTitle className="flex items-center justify-between gap-2 mt-2">
 								<div className="flex flex-col">
-									<Link
-										href={"/"}
-										className="hover:text-slate-500 transition-colors duration-300 ease-in-out"
-									>
-										<span>NLLTracker.com</span>{" "}
-									</Link>
+									<SheetClose asChild>
+										<Link
+											href={"/"}
+											className="hover:text-slate-500 transition-colors duration-300 ease-in-out"
+										>
+											<span>NLLTracker.com</span>{" "}
+										</Link>
+									</SheetClose>
 									<Link
 										href={"https://andamonium.dev"}
 										className="text-slate-500 hover:text-black transition-colors duration-300 ease-in-out"
@@ -141,7 +238,11 @@ export function NavMenu() {
 							<ul className="flex flex-col w-full gap-4 justify-center items-start">
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
-										<FileText />
+										<HugeiconsIcon
+											icon={TransactionIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<span>Transactions</span>
 									</div>
 									<SheetClose asChild>
@@ -155,7 +256,11 @@ export function NavMenu() {
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
-										<Calendar1 />
+										<HugeiconsIcon
+											icon={Calendar01Icon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<span>Schedule</span>
 									</div>
 									<SheetClose asChild>
@@ -169,7 +274,11 @@ export function NavMenu() {
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
-										<Trophy />
+										<HugeiconsIcon
+											icon={RankingIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<span>Standings</span>
 									</div>
 									<SheetClose asChild>
@@ -183,7 +292,11 @@ export function NavMenu() {
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2">
-										<Swords />
+										<HugeiconsIcon
+											icon={VersusIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<span>Games</span>
 									</div>
 									<SheetClose asChild>
@@ -209,6 +322,24 @@ export function NavMenu() {
 										/>
 									</SheetClose>
 								</li>
+								<li className="relative text-slate-500 hover:text-black transition-colors">
+									<div className="flex justify-center items-center gap-2">
+										<HugeiconsIcon
+											icon={UserGroupIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
+										<span>Teams</span>
+									</div>
+									<SheetClose asChild>
+										<Link
+											href="/teams"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to stats"
+										/>
+									</SheetClose>
+								</li>
 							</ul>
 						</div>
 						<Separator className="my-4" />
@@ -216,7 +347,11 @@ export function NavMenu() {
 							<ul className="flex w-full gap-4 justify-evenly">
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
-										<Facebook />
+										<HugeiconsIcon
+											icon={Facebook02Icon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<small className="text-center text-nowrap hidden md:block">
 											Share to Facebook
 										</small>
@@ -230,7 +365,11 @@ export function NavMenu() {
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
-										<XIcon className="h-6 w-6 p-0" />
+										<HugeiconsIcon
+											icon={NewTwitterIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<small className="text-center text-nowrap hidden md:block">
 											Share to X
 										</small>
@@ -244,7 +383,11 @@ export function NavMenu() {
 								</li>
 								<li className="relative text-slate-500 hover:text-black transition-colors">
 									<div className="flex justify-center items-center gap-2 flex-col">
-										<Instagram />
+										<HugeiconsIcon
+											icon={InstagramIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
 										<small className="text-center text-nowrap hidden md:block">
 											Share to Instagram
 										</small>
