@@ -3,6 +3,7 @@ import { PlayerCardContainer } from "@/components/players/player-card-container"
 import { getAllPlayers } from "@/server/players";
 import { notFound } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Suspense } from "react";
 // import { StatsDataTable } from "@/components/data-table/stats-data-table";
 
 export default async function Page() {
@@ -36,7 +37,9 @@ export default async function Page() {
 				</div>
 				<TabsContent value="player" className="space-y-4">
 					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8 pb-16">
-						<PlayerCardContainer players={players} total={total} />
+						<Suspense fallback={<div>Loading...</div>}>
+							<PlayerCardContainer players={players} total={total} />
+						</Suspense>
 					</div>
 				</TabsContent>
 				<TabsContent value="roster">
