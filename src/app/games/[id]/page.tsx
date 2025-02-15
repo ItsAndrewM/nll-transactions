@@ -135,6 +135,7 @@ export default async function Page(props: { params: Params }) {
 	const { status: liveStatus } = liveGame || {};
 
 	const { typeName: liveTypeName } = liveStatus || {};
+	// const fakeStatus = "live"
 
 	if (liveTypeName?.toLowerCase() === "live") {
 		return (

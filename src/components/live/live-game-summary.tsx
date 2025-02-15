@@ -51,9 +51,6 @@ export default function LiveGameSummary({
 		return <div>Loading...</div>;
 	}
 
-	console.log("liveMatch", liveMatch);
-	console.log("recrawledData", recrawledData);
-
 	const liveBoxscore = recrawledData || gameData;
 
 	const {

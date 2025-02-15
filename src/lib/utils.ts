@@ -260,11 +260,11 @@ export const liveGameFetcher = async (url: string) => {
 
 export const recrawledFetcher = async (url: string) => {
 	try {
-		const res = await fetch(url, { method: "POST" });
+		const res = await fetch(url);
 		if (!res.ok) throw new Error("Failed to fetch game data");
 		const data = await res.json();
 		if (!data.success) throw new Error("Failed to fetch game data");
-		return data.scheduleById;
+		return data.data;
 	} catch (error) {
 		console.error(error);
 		return null;
