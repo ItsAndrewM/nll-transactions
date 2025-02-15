@@ -4,7 +4,53 @@ import { getAllPlayers } from "@/server/players";
 import { notFound } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Suspense } from "react";
+import { Metadata } from "next";
 // import { StatsDataTable } from "@/components/data-table/stats-data-table";
+
+export const metadata: Metadata = {
+	title:
+		"NLL Players | Team Rosters & Player Stats | NLL Tracker by andamonium",
+	description:
+		"Browse National Lacrosse League player profiles, including stats, team affiliations, and career information for all active NLL players. View complete team rosters and player details for every NLL franchise.",
+	openGraph: {
+		title: "NLL Players | Team Rosters & Player Stats",
+		description:
+			"Complete player directory for all National Lacrosse League teams, featuring detailed player profiles, statistics, and roster information.",
+		type: "website",
+		images: [
+			{
+				url: "/og/facebook-og-image.png",
+				width: 1200,
+				height: 630,
+				alt: "NLL Players and Team Rosters",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title:
+			"NLL Players | Team Rosters & Player Stats | NLL Tracker by andamonium",
+		description:
+			"Complete player directory for all National Lacrosse League teams, featuring detailed player profiles, statistics, and roster information.",
+		images: [
+			{
+				url: "/og/twitter-og-image.png",
+				width: 1200,
+				height: 630,
+				alt: "NLL Players and Team Rosters",
+			},
+		],
+	},
+	alternates: {
+		canonical: "/players",
+	},
+	keywords:
+		"NLL Players, National Lacrosse League Rosters, Box Lacrosse Players, Team Rosters, Player Statistics, Player Profiles, NLL Athletes, Professional Lacrosse Players, Box Lacrosse Athletes, NLL Team Members",
+	robots: {
+		index: true,
+		follow: true,
+	},
+};
 
 export default async function Page() {
 	const allPlayers = await getAllPlayers();

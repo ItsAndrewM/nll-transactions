@@ -12,6 +12,68 @@ import { allRunnerColumns } from "@/components/data-table/all-runners-columns";
 import { Player } from "@/types/players";
 import { allGoalieColumns } from "@/components/data-table/all-goalie-columns";
 
+import type { Metadata } from "next";
+import { getPosition } from "@/lib/utils";
+
+type Props = {
+	params: { id: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+	const player = await getPlayer(params.id);
+
+	if (!player) {
+		return {
+			title: "Player Not Found | NLL Tracker by andamonium",
+			description: "The requested NLL player profile could not be found.",
+		};
+	}
+
+	const { fullname, team_name, position, jerseyNumber } = player;
+	const positionFull = getPosition(position);
+
+	return {
+		title: `${fullname} | #${jerseyNumber} ${team_name} ${positionFull} | NLL Tracker by andamonium`,
+		description: `View ${fullname}'s complete player profile, including career statistics, game logs, and team information. ${fullname} is a ${positionFull} for the ${team_name} in the National Lacrosse League.`,
+		openGraph: {
+			title: `${fullname} - #${jerseyNumber} ${team_name} ${positionFull}`,
+			description: `View career statistics, game logs, and team information for ${fullname}, ${positionFull} for the ${team_name} in the National Lacrosse League.`,
+			type: "profile",
+			images: [
+				{
+					url: player.headshot?.url || "/og/facebook-og-image.png",
+					width: 1200,
+					height: 630,
+					alt: `${fullname} - ${team_name} ${positionFull}`,
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `${fullname} | #${jerseyNumber} ${team_name} ${positionFull} | NLL Tracker`,
+			description: `View career statistics, game logs, and team information for ${fullname}, ${positionFull} for the ${team_name} in the National Lacrosse League.`,
+			images: [
+				{
+					url: player.headshot?.url || "/og/twitter-og-image.png",
+					width: 1200,
+					height: 630,
+					alt: `${fullname} - ${team_name} ${positionFull}`,
+				},
+			],
+		},
+		alternates: {
+			canonical: `/players/${params.id}/${fullname
+				.toLowerCase()
+				.replace(/\s+/g, "-")}`,
+		},
+		keywords: `${fullname}, ${team_name}, NLL Players, ${positionFull}, National Lacrosse League, Box Lacrosse, Player Statistics, ${team_name} Roster, NLL Athletes, Professional Lacrosse`,
+		robots: {
+			index: true,
+			follow: true,
+		},
+	};
+}
+
 export const revalidate = 3600;
 
 type Params = Promise<{ id: string }>;
