@@ -57,14 +57,8 @@ export function PlayerCardContainer({
 	const endIndex = startIndex + limit;
 
 	const slicedPlayers = filteredPlayers.slice(startIndex, endIndex);
-	console.log("totalPages", totalPages);
 
 	const pageNumbers = usePagination(totalPages, currentPage);
-	console.log("pageNumbers", pageNumbers);
-
-	console.log("filtered Length", filteredPlayers.length);
-	console.log("total Length", total);
-	console.log("limit", limit);
 
 	return (
 		<div className="flex flex-col w-full gap-6">

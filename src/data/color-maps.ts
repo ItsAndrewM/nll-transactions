@@ -48,3 +48,20 @@ export const borderColorMap: { [key: string]: [string, string] } = {
 	LV: ["border border-lasvegas", "border border-lasvegas-secondary"], // Las Vegas Desert Dogs
 	ALB: ["border border-albany", "border border-albany-secondary"], // Albany FireWolves
 };
+
+export const textColorMap: { [key: string]: [string, string] } = {
+	BUF: ["text-buffalo", "text-buffalo-secondary"], // Buffalo Bandits
+	SAS: ["text-saskatchewan", "text-saskatchewan-secondary"], // Saskatchewan Rush
+	CGY: ["text-calgary", "text-calgary-secondary"], // Calgary Roughnecks
+	COL: ["text-colorado", "text-colorado-secondary"], // Colorado Mammoth
+	PHI: ["text-philadelphia", "text-philadelphia-secondary"], // Philadelphia Wings
+	GA: ["text-georgia", "text-georgia-secondary"], // Georgia Swarm
+	OBB: ["text-ottawa", "text-ottawa-secondary"], // Ottawa Black Bears
+	HFX: ["text-halifax", "text-halifax-secondary"], // Halifax Thunderbirds
+	VAN: ["text-vancouver", "text-vancouver-secondary"], // Vancouver Warriors
+	SD: ["text-sandiego", "text-sandiego-secondary"], // San Diego Seals
+	ROC: ["text-rochester", "text-rochester-secondary"], // Rochester Knighthawks
+	TOR: ["text-toronto", "text-toronto-secondary"], // Toronto Rock
+	LV: ["text-lasvegas", "text-lasvegas-secondary"], // Las Vegas Desert Dogs
+	ALB: ["text-albany", "text-albany-secondary"], // Albany FireWolves
+};

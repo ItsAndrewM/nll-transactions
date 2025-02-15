@@ -5,7 +5,7 @@ import { Player } from "@/types/players";
 export function PlayerHero({ player }: { player: Player }) {
 	return (
 		<div className="col-span-1 md:col-span-3 relative overflow-hidden rounded-lg">
-			<div className="w-full h-64 md:h-96 relative">
+			<div className="w-full h-96 relative">
 				{player.background_image ? (
 					<div
 						className="w-full h-full bg-cover bg-center"

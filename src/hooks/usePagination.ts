@@ -1,7 +1,7 @@
 export function usePagination(totalPages: number, currentPage: number) {
 	const pageNumbers = [];
 	if (currentPage === 1 && totalPages > 3) {
-		console.log("first");
+		// console.log("first");
 		pageNumbers.push("1");
 		pageNumbers.push("2");
 		pageNumbers.push("3");
@@ -9,7 +9,7 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage > 1 && currentPage < 3 && currentPage < totalPages - 2) {
-		console.log("second");
+		// console.log("second");
 		pageNumbers.push("1");
 		pageNumbers.push("2");
 		pageNumbers.push("3");
@@ -17,13 +17,13 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage === totalPages - 2 && totalPages <= 3) {
-		console.log("seventh");
+		// console.log("seventh");
 		pageNumbers.push("1");
 		pageNumbers.push("2");
 		pageNumbers.push("3");
 	}
 	if (currentPage === 3 && currentPage < totalPages - 2) {
-		console.log("third");
+		// console.log("third");
 		pageNumbers.push("1");
 		pageNumbers.push("2");
 		pageNumbers.push("3");
@@ -32,7 +32,7 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage > 3 && currentPage < totalPages - 2) {
-		console.log("fourth");
+		// console.log("fourth");
 		pageNumbers.push("1");
 		pageNumbers.push("...");
 		pageNumbers.push(currentPage - 1);
@@ -42,7 +42,7 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage === totalPages - 2 && currentPage !== 1) {
-		console.log("fifth");
+		// console.log("fifth");
 		pageNumbers.push("1");
 		pageNumbers.push("...");
 		pageNumbers.push(currentPage - 1);
@@ -51,7 +51,7 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage > totalPages - 2 && totalPages > 3) {
-		console.log("sixth");
+		// console.log("sixth");
 		pageNumbers.push(1);
 		pageNumbers.push("...");
 		pageNumbers.push(totalPages - 2);
@@ -59,7 +59,7 @@ export function usePagination(totalPages: number, currentPage: number) {
 		pageNumbers.push(totalPages);
 	}
 	if (currentPage > totalPages - 2 && totalPages <= 3) {
-		console.log("eighth");
+		// console.log("eighth");
 		pageNumbers.push(totalPages - 2);
 		pageNumbers.push(totalPages - 1);
 		pageNumbers.push(totalPages);

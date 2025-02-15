@@ -346,22 +346,22 @@ export function calculateTeamRankings(teams: Standing[]): TeamRankings {
 
 export const getTeamColors = (teamCode: string) => {
 	const colorMap: { [key: string]: [string, string] } = {
-		BUF: ["buffalo", "buffalo-secondary"], // Buffalo Bandits
-		SAS: ["saskatchewan", "saskatchewan-secondary"], // Saskatchewan Rush
-		CGY: ["calgary", "calgary-secondary"], // Calgary Roughnecks
-		COL: ["colorado", "colorado-secondary"], // Colorado Mammoth
-		PHI: ["philadelphia", "philadelphia-secondary"], // Philadelphia Wings
-		GA: ["georgia", "georgia-secondary"], // Georgia Swarm
-		OBB: ["ottawa", "ottawa-secondary"], // Ottawa Black Bears
-		HFX: ["halifax", "halifax-secondary"], // Halifax Thunderbirds
-		VAN: ["vancouver", "vancouver-secondary"], // Vancouver Warriors
-		SD: ["sandiego", "sandiego-secondary"], // San Diego Seals
-		ROC: ["rochester", "rochester-secondary"], // Rochester Knighthawks
-		TOR: ["toronto", "toronto-secondary"], // Toronto Rock
-		LV: ["lasvegas", "lasvegas-secondary"], // Las Vegas Desert Dogs
-		ALB: ["albany", "albany-secondary"], // Albany FireWolves
+		BUF: ["hsl(19, 96%, 55%)", "hsl(267, 100%, 30%)"],
+		SAS: ["hsl(101, 48%, 52%)", "hsl(0, 0%, 0%)"],
+		CGY: ["hsl(220, 3%, 83%)", "hsl(345, 6%, 13%)"],
+		COL: ["hsl(352, 59%, 34%)", "hsl(0, 0%, 0%)"],
+		PHI: ["hsl(48, 36%, 47%)", "hsl(192, 3%, 34%)"],
+		GA: ["hsl(35, 98%, 64%)", "hsl(214, 52%, 19%)"],
+		OBB: ["hsl(350, 85%, 42%)", "hsl(34, 8%, 16%)"],
+		HFX: ["hsl(16, 100%, 60%)", "hsl(268, 46%, 36%)"],
+		VAN: ["hsl(41, 29%, 48%)", "hsl(0, 0%, 0%)"],
+		SD: ["hsl(270, 61%, 38%)", "hsl(42, 99%, 50%)"],
+		ROC: ["hsl(78, 31%, 27%)", "hsl(38, 41%, 56%)"],
+		TOR: ["hsl(218, 100%, 32%)", "hsl(3, 82%, 49%)"],
+		LV: ["hsl(0, 0%, 0%)", "hsl(0, 0%, 100%)"],
+		ALB: ["hsl(348, 44%, 33%)", "hsl(0, 0%, 100%)"],
 	};
-	return colorMap[teamCode] || ["#4a5568", "#718096"]; // Default colors if team not found
+	return colorMap[teamCode] || ["hsl(215, 16%, 47%)", "hsl(217, 19%, 27%)"]; // Default colors
 };
 
 export function getPosition(position: string) {
