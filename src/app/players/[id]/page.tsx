@@ -16,11 +16,12 @@ import type { Metadata } from "next";
 import { getPosition } from "@/lib/utils";
 
 type Props = {
-	params: { id: string };
+	params: Promise<{ id: string }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-	const player = await getPlayer(params.id);
+	const id = (await params).id;
+	const player = await getPlayer(id);
 
 	if (!player) {
 		return {
@@ -62,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			],
 		},
 		alternates: {
-			canonical: `/players/${params.id}/${fullname
+			canonical: `/players/${id}/${fullname
 				.toLowerCase()
 				.replace(/\s+/g, "-")}`,
 		},
