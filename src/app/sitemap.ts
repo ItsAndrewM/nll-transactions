@@ -62,7 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.5,
 		},
 		...players?.players.map((player: Player) => ({
-			url: `https://nlltracker.com/players/${player.id}`,
+			url: `https://nlltracker.com/players/${player.personId}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,
