@@ -1,10 +1,16 @@
 import { getGameIds } from "@/server/games";
+import { getAllPlayers } from "@/server/players";
 import { getStandings } from "@/server/standings";
+import { Player } from "@/types/players";
 import { Standing } from "@/types/standings";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-	const [gameIds, teams] = await Promise.all([getGameIds(), getStandings()]);
+	const [gameIds, teams, players] = await Promise.all([
+		getGameIds(),
+		getStandings(),
+		getAllPlayers(),
+	]);
 
 	return [
 		{
@@ -49,6 +55,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: "weekly",
 			priority: 0.8,
 		},
+		{
+			urL: "https://nlltracker.com/players",
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.5,
+		},
+		...players.map((player: Player) => ({
+			url: `https://nlltracker.com/players/${player.id}`,
+			lastModified: new Date(),
+			changeFrequency: "weekly",
+			priority: 0.5,
+		})),
 		...gameIds.map((gameId: number) => ({
 			url: `https://nlltracker.com/games/${gameId}`,
 			lastModified: new Date(),
