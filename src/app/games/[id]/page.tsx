@@ -132,7 +132,11 @@ export default async function Page(props: { params: Params }) {
 
 	const { status } = game || {};
 
-	if (status?.toLowerCase() === "live") {
+	const { status: liveStatus } = liveGame || {};
+
+	const { typeName: liveTypeName } = liveStatus || {};
+
+	if (liveTypeName?.toLowerCase() === "live") {
 		return (
 			<div className="container mx-auto py-10">
 				<AndaHeader />

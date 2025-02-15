@@ -3,8 +3,7 @@ import { env } from "@/env";
 import "server-only";
 
 export const preload = (id: string) => {
-	void getSchedule();
-	void getScheduleGameById(id);
+	void Promise.all([getSchedule(), getScheduleGameById(id)]);
 };
 
 export const getSchedule = async () => {

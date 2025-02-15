@@ -4,7 +4,7 @@ import { filterTransactionsByTeam } from "@/lib/utils";
 import "server-only";
 
 export const preload = () => {
-	void Promise.all([getAllTransactions("dsc", "all")]);
+	void getAllTransactions("dsc", "all");
 };
 
 export const getAllTransactions = async (order: string, team: string) => {

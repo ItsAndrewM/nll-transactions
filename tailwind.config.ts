@@ -50,6 +50,62 @@ export default {
 					"4": "hsl(var(--chart-4))",
 					"5": "hsl(var(--chart-5))",
 				},
+				albany: {
+					DEFAULT: "hsl(var(--alb-primary))",
+					secondary: "hsl(var(--alb-secondary))",
+				},
+				lasvegas: {
+					DEFAULT: "hsl(var(--lv-primary))",
+					secondary: "hsl(var(--lv-secondary))",
+				},
+				sandiego: {
+					DEFAULT: "hsl(var(--sd-primary))",
+					secondary: "hsl(var(--sd-secondary))",
+				},
+				toronto: {
+					DEFAULT: "hsl(var(--tor-primary))",
+					secondary: "hsl(var(--tor-secondary))",
+				},
+				rochester: {
+					DEFAULT: "hsl(var(--roc-primary))",
+					secondary: "hsl(var(--roc-secondary))",
+				},
+				philadelphia: {
+					DEFAULT: "hsl(var(--phi-primary))",
+					secondary: "hsl(var(--phi-secondary))",
+				},
+				calgary: {
+					DEFAULT: "hsl(var(--cgy-primary))",
+					secondary: "hsl(var(--cgy-secondary))",
+				},
+				colorado: {
+					DEFAULT: "hsl(var(--col-primary))",
+					secondary: "hsl(var(--col-secondary))",
+				},
+				saskatchewan: {
+					DEFAULT: "hsl(var(--sas-primary))",
+					secondary: "hsl(var(--sas-secondary))",
+				},
+				buffalo: {
+					DEFAULT: "hsl(var(--buf-primary))",
+					secondary: "hsl(var(--buf-secondary))",
+				},
+				halifax: {
+					DEFAULT: "hsl(var(--hfx-primary))",
+					secondary: "hsl(var(--hfx-secondary))",
+				},
+				vancouver: {
+					DEFAULT: "hsl(var(--van-primary))",
+					secondary: "hsl(var(--van-secondary))",
+				},
+				ottawa: {
+					DEFAULT: "hsl(var(--obb-primary))",
+					secondary: "hsl(var(--obb-secondary))",
+				},
+				georgia: {
+					DEFAULT: "hsl(var(--ga-primary))",
+					secondary: "hsl(var(--ga-secondary))",
+				},
 			},
 			borderRadius: {
 				lg: "var(--radius)",
@@ -69,5 +125,6 @@ export default {
 			},
 		},
 	},
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

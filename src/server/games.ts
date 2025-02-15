@@ -6,10 +6,7 @@ import { getRecrawlById } from "./live";
 import { revalidatePath } from "next/cache";
 
 export const preload = (id: string) => {
-	void getGames();
-	void getGame(id);
-	void getGameIds();
-	void syncGames(id);
+	void Promise.all([getGames(), getGame(id), getGameIds(), syncGames(id)]);
 };
 
 export const getGames = async () => {

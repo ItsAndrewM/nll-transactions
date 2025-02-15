@@ -5,6 +5,7 @@ import { OutgoingMatch } from "@/types/schedule";
 import { imageUrls } from "@/data/image-urls";
 import { Standing } from "@/types/standings";
 import Link from "next/link";
+import { Badge } from "../ui/badge";
 
 export function LiveGameHeader({
 	gameInfo,
@@ -32,8 +33,8 @@ export function LiveGameHeader({
 
 	return (
 		<Card key={id}>
-			<CardHeader>
-				<CardTitle className=" font-bold text-center">
+			<CardHeader className="space-y-0 pb-2">
+				<CardTitle className=" font-bold text-center flex flex-col items-center justify-center gap-2">
 					<h3 className="text-2xl">
 						<Link href={`/teams/${teams?.away?.team_id}`}>
 							{squads?.away?.displayName}
@@ -43,6 +44,7 @@ export function LiveGameHeader({
 							{squads?.home?.displayName}
 						</Link>
 					</h3>
+					<Badge variant="live">LIVE</Badge>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
@@ -84,7 +86,9 @@ export function LiveGameHeader({
 								{squads.away.score?.score ?? 0}
 							</span>
 							<span className="text-3xl font-bold mt-2">
-								{status.remainingDisplay}
+								{status?.remainingDisplay?.includes("Quarter Time")
+									? status.code
+									: status.remainingDisplay}
 							</span>
 							<span
 								className={cn(

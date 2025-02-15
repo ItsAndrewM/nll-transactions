@@ -23,7 +23,7 @@ export default function LiveGameSummary({
 	liveGame: OutgoingMatch;
 	teams: { home: Standing; away: Standing };
 }) {
-	const { data: liveMatch } = useSWR<OutgoingMatch>(
+	const { data: liveMatch, isLoading: isLiveLoading } = useSWR<OutgoingMatch>(
 		gameData?.status?.toLowerCase() === "live"
 			? `${env.NEXT_PUBLIC_API_URL}/schedule/${gameData.id}`
 			: null,
@@ -35,7 +35,7 @@ export default function LiveGameSummary({
 		}
 	);
 	// trigger recrawl depending on status
-	const { data: recrawledData } = useSWR<GameData>(
+	const { data: recrawledData, isLoading: isRecrawlLoading } = useSWR<GameData>(
 		liveMatch?.status?.typeName === "live"
 			? `${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`
 			: null,
@@ -46,6 +46,13 @@ export default function LiveGameSummary({
 			revalidateOnFocus: true,
 		}
 	);
+
+	if (isLiveLoading && isRecrawlLoading) {
+		return <div>Loading...</div>;
+	}
+
+	console.log("liveMatch", liveMatch);
+	console.log("recrawledData", recrawledData);
 
 	const liveBoxscore = recrawledData || gameData;
 
@@ -65,7 +72,9 @@ export default function LiveGameSummary({
 		<div className="container mx-auto px-4 py-8">
 			<LiveGameHeader gameInfo={currentMatch} teams={teams} />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-				<BoxScore boxScore={box_score} gameInfo={game_info} />
+				{box_score ? (
+					<BoxScore boxScore={box_score} gameInfo={game_info} />
+				) : null}
 				{"fo" in team_stats.home && "fo" in team_stats.away && (
 					<TeamStats
 						home={team_stats.home as TeamStatsType}

@@ -343,3 +343,58 @@ export function calculateTeamRankings(teams: Standing[]): TeamRankings {
 		),
 	};
 }
+
+export const getTeamColors = (teamCode: string) => {
+	const colorMap: { [key: string]: [string, string] } = {
+		BUF: ["buffalo", "buffalo-secondary"], // Buffalo Bandits
+		SAS: ["saskatchewan", "saskatchewan-secondary"], // Saskatchewan Rush
+		CGY: ["calgary", "calgary-secondary"], // Calgary Roughnecks
+		COL: ["colorado", "colorado-secondary"], // Colorado Mammoth
+		PHI: ["philadelphia", "philadelphia-secondary"], // Philadelphia Wings
+		GA: ["georgia", "georgia-secondary"], // Georgia Swarm
+		OBB: ["ottawa", "ottawa-secondary"], // Ottawa Black Bears
+		HFX: ["halifax", "halifax-secondary"], // Halifax Thunderbirds
+		VAN: ["vancouver", "vancouver-secondary"], // Vancouver Warriors
+		SD: ["sandiego", "sandiego-secondary"], // San Diego Seals
+		ROC: ["rochester", "rochester-secondary"], // Rochester Knighthawks
+		TOR: ["toronto", "toronto-secondary"], // Toronto Rock
+		LV: ["lasvegas", "lasvegas-secondary"], // Las Vegas Desert Dogs
+		ALB: ["albany", "albany-secondary"], // Albany FireWolves
+	};
+	return colorMap[teamCode] || ["#4a5568", "#718096"]; // Default colors if team not found
+};
+
+export function getPosition(position: string) {
+	switch (position) {
+		case "F":
+			return "Forward";
+		case "T":
+			return "Transition";
+		case "G":
+			return "Goalie";
+		case "D":
+			return "Defense";
+		default:
+			return "Unknown";
+	}
+}
+
+export const getTeamBackgroundColors = (teamCode: string) => {
+	const colorMap: { [key: string]: [string, string] } = {
+		BUF: ["bg-buffalo", "bg-buffalo-secondary"], // Buffalo Bandits
+		SAS: ["bg-saskatchewan", "bg-saskatchewan-secondary"], // Saskatchewan Rush
+		CGY: ["bg-calgary", "bg-calgary-secondary"], // Calgary Roughnecks
+		COL: ["bg-colorado", "bg-colorado-secondary"], // Colorado Mammoth
+		PHI: ["bg-philadelphia", "bg-philadelphia-secondary"], // Philadelphia Wings
+		GA: ["bg-georgia", "bg-georgia-secondary"], // Georgia Swarm
+		OBB: ["bg-ottawa", "bg-ottawa-secondary"], // Ottawa Black Bears
+		HFX: ["bg-halifax", "bg-halifax-secondary"], // Halifax Thunderbirds
+		VAN: ["bg-vancouver", "bg-vancouver-secondary"], // Vancouver Warriors
+		SD: ["bg-sandiego", "bg-sandiego-secondary"], // San Diego Seals
+		ROC: ["bg-rochester", "bg-rochester-secondary"], // Rochester Knighthawks
+		TOR: ["bg-toronto", "bg-toronto-secondary"], // Toronto Rock
+		LV: ["bg-lasvegas", "bg-lasvegas-secondary"], // Las Vegas Desert Dogs
+		ALB: ["bg-albany", "bg-albany-secondary"], // Albany FireWolves
+	};
+	return colorMap[teamCode] || ["bg-buffalo", "bg-buffalo-secondary"]; // Default colors if team not found
+};
