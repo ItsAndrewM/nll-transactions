@@ -31,6 +31,7 @@ import {
 	RankingIcon,
 	TransactionIcon,
 	UserGroupIcon,
+	UserIcon,
 	VersusIcon,
 } from "@hugeicons/core-free-icons";
 
@@ -334,6 +335,24 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/teams"
+											className="absolute inset-0 z-[1]"
+											prefetch
+											aria-label="Go to stats"
+										/>
+									</SheetClose>
+								</li>
+								<li className="relative text-slate-500 hover:text-black transition-colors">
+									<div className="flex justify-center items-center gap-2">
+										<HugeiconsIcon
+											icon={UserIcon}
+											size={20}
+											strokeWidth={0.5}
+										/>
+										<span>Players</span>
+									</div>
+									<SheetClose asChild>
+										<Link
+											href="/players"
 											className="absolute inset-0 z-[1]"
 											prefetch
 											aria-label="Go to stats"

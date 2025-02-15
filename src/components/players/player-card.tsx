@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
@@ -15,9 +17,9 @@ export function PlayerCard({ player }: { player: Player }) {
 				<div
 					className={cn(
 						player.team_code === "CGY" ? "text-black" : "text-white",
+						"absolute left-4 top-4 z-10 flex h-12 w-12 items-center justify-center rounded-lg text-2xl font-bold",
 						primaryColor,
-						secondaryColor,
-						"absolute left-4 top-4 z-10 flex h-12 w-12 items-center justify-center rounded-lg text-2xl font-bold"
+						secondaryColor
 					)}
 				>
 					{player.jerseyNumber || "-"}
