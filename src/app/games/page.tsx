@@ -9,6 +9,8 @@ import LiveGamesGameCard from "@/components/live/live-games-game-card";
 import { Separator } from "@/components/ui/separator";
 import GamesCardList from "@/components/games/games-card-list";
 import { AndaHeader } from "@/components/anda-header";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -57,7 +59,6 @@ export const revalidate = 3600;
 
 export default async function Page() {
 	const [games, schedule] = await Promise.all([getGames(), getSchedule()]);
-
 	const liveGames =
 		schedule.filter((game: OutgoingMatch) => game.status.typeName === "Live") ||
 		[];
@@ -88,83 +89,85 @@ export default async function Page() {
 			<h1 className="text-3xl font-bold mb-6 text-center">
 				Upcoming and Completed Regular Season Games
 			</h1>
-			<Tabs defaultValue="all" className="space-y-4">
-				<div className="w-full flex justify-center md:justify-start items-center">
-					<TabsList>
-						<TabsTrigger
-							value="all"
-							className="text-xs lg:text-sm flex xl:gap-1"
-						>
-							<span>All</span> <span className="hidden xl:block">Games</span>
-						</TabsTrigger>
-						<TabsTrigger
-							value="completed"
-							className="text-xs md:text-sm flex xl:gap-1"
-						>
-							<span>Completed</span>
-							<span className="hidden xl:block">Games</span>
-						</TabsTrigger>
-						<TabsTrigger
-							value="scheduled"
-							className="text-xs md:text-sm flex xl:gap-1"
-						>
-							<span>Scheduled</span>{" "}
-							<span className="hidden xl:block">Games</span>
-						</TabsTrigger>
-						{liveGames.length > 0 ? (
+			<Suspense fallback={<Loading />}>
+				<Tabs defaultValue="all" className="space-y-4">
+					<div className="w-full flex justify-center md:justify-start items-center">
+						<TabsList>
 							<TabsTrigger
-								value="live"
+								value="all"
+								className="text-xs lg:text-sm flex xl:gap-1"
+							>
+								<span>All</span> <span className="hidden xl:block">Games</span>
+							</TabsTrigger>
+							<TabsTrigger
+								value="completed"
 								className="text-xs md:text-sm flex xl:gap-1"
 							>
-								<span>Live</span>{" "}
-								<LiveIndicator className="ml-2 block xl:hidden" />
+								<span>Completed</span>
 								<span className="hidden xl:block">Games</span>
-								<LiveIndicator className="ml-2 hidden xl:block" />
 							</TabsTrigger>
-						) : null}
-					</TabsList>
-				</div>
-				<TabsContent value="completed" className="space-y-4">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-						<GamesCardList gamesList={completedGames} title="Completed" />
+							<TabsTrigger
+								value="scheduled"
+								className="text-xs md:text-sm flex xl:gap-1"
+							>
+								<span>Scheduled</span>{" "}
+								<span className="hidden xl:block">Games</span>
+							</TabsTrigger>
+							{liveGames.length > 0 ? (
+								<TabsTrigger
+									value="live"
+									className="text-xs md:text-sm flex xl:gap-1"
+								>
+									<span>Live</span>{" "}
+									<LiveIndicator className="ml-2 block xl:hidden" />
+									<span className="hidden xl:block">Games</span>
+									<LiveIndicator className="ml-2 hidden xl:block" />
+								</TabsTrigger>
+							) : null}
+						</TabsList>
 					</div>
-				</TabsContent>
-				<TabsContent value="scheduled">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-						<GamesCardList gamesList={scheduledGames} title="Scheduled" />
-					</div>
-				</TabsContent>
-				<TabsContent value="all">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-						{liveGames.length > 0 ? (
-							<>
-								<h3 className="text-lg font-semibold mt-4 mb-2">
-									Live <LiveIndicator />
-								</h3>
+					<TabsContent value="completed" className="space-y-4">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+							<GamesCardList gamesList={completedGames} title="Completed" />
+						</div>
+					</TabsContent>
+					<TabsContent value="scheduled">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+							<GamesCardList gamesList={scheduledGames} title="Scheduled" />
+						</div>
+					</TabsContent>
+					<TabsContent value="all">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+							{liveGames.length > 0 ? (
+								<>
+									<h3 className="text-lg font-semibold mt-4 mb-2">
+										Live <LiveIndicator />
+									</h3>
+									<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+										{liveGames.map((game: OutgoingMatch) => (
+											<LiveGamesGameCard key={game.id} game={game} />
+										))}
+									</div>
+									<Separator className="my-4" />
+								</>
+							) : null}
+							<GamesCardList gamesList={allGames} title="All" />
+						</div>
+					</TabsContent>
+					{liveGames.length > 0 ? (
+						<TabsContent value="live">
+							<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+								<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
 								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 									{liveGames.map((game: OutgoingMatch) => (
 										<LiveGamesGameCard key={game.id} game={game} />
 									))}
 								</div>
-								<Separator className="my-4" />
-							</>
-						) : null}
-						<GamesCardList gamesList={allGames} title="All" />
-					</div>
-				</TabsContent>
-				{liveGames.length > 0 ? (
-					<TabsContent value="live">
-						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-							<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-								{liveGames.map((game: OutgoingMatch) => (
-									<LiveGamesGameCard key={game.id} game={game} />
-								))}
 							</div>
-						</div>
-					</TabsContent>
-				) : null}
-			</Tabs>
+						</TabsContent>
+					) : null}
+				</Tabs>
+			</Suspense>
 		</div>
 	);
 }

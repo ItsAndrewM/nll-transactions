@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavLayout from "@/components/mobile-layout";
 import { Analytics } from "@/components/analytics";
+import { Suspense } from "react";
+import Loading from "@/components/loading";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./error";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -93,10 +97,14 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<main className="w-screen h-screen max-h-screen flex flex-col gap-8 row-start-2 items-center sm:items-start relative">
-					<NavLayout>{children}</NavLayout>
-				</main>
-				<Analytics />
+				<ErrorBoundary FallbackComponent={ErrorFallback}>
+					<Suspense fallback={<Loading />}>
+						<main className="w-screen h-screen max-h-screen flex flex-col gap-8 row-start-2 items-center sm:items-start relative">
+							<NavLayout>{children}</NavLayout>
+						</main>
+						<Analytics />
+					</Suspense>
+				</ErrorBoundary>
 			</body>
 		</html>
 	);
