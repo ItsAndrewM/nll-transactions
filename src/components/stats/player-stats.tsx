@@ -22,31 +22,39 @@ export function PlayerStats({ playerStats }: { playerStats: PlayerStatsType }) {
 					</TabsList>
 					<TabsContent value="away">
 						<h3 className="text-lg font-semibold mb-2">Runners</h3>
-						<StatsDataTable
-							columns={runnerColumns}
-							data={playerStats.away.runners}
-						/>
+						{playerStats?.away ? (
+							<StatsDataTable
+								columns={runnerColumns}
+								data={playerStats.away.runners}
+							/>
+						) : null}
 						<h3 className="text-lg font-semibold mt-4 mb-2">Goalies</h3>
-						<StatsDataTable
-							columns={goalieColumns}
-							data={playerStats.away.goalies}
-							defaultSort="min"
-							defaultSortDirection="desc"
-						/>
+						{playerStats?.away ? (
+							<StatsDataTable
+								columns={goalieColumns}
+								data={playerStats.away.goalies}
+								defaultSort="min"
+								defaultSortDirection="desc"
+							/>
+						) : null}
 					</TabsContent>
 					<TabsContent value="home">
 						<h3 className="text-lg font-semibold mb-2">Runners</h3>
-						<StatsDataTable
-							columns={runnerColumns}
-							data={playerStats.home.runners}
-						/>
+						{playerStats?.home ? (
+							<StatsDataTable
+								columns={runnerColumns}
+								data={playerStats.home.runners}
+							/>
+						) : null}
 						<h3 className="text-lg font-semibold mt-4 mb-2">Goalies</h3>
-						<StatsDataTable
-							columns={goalieColumns}
-							data={playerStats.home.goalies}
-							defaultSort="min"
-							defaultSortDirection="desc"
-						/>
+						{playerStats?.home ? (
+							<StatsDataTable
+								columns={goalieColumns}
+								data={playerStats.home.goalies}
+								defaultSort="min"
+								defaultSortDirection="desc"
+							/>
+						) : null}
 					</TabsContent>
 				</Tabs>
 			</CardContent>

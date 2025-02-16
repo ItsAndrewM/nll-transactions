@@ -46,59 +46,65 @@ export function ScoringDetails({ scoring }: ScoringDetailsProps) {
 									</TableRow>
 								</TableHeader>
 								<TableBody>
-									{scoring[quarter as keyof Scoring]?.map(
-										(goal: ScoringGoal, index: number) => {
-											const assist = goal.assists.join(", ");
-											const mobileAssist = goal.assists
-												.map((a) => a.split(". ")[1])
-												.join(", ");
-											return (
-												<TableRow
-													key={index}
-													className="w-full grid grid-cols-5 gap-20 sm:gap-4"
-												>
-													<TableCell className="min-w-0 flex items-center gap-2 ">
-														<span className="text-nowrap">
-															{goal.awayScore} - {goal.homeScore}
-														</span>
-														{goal.powerPlay ? (
-															<Badge className="flex-shrink-0">PP</Badge>
-														) : null}
-													</TableCell>
-													<TableCell className="min-w-0">
-														<span className="">{goal.time}</span>
-													</TableCell>
-													<TableCell className="flex items-center relative flex-nowrap gap-2 pr-10 sm:pr-0 min-w-0">
-														<Image
-															src={goal.logo}
-															alt={goal.team}
-															width={32}
-															height={32}
-															loading="lazy"
-															decoding="async"
-															className="flex-none w-8 h-8 shrink-0 min-w-8 min-h-8"
-														/>
-														<span className="hidden sm:block">{goal.team}</span>
-													</TableCell>
+									{!scoring
+										? null
+										: scoring[quarter as keyof Scoring]?.map(
+												(goal: ScoringGoal, index: number) => {
+													const assist = goal.assists.join(", ");
+													const mobileAssist = goal.assists
+														.map((a) => a.split(". ")[1])
+														.join(", ");
+													return (
+														<TableRow
+															key={index}
+															className="w-full grid grid-cols-5 gap-20 sm:gap-4"
+														>
+															<TableCell className="min-w-0 flex items-center gap-2 ">
+																<span className="text-nowrap">
+																	{goal.awayScore} - {goal.homeScore}
+																</span>
+																{goal.powerPlay ? (
+																	<Badge className="flex-shrink-0">PP</Badge>
+																) : null}
+															</TableCell>
+															<TableCell className="min-w-0">
+																<span className="">{goal.time}</span>
+															</TableCell>
+															<TableCell className="flex items-center relative flex-nowrap gap-2 pr-10 sm:pr-0 min-w-0">
+																<Image
+																	src={goal.logo}
+																	alt={goal.team}
+																	width={32}
+																	height={32}
+																	loading="lazy"
+																	decoding="async"
+																	className="flex-none w-8 h-8 shrink-0 min-w-8 min-h-8"
+																/>
+																<span className="hidden sm:block">
+																	{goal.team}
+																</span>
+															</TableCell>
 
-													<TableCell className="min-w-0">
-														<span className="block sm:hidden">
-															{goal.scorer.split(". ")[1]}
-														</span>
-														<span className="hidden sm:block">
-															{goal.scorer}
-														</span>
-													</TableCell>
-													<TableCell className="min-w-0">
-														<span className="block sm:hidden">
-															{mobileAssist}
-														</span>
-														<span className="hidden sm:block">{assist}</span>
-													</TableCell>
-												</TableRow>
-											);
-										}
-									)}
+															<TableCell className="min-w-0">
+																<span className="block sm:hidden">
+																	{goal.scorer.split(". ")[1]}
+																</span>
+																<span className="hidden sm:block">
+																	{goal.scorer}
+																</span>
+															</TableCell>
+															<TableCell className="min-w-0">
+																<span className="block sm:hidden">
+																	{mobileAssist}
+																</span>
+																<span className="hidden sm:block">
+																	{assist}
+																</span>
+															</TableCell>
+														</TableRow>
+													);
+												}
+										  )}
 								</TableBody>
 							</Table>
 						</div>

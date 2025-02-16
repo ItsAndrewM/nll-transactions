@@ -38,32 +38,36 @@ export function PenaltySummary({ penalties }: { penalties: Penalty }) {
 								</TableRow>
 							</TableHeader>
 							<TableBody>
-								{penalties[quarter as keyof Penalty]?.map(
-									(penalty: PenaltyEvent, index: number) => (
-										<TableRow
-											key={index}
-											className="w-full grid grid-cols-5 gap-20 sm:gap-4"
-										>
-											<TableCell className="flex items-center relative flex-nowrap gap-2 pr-10 sm:pr-0 min-w-0">
-												<Image
-													src={penalty.logo}
-													alt={penalty.team}
-													width={32}
-													height={32}
-													loading="lazy"
-													decoding="async"
-													className="flex-none w-8 h-8 shrink-0 min-w-8 min-h-8"
-												/>
+								{penalties
+									? penalties[quarter as keyof Penalty]?.map(
+											(penalty: PenaltyEvent, index: number) => (
+												<TableRow
+													key={index}
+													className="w-full grid grid-cols-5 gap-20 sm:gap-4"
+												>
+													<TableCell className="flex items-center relative flex-nowrap gap-2 pr-10 sm:pr-0 min-w-0">
+														<Image
+															src={penalty.logo}
+															alt={penalty.team}
+															width={32}
+															height={32}
+															loading="lazy"
+															decoding="async"
+															className="flex-none w-8 h-8 shrink-0 min-w-8 min-h-8"
+														/>
 
-												<span className="hidden sm:block">{penalty.team}</span>
-											</TableCell>
-											<TableCell className="w-14">{penalty.time}</TableCell>
-											<TableCell>{penalty.player}</TableCell>
-											<TableCell>{penalty.duration}</TableCell>
-											<TableCell>{penalty.infraction}</TableCell>
-										</TableRow>
-									)
-								)}
+														<span className="hidden sm:block">
+															{penalty.team}
+														</span>
+													</TableCell>
+													<TableCell className="w-14">{penalty.time}</TableCell>
+													<TableCell>{penalty.player}</TableCell>
+													<TableCell>{penalty.duration}</TableCell>
+													<TableCell>{penalty.infraction}</TableCell>
+												</TableRow>
+											)
+									  )
+									: null}
 							</TableBody>
 						</Table>
 					</div>
