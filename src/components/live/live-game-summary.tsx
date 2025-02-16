@@ -53,6 +53,8 @@ export default function LiveGameSummary({
 
 	const liveBoxscore = recrawledData || gameData;
 
+	console.log("liveBoxscore", liveBoxscore);
+
 	const {
 		game_info,
 		box_score,
