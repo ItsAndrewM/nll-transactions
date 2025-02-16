@@ -2,7 +2,7 @@
 
 import { GameData, TeamStats as TeamStatsType } from "@/types/games";
 import useSWR from "swr";
-import { OutgoingMatch } from "@/types/schedule";
+import { LiveGameData, OutgoingMatch } from "@/types/schedule";
 import { env } from "@/env";
 import { liveGameFetcher, recrawledFetcher } from "@/lib/utils";
 import { BoxScore } from "../summary/box-score";
@@ -24,9 +24,7 @@ export default function LiveGameSummary({
 	teams: { home: Standing; away: Standing };
 }) {
 	const { data: liveMatch, isLoading: isLiveLoading } = useSWR<OutgoingMatch>(
-		gameData?.status?.toLowerCase() === "live"
-			? `${env.NEXT_PUBLIC_API_URL}/schedule/${gameData.id}`
-			: null,
+		`${env.NEXT_PUBLIC_API_URL}/schedule/${gameData.id}`,
 		liveGameFetcher,
 		{
 			refreshInterval: 5000, // Refresh every 10 seconds
@@ -34,35 +32,37 @@ export default function LiveGameSummary({
 			revalidateOnFocus: true,
 		}
 	);
+
+	console.log(liveMatch?.status?.typeName);
 	// trigger recrawl depending on status
 	const { data: recrawledData, isLoading: isRecrawlLoading } = useSWR<GameData>(
-		liveMatch?.status?.typeName === "live"
-			? `${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`
-			: null,
+		`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`,
 		recrawledFetcher,
 		{
-			refreshInterval: 5000, // Refresh every 10 seconds
+			refreshInterval: 10000, // Refresh every 10 seconds
 			fallbackData: gameData,
 			revalidateOnFocus: true,
 		}
 	);
 
+	console.log(`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`);
+
 	if (isLiveLoading && isRecrawlLoading) {
 		return <div>Loading...</div>;
 	}
 
-	const liveBoxscore = recrawledData || gameData;
+	const liveBoxscore = recrawledData as unknown as LiveGameData;
 
 	console.log("liveBoxscore", liveBoxscore);
 
 	const {
-		game_info,
-		box_score,
-		team_stats,
+		gameInfo: game_info,
+		boxScore: box_score,
+		teamStats: team_stats,
 		scoring,
 		penalties,
-		player_stats,
-		game_leaders,
+		playerStats: player_stats,
+		gameLeaders: game_leaders,
 	} = liveBoxscore || {};
 
 	const currentMatch = liveMatch || liveGame;
@@ -74,7 +74,7 @@ export default function LiveGameSummary({
 				{box_score ? (
 					<BoxScore boxScore={box_score} gameInfo={game_info} />
 				) : null}
-				{"fo" in team_stats.home && "fo" in team_stats.away && (
+				{team_stats && "fo" in team_stats?.home && "fo" in team_stats?.away && (
 					<TeamStats
 						home={team_stats.home as TeamStatsType}
 						away={team_stats.away as TeamStatsType}

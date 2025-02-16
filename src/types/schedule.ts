@@ -1,3 +1,14 @@
+import {
+	Boxscore,
+	GameInfo,
+	GameLeaders,
+	Penalty,
+	PlayerStats,
+	PreGameTeamStats,
+	Scoring,
+	TeamStats,
+} from "./games";
+
 export interface Match {
 	id: number;
 	number: number;
@@ -64,3 +75,22 @@ export interface Squad {
 	nickname: string;
 	displayName: string;
 }
+
+export type LiveGameData = {
+	gameInfo: GameInfo;
+	boxScore: Boxscore;
+	teamStats: {
+		away: TeamStats | PreGameTeamStats;
+		home: TeamStats | PreGameTeamStats;
+	};
+	scoring: Scoring;
+	penalties: Penalty;
+	playerStats: PlayerStats;
+	gameLeaders: GameLeaders;
+	created_at: string;
+	updated_at: string;
+	type: string;
+	season_id: number;
+	id: string;
+	status: string;
+};

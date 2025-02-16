@@ -90,12 +90,12 @@ interface GameData {
 	box_score: Boxscore;
 	scoring: Scoring;
 	penalties: Penalty;
-	type: string;
-	season_id: number;
 	game_leaders: GameLeaders;
 	player_stats: PlayerStats;
 	created_at: string;
 	updated_at: string;
+	type: string;
+	season_id: number;
 }
 
 interface Boxscore {
