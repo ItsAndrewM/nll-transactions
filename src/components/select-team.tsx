@@ -1,3 +1,4 @@
+"use client";
 import {
 	Select,
 	SelectContent,
@@ -7,24 +8,20 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { SetStateAction } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { createFallbackName } from "@/lib/utils";
 import { imageUrls } from "@/data/image-urls";
 import Image from "next/image";
+import { usePathname, useSearchParams } from "next/navigation";
 
-export function SelectTeams({
-	teams,
-	setSelected,
-	selected,
-}: {
-	teams: string[];
-	setSelected: React.Dispatch<SetStateAction<string>>;
-	selected: string;
-}) {
+export function SelectTeams({ teams }: { teams: string[] }) {
+	const pathname = usePathname();
 	const handleValueChange = (value: string) => {
-		setSelected(value);
+		const params = new URLSearchParams(window.location.search);
+		params.set("selected", value);
+		window.history.pushState({}, "", `${pathname}?${params.toString()}`);
 	};
+	const selected = useSearchParams().get("selected") || "";
 
 	const removedNonScheduledTeams = teams.filter(
 		(team) =>

@@ -20,15 +20,14 @@ import { imageUrls } from "@/data/image-urls";
 import { Card } from "../ui/card";
 
 export interface TransactionsPanelProps {
-	selected: string;
 	content: Transactions;
 }
 
 export default function MobileTransactions({
 	content,
-	selected,
 }: TransactionsPanelProps) {
 	const searchParams = useSearchParams();
+	const selected = searchParams.get("selected") || "";
 	const router = useRouter();
 	const pathname = usePathname();
 	const scrollContainerRef = useRef<HTMLDivElement | null>(null);

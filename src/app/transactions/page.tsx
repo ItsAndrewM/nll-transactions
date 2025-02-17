@@ -3,8 +3,10 @@ import TransactionsPage from "@/components/transactions/transactions-page";
 import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
 import { getAllTransactions } from "@/server/transactions";
-import { TransactionIcon } from "@hugeicons/core-free-icons";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { Suspense } from "react";
+import { TransactionsLoading } from "../page";
+// import { TransactionIcon } from "@hugeicons/core-free-icons";
+// import { HugeiconsIcon } from "@hugeicons/react";
 
 export const revalidate = 3600;
 
@@ -25,19 +27,21 @@ export default async function Page(props: {
 		getStandings(),
 	]);
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20 flex flex-col gap-8">
+		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20 flex flex-col">
 			<AndaHeader />
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+			{/* <div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
 				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
 					<HugeiconsIcon icon={TransactionIcon} size={20} strokeWidth={0.5} />
 					Transactions
 				</h1>
-			</div>
-			<TransactionsPage
-				teamsList={teamsList}
-				allTransactions={allTransactions}
-				standings={standings}
-			/>
+			</div> */}
+			<Suspense fallback={<TransactionsLoading />}>
+				<TransactionsPage
+					teamsList={teamsList}
+					allTransactions={allTransactions}
+					standings={standings}
+				/>
+			</Suspense>
 		</div>
 	);
 }

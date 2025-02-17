@@ -1,16 +1,17 @@
+"use client";
 import { OutgoingMatch } from "@/types/schedule";
 import { Standing } from "@/types/standings";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 export default function ScheduleNext({
 	schedule,
-	selected,
 	standings,
 }: {
 	schedule: OutgoingMatch[];
-	selected: string;
 	standings: Standing[];
 }) {
+	const selected = useSearchParams().get("selected") || "";
 	if (selected === "all") {
 		return null;
 	}

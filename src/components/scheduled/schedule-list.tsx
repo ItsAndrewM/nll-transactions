@@ -2,7 +2,7 @@
 import { OutgoingMatch } from "@/types/schedule";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import LiveIndicator from "../live/live-indicator";
 import GamesList from "../games/games-list";
@@ -10,11 +10,10 @@ import LiveGamesList from "../live/live-games-list";
 
 export default function ScheduleList({
 	schedule,
-	selected,
 }: {
 	schedule: OutgoingMatch[];
-	selected: string;
 }) {
+	const selected = useSearchParams().get("selected") || "";
 	const scrollContainerRef = useRef<HTMLDivElement | null>(null);
 	const pathname = usePathname();
 	const filtered = schedule.filter(
