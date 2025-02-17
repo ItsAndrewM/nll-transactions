@@ -6,15 +6,20 @@ import Image from "next/image";
 import Link from "next/link";
 import { imageUrls } from "@/data/image-urls";
 import { Player } from "@/types/players";
+import { createFallbackName, getPosition } from "@/lib/utils";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
-export const allRunnerColumns: ColumnDef<Player>[] = [
+export const allPlayersColumns: ColumnDef<Player>[] = [
 	{
 		id: "team",
 		accessorFn: (row) => ({
 			name: row.team_name,
-			logo: imageUrls.find(
-				(url) => url.name.toLowerCase() === row.team_name.toLowerCase()
-			)?.imageUrl,
+			logo:
+				row.team_name !== ""
+					? imageUrls.find((url) =>
+							url?.name?.toLowerCase().includes(row?.team_name?.toLowerCase())
+					  )?.imageUrl
+					: null,
 		}),
 		header: ({ column }) => (
 			<ColumnHeader<Player> column={column} text="TEAM" sort={false} />
@@ -31,81 +36,94 @@ export const allRunnerColumns: ColumnDef<Player>[] = [
 						}`}
 						className="transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg"
 					>
-						<Image src={team.logo} alt={team.name} width={32} height={32} />
+						{!team.name ||
+						!imageUrls.find((url) => url.name.includes(team.name)) ? (
+							<div className="pl-4">{team.name}</div>
+						) : (
+							<Image src={team.logo} alt={team.name} width={32} height={32} />
+						)}
 					</Link>
 				</div>
 			);
 		},
 	},
 	{
-		accessorKey: "fullName",
+		id: "player",
+		accessorFn: (row) => ({
+			name: row.fullname,
+			logo: row.headshot?.sizes?.thumbnail,
+			id: row.id,
+		}),
 		header: ({ column }) => (
 			<ColumnHeader<Player> column={column} text="NAME" />
 		),
+		cell: ({ row }) => {
+			const player = row.getValue("player") as {
+				name: string;
+				logo: string;
+				id: string;
+			};
+			return (
+				<div className="flex justify-center items-center w-full">
+					<Link
+						href={`/players/${player.id}`}
+						className="flex justify-start items-center w-full"
+					>
+						<Avatar>
+							<AvatarImage
+								src={player.logo || "/placeholder.svg"}
+								alt={player.name}
+								width={32}
+								height={32}
+							/>
+							<AvatarFallback>{createFallbackName(player.name)}</AvatarFallback>
+						</Avatar>
+						<div className="pl-4 text-left text-nowrap">{player.name}</div>
+					</Link>
+				</div>
+			);
+		},
+	},
+	{
+		accessorKey: "jerseyNumber",
+		header: ({ column }) => <ColumnHeader<Player> column={column} text="#" />,
 		cell: ({ row }) => (
 			<div className="pl-4 text-left text-nowrap">
-				{row.getValue("fullName")}
+				{row.getValue("jerseyNumber")}
 			</div>
 		),
 	},
 	{
-		accessorKey: "g",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="G" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("g")}</div>,
+		accessorKey: "position",
+		header: ({ column }) => <ColumnHeader<Player> column={column} text="POS" />,
+		cell: ({ row }) => (
+			<div className="pl-4">{getPosition(row.getValue("position"))}</div>
+		),
 	},
 	{
-		accessorKey: "a",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="A" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("a")}</div>,
+		accessorKey: "height",
+		header: ({ column }) => (
+			<ColumnHeader<Player> column={column} text="Height" />
+		),
+		cell: ({ row }) => <div className="pl-4">{row.getValue("height")}</div>,
 	},
 	{
-		accessorKey: "pts",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="PTS" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("pts")}</div>,
+		accessorKey: "weight",
+		header: ({ column }) => (
+			<ColumnHeader<Player> column={column} text="WEIGHT" />
+		),
+		cell: ({ row }) => <div className="pl-4">{row.getValue("weight")}</div>,
 	},
 	{
-		accessorKey: "sog",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="SOG" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("sog")}</div>,
+		accessorKey: "ageYear",
+		header: ({ column }) => <ColumnHeader<Player> column={column} text="AGE" />,
+		cell: ({ row }) => <div className="pl-4">{row.getValue("ageYear")}</div>,
 	},
 	{
-		accessorKey: "lb",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="LB" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("lb")}</div>,
-	},
-	{
-		accessorKey: "to",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="TO" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("to")}</div>,
-	},
-	{
-		accessorKey: "cto",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="CTO" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("cto")}</div>,
-	},
-	{
-		accessorKey: "pims",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="PIM" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("pims")}</div>,
-	},
-	{
-		accessorKey: "ppg",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="PPG" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("ppg")}</div>,
-	},
-	{
-		accessorKey: "ppa",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="PPA" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("ppa")}</div>,
-	},
-	{
-		accessorKey: "shg",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="SHG" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("shg")}</div>,
-	},
-	{
-		accessorKey: "bs",
-		header: ({ column }) => <ColumnHeader<Player> column={column} text="BS" />,
-		cell: ({ row }) => <div className="pl-4">{row.getValue("bs")}</div>,
+		accessorKey: "hometown",
+		header: ({ column }) => (
+			<ColumnHeader<Player> column={column} text="HOMETOWN" />
+		),
+		cell: ({ row }) => <div className="pl-4">{row.getValue("hometown")}</div>,
 	},
 ];

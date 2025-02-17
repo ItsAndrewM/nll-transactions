@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { DynamicBackground } from "./player-dynamic-bg";
+// import { DynamicBackground } from "./player-dynamic-bg";
 import { Player } from "@/types/players";
+import { teamBackgroundImageUrls } from "@/data/team-background-image-urls";
 export function PlayerHero({ player }: { player: Player }) {
 	return (
 		<div className="col-span-1 md:col-span-3 relative overflow-hidden rounded-lg">
@@ -12,7 +13,16 @@ export function PlayerHero({ player }: { player: Player }) {
 						style={{ backgroundImage: `url(${player.background_image})` }}
 					/>
 				) : (
-					<DynamicBackground player={player} />
+					<div
+						className="w-full h-full bg-cover bg-center-bottom contrast-[.8] brightness-[.8]"
+						style={{
+							backgroundImage: `url(${
+								teamBackgroundImageUrls[
+									player.team_name as keyof typeof teamBackgroundImageUrls
+								]
+							})`,
+						}}
+					/>
 				)}
 
 				<div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-start p-6">

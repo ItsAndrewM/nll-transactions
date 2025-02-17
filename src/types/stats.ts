@@ -1,0 +1,25 @@
+export type HistoricalPlayerStats = {
+	name: string;
+	year: string;
+	team: string;
+	gp: number;
+	g: number;
+	a: number;
+	pts: number;
+	pims: number;
+	ppg: string;
+	ppa: number;
+	fow: number;
+	foa: number;
+	lb: number;
+	to: number;
+	cto: number;
+	bs: number;
+	minutes: string;
+	wins: number;
+	losses: number;
+	ga: number;
+	saves: number;
+	gaa: string;
+	savePerc: string;
+};

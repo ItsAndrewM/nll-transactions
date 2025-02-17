@@ -11,6 +11,8 @@ import GamesCardList from "@/components/games/games-card-list";
 import { AndaHeader } from "@/components/anda-header";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { VersusIcon } from "@hugeicons/core-free-icons";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -84,11 +86,14 @@ export default async function Page() {
 	);
 
 	return (
-		<div className="container mx-auto px-4 py-8">
+		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
-			<h1 className="text-3xl font-bold mb-6 text-center">
-				Upcoming and Completed Regular Season Games
-			</h1>
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+				<h1 className="text-3xl font-bold text-center p-8 flex items-center gap-2">
+					<HugeiconsIcon icon={VersusIcon} size={70} strokeWidth={0.5} />
+					Scheduled, Live, and Completed Games
+				</h1>
+			</div>
 			<Suspense fallback={<Loading />}>
 				<Tabs defaultValue="all" className="space-y-4">
 					<div className="w-full flex justify-center md:justify-start items-center">

@@ -31,6 +31,10 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { ChevronDown } from "lucide-react";
 
+interface FilterConfig {
+	path?: string; // Optional path to nested property (e.g., 'name' for player.name)
+}
+
 export function StatsDataTable<TData>({
 	columns,
 	data,
@@ -38,6 +42,8 @@ export function StatsDataTable<TData>({
 	filter = false,
 	defaultSort = "pts",
 	defaultSortDirection = "desc",
+	filterValue = "name",
+	filterConfig,
 }: {
 	columns: ColumnDef<TData>[];
 	data: TData[];
@@ -45,14 +51,48 @@ export function StatsDataTable<TData>({
 	filter?: boolean;
 	defaultSort?: string;
 	defaultSortDirection?: "asc" | "desc";
+	filterValue?: string;
+	filterConfig?: FilterConfig;
 }) {
 	const [sorting, setSorting] = useState<SortingState>([
 		{ id: defaultSort || "pts", desc: defaultSortDirection === "desc" },
 	]);
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const getNestedValue = (obj: any, path?: string) => {
+		if (!path) return obj;
+		const value = path.split(".").reduce((acc, part) => acc?.[part], obj);
+		return value ?? obj;
+	};
+
+	const columnsWithFilter = columns.map((col) => {
+		if (col.id === filterValue) {
+			return {
+				...col,
+				enableColumnFilter: true,
+				filterFn: (
+					row: { getValue: (id: string) => unknown },
+					columnId: string,
+					filterValue: string
+				) => {
+					const value = row.getValue(columnId);
+					const searchValue = getNestedValue(value, filterConfig?.path);
+
+					if (searchValue === null || searchValue === undefined) return false;
+
+					return String(searchValue)
+						.toLowerCase()
+						.includes(String(filterValue).toLowerCase());
+				},
+			};
+		}
+		return col;
+	});
+
 	const table = useReactTable({
 		data,
-		columns,
+		columns: columnsWithFilter,
 		getCoreRowModel: getCoreRowModel(),
 		getSortedRowModel: getSortedRowModel(),
 		onSortingChange: setSorting,
@@ -71,10 +111,16 @@ export function StatsDataTable<TData>({
 			{filter ? (
 				<div className="sm:flex grid grid-cols-2 sm:flex-row gap-2 items-center p-4">
 					<Input
-						placeholder="Filter names..."
-						value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+						placeholder={`Filter by ${filterValue}...`}
+						value={
+							(table
+								.getColumn(filterValue || "name")
+								?.getFilterValue() as string) ?? ""
+						}
 						onChange={(event) =>
-							table.getColumn("name")?.setFilterValue(event.target.value)
+							table
+								.getColumn(filterValue || "name")
+								?.setFilterValue(event.target.value)
 						}
 						className="max-w-sm"
 					/>

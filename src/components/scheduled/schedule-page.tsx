@@ -20,7 +20,7 @@ export default function SchedulePage({
 	const [selected, setSelected] = useState("");
 
 	return (
-		<div className="flex flex-col gap-4 items-center justify-center w-full mx-auto p-8 max-w-3xl">
+		<div className="flex flex-col gap-4 items-center justify-center w-full mx-auto p-8 ">
 			<h1 className="text-xl font-bold text-left w-full">
 				Regular Season Schedule
 			</h1>

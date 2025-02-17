@@ -14,6 +14,7 @@ import { allGoalieColumns } from "@/components/data-table/all-goalie-columns";
 
 import type { Metadata } from "next";
 import { getPosition } from "@/lib/utils";
+import { PlayerHistoricalStats } from "@/components/players/player-historical-stats";
 
 type Props = {
 	params: Promise<{ id: string }>;
@@ -88,7 +89,7 @@ export default async function Page(props: { params: Params }) {
 	if (!player || !playerStats) {
 		notFound();
 	}
-	const { bio, position } = (player as Player) || {};
+	const { bio, position, fullname } = (player as Player) || {};
 	return (
 		<div className="container mx-auto px-4 py-8 pb-20">
 			<AndaHeader />
@@ -108,7 +109,9 @@ export default async function Page(props: { params: Params }) {
 				<StatsDataTable
 					data={[playerStats]}
 					columns={position !== "G" ? allRunnerColumns : allGoalieColumns}
+					defaultSort={position !== "G" ? "pts" : "mins"}
 				/>
+				<PlayerHistoricalStats fullname={fullname} position={position} />
 			</div>
 		</div>
 	);

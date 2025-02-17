@@ -1,7 +1,10 @@
+import { AndaHeader } from "@/components/anda-header";
 import SchedulePage from "@/components/scheduled/schedule-page";
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
 import { getListOfTeams } from "@/server/teams";
+import { Calendar01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 
 import { Metadata } from "next";
 
@@ -60,6 +63,19 @@ export default async function Page() {
 	]);
 
 	return (
-		<SchedulePage schedule={schedule} teamsList={teams} standings={standings} />
+		<div className="container mx-auto px-4 py-8 pb-20 max-w-3xl flex flex-col gap-8">
+			<AndaHeader />
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
+					<HugeiconsIcon icon={Calendar01Icon} size={30} strokeWidth={0.5} />
+					Schedule
+				</h1>
+			</div>
+			<SchedulePage
+				schedule={schedule}
+				teamsList={teams}
+				standings={standings}
+			/>
+		</div>
 	);
 }

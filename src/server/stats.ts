@@ -3,7 +3,12 @@ import { env } from "@/env";
 import "server-only";
 
 export const preload = (id: string) => {
-	void Promise.all([getStats(), getGoalieStats(), getPlayerStats(id)]);
+	void Promise.all([
+		getStats(),
+		getGoalieStats(),
+		getPlayerStats(id),
+		getHistoricalStats(id),
+	]);
 };
 
 export const getStats = async () => {
@@ -44,6 +49,22 @@ export const getGoalieStats = async () => {
 		}
 		const data = await response.json();
 		return data.goalies;
+	} catch (error) {
+		console.error(error);
+		return [];
+	}
+};
+
+export const getHistoricalStats = async (fullname: string) => {
+	try {
+		const response = await fetch(
+			`${env.NEXT_PUBLIC_API_URL}/stats/historical/${fullname}`
+		);
+		if (!response.ok) {
+			throw new Error("Failed to fetch historical stats");
+		}
+		const data = await response.json();
+		return data.historical_stats;
 	} catch (error) {
 		console.error(error);
 		return [];

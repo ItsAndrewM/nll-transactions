@@ -5,7 +5,10 @@ import { notFound } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Suspense } from "react";
 import { Metadata } from "next";
-// import { StatsDataTable } from "@/components/data-table/stats-data-table";
+import { StatsDataTable } from "@/components/data-table/stats-data-table";
+import { allPlayersColumns } from "@/components/data-table/all-players-columns";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { UserIcon } from "@hugeicons/core-free-icons";
 
 export const metadata: Metadata = {
 	title:
@@ -59,10 +62,16 @@ export default async function Page() {
 
 	const { players, total } = allPlayers || {};
 	return (
-		<div className="container mx-auto px-4 py-8">
+		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
 
-			<h1 className="text-3xl font-bold mb-6 text-center">Players</h1>
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+				<h1 className="text-3xl font-bold text-center p-8 flex justify-center items-center gap-2">
+					<HugeiconsIcon icon={UserIcon} size={30} strokeWidth={0.5} />
+					Players
+				</h1>
+			</div>
+
 			<Tabs defaultValue="player" className="space-y-4">
 				<div className="w-full flex justify-center md:justify-start items-center">
 					<TabsList>
@@ -89,8 +98,17 @@ export default async function Page() {
 					</div>
 				</TabsContent>
 				<TabsContent value="roster">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-						{/* <StatsDataTable /> */}
+					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8 pb-16">
+						<StatsDataTable
+							data={players}
+							columns={allPlayersColumns}
+							paginate={true}
+							filter={true}
+							defaultSort="player"
+							defaultSortDirection="desc"
+							filterValue="player"
+							filterConfig={{ path: "name" }}
+						/>
 					</div>
 				</TabsContent>
 			</Tabs>

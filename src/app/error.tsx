@@ -2,7 +2,9 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { AndaHeader } from "@/components/anda-header";
 
 export default function ErrorFallback({ error }: { error: Error }) {
 	return <Error error={error} reset={() => window.location.reload()} />;
@@ -21,18 +23,9 @@ function Error({
 	}, [error]);
 
 	return (
-		<div className="min-h-[calc(100vh-4rem)] flex items-center justify-center p-4 bg-[#fdf8f6]">
-			<div className="max-w-md w-full text-center space-y-6">
-				<div className="relative w-24 h-24 mx-auto">
-					<Image
-						src="/global-error.png"
-						alt="Official with NLL Player"
-						fill
-						className="object-contain"
-						priority
-					/>
-				</div>
-
+		<div className="min-h-[calc(100vh-4rem)] flex flex-col items-start justify-center p-4 w-full max-w-3xl mx-auto">
+			<AndaHeader />
+			<Card className="container px-4 py-8 text-center ">
 				<div className="space-y-3">
 					<h1 className="text-4xl font-bold text-gray-900">
 						Penalty on the Play!
@@ -44,22 +37,19 @@ function Error({
 				</div>
 
 				<div className="flex items-center justify-center gap-4">
-					<button
-						onClick={reset}
-						className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-[#ff6934] rounded-md hover:bg-[#e55a2b] transition-colors"
-					>
-						Try Again
-					</button>
-					<Link
-						href="/"
-						className="inline-flex items-center justify-center px-6 py-3 text-base font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
-					>
-						Return Home
-					</Link>
+					<Button onClick={reset}>Try Again</Button>
+					<Button asChild variant="secondary">
+						<Link
+							href="/"
+							className="inline-flex items-center justify-center px-6 py-3 text-base font-medium border border-gray-300 rounded-md hover:bg-gray-50 transition-colors"
+						>
+							Return Home
+						</Link>
+					</Button>
 				</div>
 
 				{process.env.NODE_ENV === "development" && (
-					<div className="mt-4 p-4 bg-gray-100 rounded-md text-left">
+					<div className="mt-4 p-4 bg-gray-100 rounded-md text-left max-w-md mx-auto">
 						<p className="text-sm font-mono text-gray-700 break-all">
 							{error.message}
 						</p>
@@ -70,7 +60,7 @@ function Error({
 						)}
 					</div>
 				)}
-			</div>
+			</Card>
 		</div>
 	);
 }

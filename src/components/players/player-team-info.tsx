@@ -7,7 +7,6 @@ import { Badge } from "../ui/badge";
 import { backgroundColorMap, textColorMap } from "@/data/color-maps";
 
 export function PlayerTeamInfo({ player }: { player: Player }) {
-	console.log("player", player);
 	const { imageUrl, name } =
 		imageUrls.find((url) => url.name.includes(player.team_name)) || {};
 	const [primaryColor] = backgroundColorMap[player.team_code];

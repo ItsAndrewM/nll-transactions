@@ -47,7 +47,7 @@ export default function LiveGameSummary({
 
 	console.log(`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`);
 
-	if (isLiveLoading && isRecrawlLoading) {
+	if (isLiveLoading || isRecrawlLoading) {
 		return <div>Loading...</div>;
 	}
 
