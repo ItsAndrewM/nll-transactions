@@ -58,11 +58,14 @@ export const metadata: Metadata = {
 export const revalidate = 3600;
 
 export default async function Page() {
-	const [schedule, teams, standings] = await Promise.all([
-		getSchedule(),
-		getListOfTeams(),
-		getStandings(),
-	]);
+	// const [schedule, teams, standings] = await Promise.all([
+	// 	getSchedule(),
+	// 	getListOfTeams(),
+	// 	getStandings(),
+	// ]);
+	const schedule = await getSchedule();
+	const teams = await getListOfTeams();
+	const standings = await getStandings();
 
 	return (
 		<div className="container mx-auto px-4 py-8 pb-20 max-w-3xl flex flex-col">

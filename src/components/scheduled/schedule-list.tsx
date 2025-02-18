@@ -18,8 +18,8 @@ export default function ScheduleList({
 	const pathname = usePathname();
 	const filtered = schedule.filter(
 		(match) =>
-			match.squads.away.displayName === selected ||
-			match.squads.home.displayName === selected
+			match?.squads?.away?.displayName === selected ||
+			match?.squads?.home?.displayName === selected
 	);
 
 	const homePageStyles = {
@@ -30,12 +30,12 @@ export default function ScheduleList({
 	const isHomePage = !pathname.includes("schedule") ? homePageStyles : null;
 
 	const liveGames =
-		schedule.filter((game) => game.status.typeName === "Live") || [];
+		schedule.filter((game) => game?.status?.typeName === "Live") || [];
 
 	const filteredLiveGames = liveGames.filter(
 		(match) =>
-			match.squads.away.displayName === selected ||
-			match.squads.home.displayName === selected
+			match?.squads?.away?.displayName === selected ||
+			match?.squads?.home?.displayName === selected
 	);
 
 	return (
@@ -73,11 +73,11 @@ export default function ScheduleList({
 						<h3 className="text-lg font-semibold mt-4 mb-2">Completed Games</h3>
 						<GamesList
 							schedule={schedule.filter(
-								(match) => match.status.name === "Complete"
+								(match) => match?.status?.name === "Complete"
 							)}
 							selected={selected}
 							filtered={filtered.filter(
-								(match) => match.status.name === "Complete"
+								(match) => match?.status?.name === "Complete"
 							)}
 							isHomePage={isHomePage}
 						/>
@@ -86,11 +86,11 @@ export default function ScheduleList({
 						<h3 className="text-lg font-semibold mt-4 mb-2">Scheduled Games</h3>
 						<GamesList
 							schedule={schedule.filter(
-								(match) => match.status.name === "Scheduled"
+								(match) => match?.status?.name === "Scheduled"
 							)}
 							selected={selected}
 							filtered={filtered.filter(
-								(match) => match.status.name === "Scheduled"
+								(match) => match?.status?.name === "Scheduled"
 							)}
 							isHomePage={isHomePage}
 						/>
