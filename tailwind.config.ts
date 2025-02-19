@@ -214,6 +214,9 @@ export default {
 					"100%": { transform: "scale(1.3)", opacity: "0" },
 				},
 			},
+			fontFamily: {
+				adumu: ["Adumu"],
+			},
 		},
 	},
 	// eslint-disable-next-line @typescript-eslint/no-require-imports

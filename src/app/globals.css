@@ -113,6 +113,15 @@ body {
 }
 
 @layer base {
+	@layer base {
+		@font-face {
+			font-family: "Adumu";
+			font-style: normal;
+			font-weight: 400;
+			font-display: swap;
+			src: url(/fonts/Adumu.ttf) format("tff");
+		}
+	}
 	* {
 		@apply border-border;
 	}
@@ -122,6 +131,11 @@ body {
 	body {
 		@apply bg-background text-foreground;
 	}
+	/* h1,
+	h2,
+	h3 {
+		@apply font-adumu tracking-widest font-extralight uppercase;
+	} */
 }
 
 @layer utilities {

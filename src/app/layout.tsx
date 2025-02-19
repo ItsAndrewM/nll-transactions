@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import NavLayout from "@/components/mobile-layout";
 import { Analytics } from "@/components/analytics";
@@ -7,6 +8,12 @@ import { Analytics } from "@/components/analytics";
 // import Loading from "@/components/loading";
 import { ErrorBoundary } from "react-error-boundary";
 import ErrorFallback from "./error";
+
+const adumuRegular = localFont({
+	src: "../fonts/Adumu.ttf",
+	style: "normal",
+	variable: "--font-adumu-regular",
+});
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -95,7 +102,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${adumuRegular.variable} antialiased`}
 			>
 				<ErrorBoundary FallbackComponent={ErrorFallback}>
 					{/* <Suspense fallback={<Loading />}> */}
