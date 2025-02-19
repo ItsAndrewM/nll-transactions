@@ -70,7 +70,7 @@ export default async function Page() {
 	return (
 		<div className="container mx-auto px-4 py-8 pb-20 max-w-3xl flex flex-col">
 			<AndaHeader />
-			{/* <div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+			{/* <div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-xs ">
 				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
 					<HugeiconsIcon icon={Calendar01Icon} size={30} strokeWidth={0.5} />
 					Schedule

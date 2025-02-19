@@ -21,7 +21,7 @@ export default function TeamHeader({
 						width={150}
 						height={150}
 					/>
-					<div className="flex-grow text-center md:text-left">
+					<div className="grow text-center md:text-left">
 						<h1 className="text-3xl font-bold">{team.displayName}</h1>
 						<p className="text-xl text-gray-600">{team.team_city}</p>
 						<div className="mt-2 flex flex-wrap justify-center md:justify-start gap-4">

@@ -10,7 +10,11 @@ export const preload = (id: string) => {
 
 export async function getTeamWithSchedule(id: string) {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/team/${id}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/team/${id}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		// const response = await fetch(`http://localhost:8080/api/team/${id}`);
 		if (!response.ok) {
 			throw new Error("Failed to fetch teams");
@@ -25,7 +29,11 @@ export async function getTeamWithSchedule(id: string) {
 
 export async function getTeamRoster(team: string) {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats/${team}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats/${team}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		// const response = await fetch(`http://localhost:8080/api/stats/${team}`);
 		if (!response.ok) {
 			throw new Error("Failed to fetch teams");

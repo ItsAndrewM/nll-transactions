@@ -10,7 +10,12 @@ export const preload = () => {
 export async function getFrontPage(order: string, team: string) {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/front-page?order=${order}`
+			`${env.NEXT_PUBLIC_API_URL}/front-page?order=${order}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch front page");

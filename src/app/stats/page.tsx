@@ -68,7 +68,7 @@ export default async function StatsPage() {
 	return (
 		<div className="container mx-auto px-4 py-8 pb-20 flex flex-col gap-8">
 			<AndaHeader />
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-xs ">
 				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
 					<ChartBarBigIcon size={40} />
 					Player Stats
@@ -81,7 +81,7 @@ export default async function StatsPage() {
 					<TabsTrigger value="glossary">Stats Glossary</TabsTrigger>
 				</TabsList>
 				<TabsContent value="stats" className="space-y-4">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-xs p-6">
 						<h3 className="text-xl font-semibold mt-4 mb-2">All Positions</h3>
 						<div>
 							<StatsDataTable
@@ -92,7 +92,7 @@ export default async function StatsPage() {
 							/>
 						</div>
 					</div>
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-xs p-6">
 						<h3 className="text-xl font-semibold mt-4 mb-2">Goalies</h3>
 						<div>
 							<StatsDataTable
@@ -107,7 +107,7 @@ export default async function StatsPage() {
 					</div>
 				</TabsContent>
 				<TabsContent value="glossary">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-xs">
 						<div className="p-6">
 							<Glossary title="Statistics Glossary" />
 						</div>

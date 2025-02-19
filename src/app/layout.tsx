@@ -50,7 +50,7 @@ export default function RootLayout({
 				{/* <!-- Preconnect --> */}
 				<link
 					rel="preconnect"
-					href="https://nll-transactions-server.fly.dev/api"
+					href="https://nll-transactions-server.onrender.com/api"
 					crossOrigin="anonymous"
 				/>
 

@@ -10,7 +10,12 @@ export const preload = () => {
 export const getAllTransactions = async (order: string, team: string) => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/transactions?order=${order}`
+			`${env.NEXT_PUBLIC_API_URL}/transactions?order=${order}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch transactions");
@@ -36,7 +41,12 @@ export const getAllTransactions = async (order: string, team: string) => {
 export const getListOfTransactionsByDate = async () => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/transactions/list`
+			`${env.NEXT_PUBLIC_API_URL}/transactions/list`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch transactions");
@@ -52,7 +62,12 @@ export const getListOfTransactionsByDate = async () => {
 export const getTransactionsByDate = async (date: string) => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/transactions/${date}`
+			`${env.NEXT_PUBLIC_API_URL}/transactions/${date}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch transactions");

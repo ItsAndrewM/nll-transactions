@@ -19,7 +19,7 @@ export default async function TeamPage() {
 	return (
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-4  pb-20">
 			<AndaHeader />
-			<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16 flex flex-col gap-4">
+			<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16 flex flex-col gap-4">
 				<div className="w-full flex flex-col sm:flex-row justify-between items-center pt-2">
 					<h1 className="text-4xl font-semibold mt-4 mb-2">NLL Teams</h1>
 					<Separator className="my-4 sm:hidden" />
@@ -64,7 +64,7 @@ export default async function TeamPage() {
 					))}
 				</div>
 			</div>
-			<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16 flex flex-col gap-4">
+			<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16 flex flex-col gap-4">
 				<h1 className="text-4xl font-semibold mt-4 mb-2">Team Stats</h1>
 				<div className="w-full">
 					<StatsDataTable

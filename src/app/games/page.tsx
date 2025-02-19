@@ -88,7 +88,7 @@ export default async function Page() {
 	return (
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-xs ">
 				<h1 className="text-3xl font-bold text-center p-8 flex items-center gap-2">
 					<HugeiconsIcon icon={VersusIcon} size={70} strokeWidth={0.5} />
 					Scheduled, Live, and Completed Games
@@ -132,17 +132,17 @@ export default async function Page() {
 						</TabsList>
 					</div>
 					<TabsContent value="completed" className="space-y-4">
-						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16">
 							<GamesCardList gamesList={completedGames} title="Completed" />
 						</div>
 					</TabsContent>
 					<TabsContent value="scheduled">
-						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16">
 							<GamesCardList gamesList={scheduledGames} title="Scheduled" />
 						</div>
 					</TabsContent>
 					<TabsContent value="all">
-						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+						<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16">
 							{liveGames.length > 0 ? (
 								<>
 									<h3 className="text-lg font-semibold mt-4 mb-2">
@@ -161,7 +161,7 @@ export default async function Page() {
 					</TabsContent>
 					{liveGames.length > 0 ? (
 						<TabsContent value="live">
-							<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
+							<div className="rounded-lg border bg-card text-card-foreground shadow-xs px-6 pb-16">
 								<h3 className="text-lg font-semibold mt-4 mb-2">Live Games</h3>
 								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 									{liveGames.map((game: OutgoingMatch) => (

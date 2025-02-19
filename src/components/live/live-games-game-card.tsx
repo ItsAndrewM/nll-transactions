@@ -129,7 +129,7 @@ export default function LiveGamesGameCard({ game }: { game: OutgoingMatch }) {
 			</CardContent>
 			<Link
 				href={`/games/${id}`}
-				className="absolute inset-0 z-[1] cursor-pointer"
+				className="absolute inset-0 z-1 cursor-pointer"
 				aria-label={`New tab link to ${squads.away.displayName} vs ${squads.home.displayName}`}
 				prefetch
 			/>

@@ -13,7 +13,7 @@ export default function MobileMenu() {
 						</div>
 						<Link
 							href="/transactions"
-							className="absolute inset-0 z-[1]"
+							className="absolute inset-0 z-1"
 							prefetch
 							aria-label="Go to Transactions"
 						/>
@@ -25,7 +25,7 @@ export default function MobileMenu() {
 						</div>
 						<Link
 							href="/schedule"
-							className="absolute inset-0 z-[1]"
+							className="absolute inset-0 z-1"
 							prefetch
 							aria-label="Go to Schedule"
 						/>
@@ -37,7 +37,7 @@ export default function MobileMenu() {
 						</div>
 						<Link
 							href="/standings"
-							className="absolute inset-0 z-[1]"
+							className="absolute inset-0 z-1"
 							prefetch
 							aria-label="Go to Standings"
 						/>

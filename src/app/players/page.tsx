@@ -65,7 +65,7 @@ export default async function Page() {
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
 
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
+			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-xs ">
 				<h1 className="text-3xl font-bold text-center p-8 flex justify-center items-center gap-2">
 					<HugeiconsIcon icon={UserIcon} size={30} strokeWidth={0.5} />
 					Players
@@ -91,14 +91,14 @@ export default async function Page() {
 					</TabsList>
 				</div>
 				<TabsContent value="player" className="space-y-4">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8 pb-16">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-xs p-8 pb-16">
 						<Suspense fallback={<div>Loading...</div>}>
 							<PlayerCardContainer players={players} total={total} />
 						</Suspense>
 					</div>
 				</TabsContent>
 				<TabsContent value="roster">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8 pb-16">
+					<div className="rounded-lg border bg-card text-card-foreground shadow-xs p-8 pb-16">
 						<StatsDataTable
 							data={players}
 							columns={allPlayersColumns}

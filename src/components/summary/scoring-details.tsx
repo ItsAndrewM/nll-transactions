@@ -64,7 +64,7 @@ export function ScoringDetails({ scoring }: ScoringDetailsProps) {
 																	{goal.awayScore} - {goal.homeScore}
 																</span>
 																{goal.powerPlay ? (
-																	<Badge className="flex-shrink-0">PP</Badge>
+																	<Badge className="shrink-0">PP</Badge>
 																) : null}
 															</TableCell>
 															<TableCell className="min-w-0">

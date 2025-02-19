@@ -92,7 +92,7 @@ export default function LiveGameCard({
 				<Link
 					href={`/games/${currentMatch.id}`}
 					target="_blank"
-					className="absolute inset-0 z-[1] cursor-pointer"
+					className="absolute inset-0 z-1 cursor-pointer"
 					aria-label={`New tab link to ${currentMatch.squads.away.displayName} vs ${currentMatch.squads.home.displayName}`}
 				/>
 			</div>

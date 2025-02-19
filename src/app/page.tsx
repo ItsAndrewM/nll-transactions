@@ -1,3 +1,4 @@
+import { ScheduleSelectedTeam } from "@/components/schedule-selected-team";
 import ScheduleList from "@/components/scheduled/schedule-list";
 import ScheduleNext from "@/components/scheduled/schedule-next";
 import { SelectTeams } from "@/components/select-team";
@@ -45,8 +46,7 @@ export default async function Home(props: {
 	const order =
 		typeof searchParams.order === "string" ? searchParams.order : "dsc";
 	const team = typeof searchParams.team === "string" ? searchParams.team : "";
-	const selected =
-		typeof searchParams.selected === "string" ? searchParams.selected : "";
+	const selected = searchParams?.selected || "";
 
 	const {
 		data: allTransactions,
@@ -54,17 +54,13 @@ export default async function Home(props: {
 		schedule,
 		standings,
 	} = await getFrontPage(order, team);
+	console.log("selected", !selected);
 	return (
 		<>
 			<div className="w-full h-full flex max-h-screen overflow-y-hidden">
 				<div className="w-full hidden md:grid border-red-50 grid-cols-2 lg:grid-cols-3">
 					<div className="px-8 py-4 flex flex-col gap-4">
-						{selected ? (
-							<>
-								<SelectedTitle standings={standings} />
-								<ScheduleNext schedule={schedule} standings={standings} />
-							</>
-						) : null}
+						<ScheduleSelectedTeam standings={standings} schedule={schedule} />
 						<Suspense fallback={<ScheduleLoading />}>
 							<SelectTeams teams={teamsList} />
 						</Suspense>

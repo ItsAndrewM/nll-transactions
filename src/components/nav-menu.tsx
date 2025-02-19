@@ -194,7 +194,7 @@ export function NavMenu() {
 					<SheetTrigger asChild className="flex items-center ">
 						<Button
 							variant="secondary"
-							className="hover:text-card-foreground bg-card"
+							className="hover:text-card-foreground bg-card hover:cursor-pointer"
 						>
 							<Menu />
 						</Button>
@@ -249,7 +249,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/transactions"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to Transactions"
 										/>
@@ -267,7 +267,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/schedule"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to Schedule"
 										/>
@@ -285,7 +285,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/standings"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to Standings"
 										/>
@@ -303,7 +303,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/games"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to Games"
 										/>
@@ -317,7 +317,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/stats"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to stats"
 										/>
@@ -335,7 +335,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/teams"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to stats"
 										/>
@@ -353,7 +353,7 @@ export function NavMenu() {
 									<SheetClose asChild>
 										<Link
 											href="/players"
-											className="absolute inset-0 z-[1]"
+											className="absolute inset-0 z-1"
 											prefetch
 											aria-label="Go to stats"
 										/>
@@ -377,7 +377,7 @@ export function NavMenu() {
 									</div>
 									<Link
 										href={shareToFacebook(location)}
-										className="absolute inset-0 z-[1]"
+										className="absolute inset-0 z-1"
 										prefetch
 										aria-label="Share to Facebook"
 									/>
@@ -395,7 +395,7 @@ export function NavMenu() {
 									</div>
 									<Link
 										href={shareToX(location)}
-										className="absolute inset-0 z-[1]"
+										className="absolute inset-0 z-1"
 										prefetch
 										aria-label="Share to X"
 									/>
@@ -413,7 +413,7 @@ export function NavMenu() {
 									</div>
 									<Button
 										variant={"link"}
-										className="absolute inset-0 z-[1]"
+										className="absolute inset-0 z-1"
 										aria-label="Share to Instagram"
 										onClick={handleInstagramShare}
 									/>

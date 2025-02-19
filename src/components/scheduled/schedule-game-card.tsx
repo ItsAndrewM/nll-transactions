@@ -98,7 +98,7 @@ export default function ScheduleGameCard({
 			)}
 			<Link
 				href={`/games/${match.id}`}
-				className="absolute inset-0 z-[1] cursor-pointer"
+				className="absolute inset-0 z-1 cursor-pointer"
 				aria-label={`New tab link to ${match.squads.away.displayName} vs ${match.squads.home.displayName}`}
 				prefetch
 			/>

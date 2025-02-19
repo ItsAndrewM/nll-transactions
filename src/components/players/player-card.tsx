@@ -13,7 +13,7 @@ export function PlayerCard({ player }: { player: Player }) {
 
 	return (
 		<Link href={`/players/${player.id}`} prefetch>
-			<div className="group relative aspect-[3/4] overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-xl">
+			<div className="group relative aspect-3/4 overflow-hidden rounded-lg bg-white shadow-md transition-all hover:shadow-xl">
 				<div
 					className={cn(
 						player.team_code === "CGY" ? "text-black" : "text-white",
@@ -39,7 +39,7 @@ export function PlayerCard({ player }: { player: Player }) {
 					<div
 						className={cn(
 							`to-black/80`,
-							"absolute inset-0 bg-gradient-to-b from-transparent via-transparent"
+							"absolute inset-0 bg-linear-to-b from-transparent via-transparent"
 						)}
 					/>
 				</div>
@@ -63,7 +63,7 @@ export function PlayerCard({ player }: { player: Player }) {
 					<div className="w-full flex justify-center items-center">
 						<Badge
 							variant="outline"
-							className="mt-1 text-sm font-semibold tracking-wider text-white/80 border-none backdrop-blur-sm"
+							className="mt-1 text-sm font-semibold tracking-wider text-white/80 border-none backdrop-blur-xs"
 						>
 							{getPosition(player.position)}
 						</Badge>

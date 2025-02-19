@@ -11,7 +11,11 @@ export const preload = (id: string) => {
 
 export const getGames = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch games");
 		}
@@ -25,7 +29,11 @@ export const getGames = async () => {
 
 export const getGame = async (id: string) => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games/${id}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games/${id}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch game");
 		}
@@ -39,7 +47,11 @@ export const getGame = async (id: string) => {
 
 export const getGameIds = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games/list`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/games/list`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch game ids");
 		}

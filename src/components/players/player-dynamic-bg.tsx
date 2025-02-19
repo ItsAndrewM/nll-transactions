@@ -51,7 +51,7 @@ export const DynamicBackground = ({ player }: { player: Player }) => {
 							/>
 						</stop>
 					</linearGradient>
-					<filter id="blur">
+					<filter id="blur-sm">
 						<feGaussianBlur in="SourceGraphic" stdDeviation="1" />
 					</filter>
 				</defs>
@@ -75,7 +75,7 @@ export const DynamicBackground = ({ player }: { player: Player }) => {
 								stroke={i % 2 ? primaryColor : secondaryColor}
 								strokeWidth="1"
 								strokeOpacity="0.2"
-								filter="url(#blur)"
+								filter="url(#blur-sm)"
 							>
 								<animate
 									attributeName="r"

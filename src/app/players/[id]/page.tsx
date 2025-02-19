@@ -102,7 +102,7 @@ export default async function Page(props: { params: Params }) {
 
 			{/* Social Media Links */}
 			<PlayerSocials player={player} />
-			<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex-col flex gap-4">
+			<div className="rounded-lg border bg-card text-card-foreground shadow-xs p-6 flex-col flex gap-4">
 				<h3 className="text-xl font-semibold ">
 					2024-25 {position === "G" ? "Goalie" : "Player"} Stats
 				</h3>
