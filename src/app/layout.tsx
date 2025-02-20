@@ -57,7 +57,7 @@ export default function RootLayout({
 				{/* <!-- Preconnect --> */}
 				<link
 					rel="preconnect"
-					href="https://nll-transactions-server.fly.dev/api"
+					href="https://nll-transactions-server.onrender.com/api"
 					crossOrigin="anonymous"
 				/>
 
@@ -76,7 +76,7 @@ export default function RootLayout({
 				<meta property="og:site_name" content="https://nlltracker.com"></meta>
 				<meta property="twitter:card" content="summary" />
 				<meta property="twitter:url" content="https://nlltracker.com" />
-				<meta property="twitter:title" content="@andamonium_dev" />
+				<meta property="twitter:title" content="@nlltracker" />
 				<meta
 					property="twitter:description"
 					content="NLL Transactions, Stats & Updates"

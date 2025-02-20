@@ -139,5 +139,13 @@ export function PreloadResources() {
 			fetchPriority: "high",
 		}
 	);
+	ReactDOM.preload(
+		"https://www.sealslax.com/_nuxt/img/seals_team_lax.018584e.webp",
+		{
+			as: "image",
+			type: "image/jpeg",
+			fetchPriority: "high",
+		}
+	);
 	return null;
 }

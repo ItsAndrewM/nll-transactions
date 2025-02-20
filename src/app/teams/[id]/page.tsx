@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 			title,
 			description,
 			images: [team.team_logo.url],
-			site: "@andamonium_dev",
+			site: "@NLLTracker",
 			creator: "@andamonium_dev",
 		},
 		robots: {
