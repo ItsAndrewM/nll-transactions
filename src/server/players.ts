@@ -8,7 +8,11 @@ export const preload = (id: string) => {
 
 export async function getAllPlayers() {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/players`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/players`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch players");
 		}
@@ -22,7 +26,11 @@ export async function getAllPlayers() {
 
 export async function getPlayer(id: string) {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/players/${id}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/players/${id}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch player");
 		}

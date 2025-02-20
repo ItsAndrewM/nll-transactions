@@ -13,7 +13,11 @@ export const preload = (id: string) => {
 
 export const getStats = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch stats");
 		}
@@ -28,7 +32,12 @@ export const getStats = async () => {
 export const getPlayerStats = async (playerId: string) => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/stats/players/${playerId}`
+			`${env.NEXT_PUBLIC_API_URL}/stats/players/${playerId}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch stats");
@@ -43,7 +52,11 @@ export const getPlayerStats = async (playerId: string) => {
 
 export const getGoalieStats = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats/goalies`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/stats/goalies`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch goalies");
 		}
@@ -58,7 +71,12 @@ export const getGoalieStats = async () => {
 export const getHistoricalStats = async (fullname: string) => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/stats/historical/${fullname}`
+			`${env.NEXT_PUBLIC_API_URL}/stats/historical/${fullname}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch historical stats");

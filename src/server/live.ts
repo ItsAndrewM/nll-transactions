@@ -8,7 +8,11 @@ export const preload = (id: string) => {
 
 export async function getRecrawlById(id: string) {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/live/${id}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/live/${id}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch game");
 		}

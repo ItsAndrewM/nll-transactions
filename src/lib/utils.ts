@@ -1,3 +1,4 @@
+import { env } from "@/env";
 import { OutgoingMatch } from "@/types/schedule";
 import { Standing } from "@/types/standings";
 import { clsx, type ClassValue } from "clsx";
@@ -247,7 +248,11 @@ export function convertESTtoLocal(estTime: string): string {
 
 export const liveGameFetcher = async (url: string) => {
 	try {
-		const res = await fetch(url);
+		const res = await fetch(url, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!res.ok) throw new Error("Failed to fetch game data");
 		const data = await res.json();
 		if (!data.success) throw new Error("Failed to fetch game data");
@@ -260,7 +265,11 @@ export const liveGameFetcher = async (url: string) => {
 
 export const recrawledFetcher = async (url: string) => {
 	try {
-		const res = await fetch(url);
+		const res = await fetch(url, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!res.ok) throw new Error("Failed to fetch game data");
 		const data = await res.json();
 		if (!data.success) throw new Error("Failed to fetch game data");

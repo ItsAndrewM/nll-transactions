@@ -7,7 +7,11 @@ export const preload = () => {
 
 export const getStandings = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/standings`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/standings`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch standings");
 		}

@@ -8,7 +8,11 @@ export const preload = (id: string) => {
 
 export const getSchedule = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch schedule");
 		}
@@ -25,7 +29,11 @@ export const getSchedule = async () => {
 
 export const getScheduleGameById = async (id: string) => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule/${id}`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule/${id}`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch schedule");
 		}

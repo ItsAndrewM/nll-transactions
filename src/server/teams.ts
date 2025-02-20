@@ -21,7 +21,11 @@ export const getAllTeamsTransactions = async () => {
 
 export const getListOfTeams = async () => {
 	try {
-		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/teams/list`);
+		const response = await fetch(`${env.NEXT_PUBLIC_API_URL}/teams/list`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
 		if (!response.ok) {
 			throw new Error("Failed to fetch teams");
 		}
@@ -36,7 +40,12 @@ export const getListOfTeams = async () => {
 export const getTeamTransactions = async (teamName: string) => {
 	try {
 		const response = await fetch(
-			`${env.NEXT_PUBLIC_API_URL}/teams/${teamName}`
+			`${env.NEXT_PUBLIC_API_URL}/teams/${teamName}`,
+			{
+				headers: {
+					"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				},
+			}
 		);
 		if (!response.ok) {
 			throw new Error("Failed to fetch teams");

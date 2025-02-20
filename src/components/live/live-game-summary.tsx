@@ -33,7 +33,6 @@ export default function LiveGameSummary({
 		}
 	);
 
-	console.log(liveMatch?.status?.typeName);
 	// trigger recrawl depending on status
 	const { data: recrawledData, isLoading: isRecrawlLoading } = useSWR<GameData>(
 		`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`,
@@ -44,8 +43,6 @@ export default function LiveGameSummary({
 			revalidateOnFocus: true,
 		}
 	);
-
-	console.log(`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`);
 
 	if (isLiveLoading || isRecrawlLoading) {
 		return <div>Loading...</div>;
