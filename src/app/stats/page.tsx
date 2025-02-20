@@ -9,7 +9,7 @@ import { AndaHeader } from "@/components/anda-header";
 import { allGoalieColumns } from "@/components/data-table/all-goalie-columns";
 import { getStandings } from "@/server/standings";
 import Standings from "@/components/standings/standings";
-import { ChartBarBigIcon } from "lucide-react";
+import { teamsColumns } from "@/components/data-table/teams-columns";
 
 export const metadata: Metadata = {
 	title: "NLL Stats | Player and Goalie Statistics | NLL Tracker by andamonium",
@@ -68,12 +68,14 @@ export default async function StatsPage() {
 	return (
 		<div className="container mx-auto px-4 py-8 pb-20 flex flex-col gap-8">
 			<AndaHeader />
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
-				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
-					<ChartBarBigIcon size={40} />
+			<h2
+				className="uppercase text-4xl font-bold md:text-left text-center w-full"
+				id="standings"
+			>
+				<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
 					Player Stats
-				</h1>
-			</div>
+				</span>
+			</h2>
 
 			<Tabs defaultValue="stats" className="space-y-4 ">
 				<TabsList>
@@ -82,7 +84,11 @@ export default async function StatsPage() {
 				</TabsList>
 				<TabsContent value="stats" className="space-y-4">
 					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-						<h3 className="text-xl font-semibold mt-4 mb-2">All Positions</h3>
+						<h3 className="text-xl font-semibold mt-4 mb-2">
+							<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+								All Positions
+							</span>
+						</h3>
 						<div>
 							<StatsDataTable
 								data={allStats.players}
@@ -93,7 +99,11 @@ export default async function StatsPage() {
 						</div>
 					</div>
 					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-						<h3 className="text-xl font-semibold mt-4 mb-2">Goalies</h3>
+						<h3 className="text-xl font-semibold mt-4 mb-2">
+							<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+								Goalies
+							</span>
+						</h3>
 						<div>
 							<StatsDataTable
 								data={goalieStats}
@@ -114,7 +124,32 @@ export default async function StatsPage() {
 					</div>
 				</TabsContent>
 			</Tabs>
-			<Standings standings={standings} />
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div className="flex flex-col gap-4 justify-start w-full">
+					{" "}
+					<h3 className="text-xl font-semibold mt-4 mb-2">
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							Standings
+						</span>
+					</h3>
+					<Standings standings={standings} />
+				</div>
+				<div className="flex flex-col gap-4 justify-start w-full">
+					<h3 className="text-xl font-semibold mt-4 mb-2">
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							Team Stats
+						</span>
+					</h3>
+					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex flex-col gap-4">
+						<StatsDataTable
+							columns={teamsColumns}
+							data={standings}
+							defaultSort="position"
+							defaultSortDirection="asc"
+						/>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }

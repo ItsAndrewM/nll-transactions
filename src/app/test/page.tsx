@@ -1,25 +1,45 @@
+import { StatsDataTable } from "@/components/data-table/stats-data-table";
+import { teamsColumns } from "@/components/data-table/teams-columns";
+import ScheduleTabsViewList from "@/components/scheduled/schedule-tabs-view-list";
+import { TransactionsFrontPage } from "@/components/transactions/transactions-front-page";
 import { Button } from "@/components/ui/button";
+import { getFrontPage } from "@/server/front-page";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Test() {
+export const revalidate = 3600;
+
+type Params = Promise<{ slug: string }>;
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
+
+export default async function Test(props: {
+	params: Params;
+	searchParams: SearchParams;
+}) {
+	const searchParams = await props.searchParams;
+	const order =
+		typeof searchParams.order === "string" ? searchParams.order : "dsc";
+	const team = typeof searchParams.team === "string" ? searchParams.team : "";
+
+	const {
+		data: allTransactions,
+		schedule,
+		standings,
+	} = await getFrontPage(order, team);
 	return (
 		<main className="w-full mx-auto flex flex-col">
 			<section className="relative h-screen md:h-[85vh] w-full md:px-4 md:py-16 sm:px-6 lg:px-8 mx-auto">
 				<div
-					className="absolute inset-0 bg-cover bg-center bg-no-repeat contrast-[.75] "
+					className="absolute inset-0 bg-cover bg-center bg-no-repeat contrast-[.75] brightness-[.8]"
 					style={{
 						backgroundImage: `url('https://www.sealslax.com/_nuxt/img/seals_team_lax.018584e.webp')`,
 					}}
 				></div>
-				<div className="relative flex h-full flex-col items-center justify-center px-4 text-center text-cream">
-					<h1 className="mb-6 text-4xl font-bold tracking-wider sm:text-5xl md:text-6xl lg:text-7xl"></h1>
-					{/* <p className="mx-auto mb-8 max-w-3xl text-base sm:text-lg md:text-xl lg:text-2xl"></p> */}
-
+				<div className="relative flex h-full flex-col items-center justify-center px-4 text-center">
 					<div className="flex justify-between items-center mb-8 px-6">
 						<div className="flex items-center gap-4">
-							<div className="flex flex-col items-center gap-6">
-								<div className="flex items-center gap-4">
+							<div className="hidden md:flex flex-col items-center gap-6">
+								<div className="flex items-center gap-4 ">
 									<Link
 										href={"/"}
 										className="hover:scale-105 transition-all duration-300 ease-in-out text-foreground"
@@ -59,7 +79,7 @@ export default function Test() {
 									</Link>
 									<Link
 										href={"https://andamonium.dev"}
-										className=" hover:text-slate-500 transition-colors duration-300 ease-in-out font-semibold"
+										className=" hover:text-slate-500 transition-colors duration-300 ease-in-out font-semibold text-card"
 									>
 										<p className="text-lg ">by andamonium</p>
 									</Link>
@@ -67,44 +87,57 @@ export default function Test() {
 							</div>
 						</div>
 					</div>
-					{/* Play Button */}
-					{/* <button
-					className="mb-8 rounded-full border-2 border-white p-4 transition-transform hover:scale-110"
-					aria-label="Play video"
-				>
-					<Play className="h-8 w-8 md:h-12 md:w-12" />
-				</button> */}
-
+					<h3 className="mb-6 text-2xl font-bold tracking-wider lg:text-3xl text-card">
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							NLL Transactions, Stats & Updates
+						</span>
+					</h3>
+					<p className="mx-auto mb-8 max-w-3xl text-base sm:text-lg md:text-xl text-card font-medium">
+						Stay up-to-date with the latest National Lacrosse League news,
+						player movements, and game schedules.
+					</p>
 					<div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
-						<Button asChild>
-							<Link href={"#"}>Button</Link>
+						<Button asChild className="hover:bg-[#a2451f] hover:text-white">
+							<Link href="/test#transactions">View Transactions</Link>
 						</Button>
-						<Button asChild variant="secondary">
-							<Link href={"#"}>Button</Link>
+						<Button asChild variant="secondary" className="hover:bg-card">
+							<Link href="/test#schedule">Check Schedule</Link>
 						</Button>
 					</div>
 				</div>
 			</section>
-			<section className="relative max-w-3xl w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto">
-				<div className="relative">
-					<p
-						className="absolute -top-1.5 -left-1.5 -z-10 text-black text-8xl"
-						style={{
-							WebkitTextStroke: "2px #FF29ED",
-						}}
-					>
-						{"Andrew"}
-					</p>
-
-					{/* Main text */}
-					<p className={`text-white text-8xl font-bold `}>{"Andrew"}</p>
+			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8">
+				<TransactionsFrontPage transactions={allTransactions} />
+			</section>
+			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 ">
+				<h2
+					className="uppercase text-4xl font-bold md:text-left text-center"
+					id="schedule"
+				>
+					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+						Schedule
+					</span>
+				</h2>
+				<ScheduleTabsViewList schedule={schedule} standings={standings} />
+			</section>
+			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 pb-20">
+				<h2
+					className="uppercase text-4xl font-bold md:text-left text-center"
+					id="standings"
+				>
+					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+						Standings
+					</span>
+				</h2>
+				{/* <Standings standings={standings} /> */}
+				<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex flex-col gap-4">
+					<StatsDataTable
+						columns={teamsColumns}
+						data={standings}
+						defaultSort="position"
+						defaultSortDirection="asc"
+					/>
 				</div>
-			</section>
-			<section className="relative max-w-3xl w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto">
-				This is another section
-			</section>
-			<section className="relative max-w-3xl w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto">
-				This is another section
 			</section>
 		</main>
 	);

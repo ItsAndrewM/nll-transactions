@@ -1,10 +1,11 @@
 import { AndaHeader } from "@/components/anda-header";
-import TransactionsPage from "@/components/transactions/transactions-page";
-import { getStandings } from "@/server/standings";
-import { getListOfTeams } from "@/server/teams";
+import { TransactionsPage } from "@/components/transactions/transactions-page";
 import { getAllTransactions } from "@/server/transactions";
 import { Suspense } from "react";
-import { TransactionsLoading } from "../page";
+import { getStandings } from "@/server/standings";
+import Standings from "@/components/standings/standings";
+import { TransactionsLoading } from "@/components/transactions/transactions-loading";
+import { StandingsLoading } from "@/components/standings/standings-loading";
 // import { TransactionIcon } from "@hugeicons/core-free-icons";
 // import { HugeiconsIcon } from "@hugeicons/react";
 
@@ -21,27 +22,32 @@ export default async function Page(props: {
 	const order =
 		typeof searchParams.order === "string" ? searchParams.order : "dsc";
 	const team = typeof searchParams.team === "string" ? searchParams.team : "";
-	const [teamsList, allTransactions, standings] = await Promise.all([
-		getListOfTeams(),
+	const [allTransactions, standings] = await Promise.all([
 		getAllTransactions(order, team),
 		getStandings(),
 	]);
+
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20 flex flex-col">
+		<div className="mx-auto px-4 py-8 pb-20 flex flex-col items-center">
 			<AndaHeader />
-			{/* <div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
-				<h1 className="text-3xl font-bold text-center p-8 flex items-center justify-center gap-2">
-					<HugeiconsIcon icon={TransactionIcon} size={20} strokeWidth={0.5} />
-					Transactions
-				</h1>
-			</div> */}
-			<Suspense fallback={<TransactionsLoading />}>
-				<TransactionsPage
-					teamsList={teamsList}
-					allTransactions={allTransactions}
-					standings={standings}
-				/>
-			</Suspense>
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<Suspense fallback={<TransactionsLoading />}>
+					<TransactionsPage transactions={allTransactions} />
+				</Suspense>
+				<div className="flex flex-col gap-4 items-center justify-start w-full">
+					<h2
+						className="uppercase text-4xl font-bold md:text-left text-center w-full md:ml-16"
+						id="transactions"
+					>
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							Standings
+						</span>
+					</h2>
+					<Suspense fallback={<StandingsLoading />}>
+						<Standings standings={standings} />
+					</Suspense>
+				</div>
+			</div>
 		</div>
 	);
 }

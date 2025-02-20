@@ -1,4 +1,6 @@
 import { AndaHeader } from "@/components/anda-header";
+import { StatsDataTable } from "@/components/data-table/stats-data-table";
+import { teamsColumns } from "@/components/data-table/teams-columns";
 import Standings from "@/components/standings/standings";
 import { getStandings } from "@/server/standings";
 import { Metadata } from "next";
@@ -51,12 +53,41 @@ export const revalidate = 3600;
 export default async function Page() {
 	const standings = await getStandings();
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-3xl pb-20 flex flex-col gap-8">
+		<div className="mx-auto px-4 py-8 pb-20 flex flex-col gap-4 items-center">
 			<AndaHeader />
-			{/* <div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
-				<h1 className="text-3xl font-bold text-center p-8">Standings</h1>
-			</div> */}
-			<Standings standings={standings} />
+
+			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+				<div className="flex flex-col gap-4 justify-start w-full">
+					{" "}
+					<h2
+						className="uppercase text-4xl font-bold md:text-left text-center w-full px-6"
+						id="standings"
+					>
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							Standings
+						</span>
+					</h2>
+					<Standings standings={standings} />
+				</div>
+				<div className="flex flex-col gap-4 justify-start w-full">
+					<h2
+						className="uppercase text-4xl font-bold md:text-left text-center w-full "
+						id="standings"
+					>
+						<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+							Team Stats
+						</span>
+					</h2>
+					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex flex-col gap-4">
+						<StatsDataTable
+							columns={teamsColumns}
+							data={standings}
+							defaultSort="position"
+							defaultSortDirection="asc"
+						/>
+					</div>
+				</div>
+			</div>
 		</div>
 	);
 }

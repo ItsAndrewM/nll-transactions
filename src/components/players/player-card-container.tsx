@@ -62,7 +62,11 @@ export function PlayerCardContainer({
 
 	return (
 		<div className="flex flex-col w-full gap-6">
-			<h3 className="text-lg font-semibold mt-4 mb-2">Player View</h3>
+			<h3 className="text-lg font-semibold mt-4 mb-2">
+				<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+					Player View
+				</span>{" "}
+			</h3>
 			<div className="flex items-center gap-2">
 				<Select
 					onValueChange={(value) =>

@@ -7,8 +7,6 @@ import { Suspense } from "react";
 import { Metadata } from "next";
 import { StatsDataTable } from "@/components/data-table/stats-data-table";
 import { allPlayersColumns } from "@/components/data-table/all-players-columns";
-import { HugeiconsIcon } from "@hugeicons/react";
-import { UserIcon } from "@hugeicons/core-free-icons";
 
 export const metadata: Metadata = {
 	title:
@@ -65,12 +63,11 @@ export default async function Page() {
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
 
-			<div className="max-w-md w-full mx-auto rounded-lg border bg-card text-card-foreground shadow-sm ">
-				<h1 className="text-3xl font-bold text-center p-8 flex justify-center items-center gap-2">
-					<HugeiconsIcon icon={UserIcon} size={30} strokeWidth={0.5} />
+			<h1 className="text-3xl font-bold text-center md:text-left gap-2">
+				<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
 					Players
-				</h1>
-			</div>
+				</span>
+			</h1>
 
 			<Tabs defaultValue="player" className="space-y-4">
 				<div className="w-full flex justify-center md:justify-start items-center">
@@ -99,6 +96,11 @@ export default async function Page() {
 				</TabsContent>
 				<TabsContent value="roster">
 					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-8 pb-16">
+						<h3 className="text-lg font-semibold mt-4 mb-2">
+							<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+								Roster View
+							</span>{" "}
+						</h3>
 						<StatsDataTable
 							data={players}
 							columns={allPlayersColumns}

@@ -1,4 +1,5 @@
 import { AndaHeader } from "@/components/anda-header";
+import { ScheduleLoading } from "@/components/scheduled/schedule-loading";
 import SchedulePage from "@/components/scheduled/schedule-page";
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
@@ -8,7 +9,6 @@ import { getListOfTeams } from "@/server/teams";
 
 import { Metadata } from "next";
 import { Suspense } from "react";
-import { ScheduleLoading } from "../page";
 
 export const metadata: Metadata = {
 	title:

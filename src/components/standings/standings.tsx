@@ -12,7 +12,7 @@ export default function Standings({ standings }: { standings: Standing[] }) {
 	const pathname = usePathname();
 	const isHomePage =
 		!pathname.includes("standings") && !pathname.includes("stats")
-			? "bg-background border-none"
+			? "bg-card"
 			: "bg-card";
 	return (
 		<Card

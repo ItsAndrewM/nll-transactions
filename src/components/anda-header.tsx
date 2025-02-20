@@ -22,7 +22,12 @@ export function AndaHeader() {
 						href={"/"}
 						className="hover:text-slate-500 transition-colors duration-300 ease-in-out text-foreground"
 					>
-						<h1 className="text-4xl font-bold ">NLL Tracker</h1>
+						<h1 className="text-4xl font-bold ">
+							{" "}
+							<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+								NLL Tracker
+							</span>
+						</h1>
 					</Link>
 					<Link
 						href={"https://andamonium.dev"}

@@ -208,7 +208,9 @@ export function NavMenu() {
 											href={"/"}
 											className="hover:text-slate-500 transition-colors duration-300 ease-in-out"
 										>
-											<span>NLLTracker.com</span>{" "}
+											<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+												NLLTracker.com
+											</span>{" "}
 										</Link>
 									</SheetClose>
 									<Link

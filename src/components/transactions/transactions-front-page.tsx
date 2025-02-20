@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowUpCircle, Calendar } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,14 +13,27 @@ import { TransactionsFrontPageSelect } from "./transactions-front-page-select";
 import Link from "next/link";
 import { filterTransactionsByTeam, searchTransactions } from "@/lib/utils";
 import { usePathname, useSearchParams } from "next/navigation";
+import { useRef } from "react";
 
-export function TransactionsPage({
+export function TransactionsFrontPage({
 	transactions,
 }: {
 	transactions: Transactions;
 }) {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
+
+	const scrollContainerRef = useRef<HTMLDivElement | null>(null);
+
+	const scrollToTop = () => {
+		const scrollArea = scrollContainerRef.current;
+		if (scrollArea) {
+			const viewport = scrollArea.querySelector(
+				"[data-radix-scroll-area-viewport]"
+			);
+			viewport?.scrollTo({ top: 0, behavior: "smooth" });
+		}
+	};
 
 	const selected = searchParams.get("selected") || "";
 
@@ -52,9 +66,12 @@ export function TransactionsPage({
 	};
 
 	return (
-		<div className="flex flex-col gap-4">
+		<>
 			<TransactionsFrontPageSelect />
-			<div className="rounded-lg border p-4 relative py-6 bg-card ">
+			<ScrollArea
+				className="h-[600px] rounded-lg border bg-white p-4 relative py-6 bg-card"
+				ref={scrollContainerRef}
+			>
 				<div className="flex flex-col gap-6">
 					{Object.keys(content)
 						.slice(0, Number(offset))
@@ -115,16 +132,16 @@ export function TransactionsPage({
 						{totalEntries} entries
 					</div>
 				</div>
-			</div>
+			</ScrollArea>
 			<Button
 				variant="outline"
 				size="sm"
 				className="mx-auto flex items-center gap-2"
-				onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+				onClick={scrollToTop}
 			>
 				<ArrowUpCircle className="h-4 w-4" />
 				Back to Top
 			</Button>
-		</div>
+		</>
 	);
 }
