@@ -137,7 +137,7 @@ export default async function Page(props: { params: Params }) {
 	const { typeName: liveTypeName } = liveStatus || {};
 	// const fakeStatus = "live"
 
-	if (liveTypeName?.toLowerCase() === "live") {
+	if (liveTypeName?.toLowerCase() === "live" && game) {
 		return (
 			<div className="container mx-auto py-10">
 				<AndaHeader />

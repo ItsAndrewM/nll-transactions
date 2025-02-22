@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { AndaHeader } from "@/components/anda-header";
 import { ScheduleTabsViewListCard } from "@/components/scheduled/schedule-tabs-view-list-card";
 import { getStandings } from "@/server/standings";
-import LiveGamesGameCard from "@/components/live/live-games-game-card";
+import { LiveGridList } from "@/components/live/live-grid-list";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -164,14 +164,7 @@ export default async function Page() {
 						</h3>
 						{liveGames.length > 0 ? (
 							<>
-								<h3 className="text-lg font-semibold mt-4 mb-2">
-									Live <LiveIndicator />
-								</h3>
-								<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-									{liveGames.map((game: OutgoingMatch) => (
-										<LiveGamesGameCard game={game} key={game.id} />
-									))}
-								</div>
+								<LiveGridList standings={standings} fallBackData={liveGames} />
 								<Separator className="my-4" />
 							</>
 						) : null}
@@ -189,16 +182,7 @@ export default async function Page() {
 				{liveGames.length > 0 ? (
 					<TabsContent value="live">
 						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-							<h3 className="text-lg font-semibold mt-4 mb-2 md:text-left text-center">
-								<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
-									Live Games
-								</span>
-							</h3>
-							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-								{liveGames.map((game: OutgoingMatch) => (
-									<LiveGamesGameCard game={game} key={game.id} />
-								))}
-							</div>
+							<LiveGridList standings={standings} fallBackData={liveGames} />
 						</div>
 					</TabsContent>
 				) : null}

@@ -23,18 +23,18 @@ export default function LiveGameSummary({
 	liveGame: OutgoingMatch;
 	teams: { home: Standing; away: Standing };
 }) {
-	const { data: liveMatch, isLoading: isLiveLoading } = useSWR<OutgoingMatch>(
-		`${env.NEXT_PUBLIC_API_URL}/schedule/${gameData.id}`,
+	const { data: liveMatch } = useSWR<OutgoingMatch>(
+		`${env.NEXT_PUBLIC_API_URL}/schedule/${gameData?.id}`,
 		liveGameFetcher,
 		{
-			refreshInterval: 5000, // Refresh every 10 seconds
+			refreshInterval: 5000, // Refresh every 5 seconds
 			fallbackData: liveGame,
 			revalidateOnFocus: true,
 		}
 	);
 
 	// trigger recrawl depending on status
-	const { data: recrawledData, isLoading: isRecrawlLoading } = useSWR<GameData>(
+	const { data: recrawledData } = useSWR<GameData>(
 		`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`,
 		recrawledFetcher,
 		{
@@ -44,11 +44,7 @@ export default function LiveGameSummary({
 		}
 	);
 
-	if (isLiveLoading || isRecrawlLoading) {
-		return <div>Loading...</div>;
-	}
-
-	const liveBoxscore = recrawledData as unknown as LiveGameData;
+	const liveBoxscore = (recrawledData as unknown as LiveGameData) || {};
 
 	console.log("liveBoxscore", liveBoxscore);
 
@@ -67,22 +63,28 @@ export default function LiveGameSummary({
 	return (
 		<div className="container mx-auto px-4 py-8">
 			<LiveGameHeader gameInfo={currentMatch} teams={teams} />
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-				{box_score ? (
-					<BoxScore boxScore={box_score} gameInfo={game_info} />
-				) : null}
-				{team_stats && "fo" in team_stats?.home && "fo" in team_stats?.away && (
-					<TeamStats
-						home={team_stats.home as TeamStatsType}
-						away={team_stats.away as TeamStatsType}
-						gameInfo={game_info}
-					/>
-				)}
-			</div>
-			<ScoringDetails scoring={scoring} />
-			<PenaltySummary penalties={penalties} />
-			<PlayerStats playerStats={player_stats} />
-			<GameLeaders gameLeaders={game_leaders} />
+			{!liveBoxscore ? null : (
+				<>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+						{box_score ? (
+							<BoxScore boxScore={box_score} gameInfo={game_info} />
+						) : null}
+						{team_stats &&
+						"fo" in team_stats?.home &&
+						"fo" in team_stats?.away ? (
+							<TeamStats
+								home={team_stats.home as TeamStatsType}
+								away={team_stats.away as TeamStatsType}
+								gameInfo={game_info}
+							/>
+						) : null}
+					</div>
+					<ScoringDetails scoring={scoring} />
+					<PenaltySummary penalties={penalties} />
+					<PlayerStats playerStats={player_stats} />
+					<GameLeaders gameLeaders={game_leaders} />
+				</>
+			)}
 		</div>
 	);
 }

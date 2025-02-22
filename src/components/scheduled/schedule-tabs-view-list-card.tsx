@@ -15,7 +15,7 @@ export function ScheduleTabsViewListCard({
 }) {
 	const { squads, date: matchDate, status, id, venue } = game || {};
 	const { away: awayTeam, home: homeTeam } = squads || {};
-	const { name } = status || {};
+	const { name, typeName } = status || {};
 	const { startDate, utcMatchStart } = matchDate || {};
 	const awayLogo = imageUrls.find(
 		(img) => img.name === awayTeam.displayName
@@ -81,7 +81,7 @@ export function ScheduleTabsViewListCard({
 							</span>
 						) : null}
 					</div>
-					{name === "Complete" ? (
+					{name === "Complete" || typeName === "Live" ? (
 						<div className="flex items-center gap-2 text-xl font-bold">
 							<div
 								className={cn(

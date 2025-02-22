@@ -263,6 +263,25 @@ export const liveGameFetcher = async (url: string) => {
 	}
 };
 
+export const liveGamesFetcher = async () => {
+	try {
+		const res = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule`, {
+			headers: {
+				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+			},
+		});
+		if (!res.ok) throw new Error("Failed to fetch game data");
+		const data = await res.json();
+		if (!data.success) throw new Error("Failed to fetch game data");
+		return data.schedule.filter(
+			(game: OutgoingMatch) => game?.status?.typeName === "Live"
+		);
+	} catch (error) {
+		console.error(error);
+		return null;
+	}
+};
+
 export const recrawledFetcher = async (url: string) => {
 	try {
 		const res = await fetch(url, {
