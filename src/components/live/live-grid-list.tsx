@@ -4,27 +4,17 @@ import { OutgoingMatch } from "@/types/schedule";
 import LiveIndicator from "./live-indicator";
 import { ScheduleTabsViewListCard } from "../scheduled/schedule-tabs-view-list-card";
 import { Standing } from "@/types/standings";
-import useSWR from "swr";
-import { env } from "@/env";
-import { liveGamesFetcher } from "@/lib/utils";
 import { Spinner } from "../spinner";
 
 export function LiveGridList({
-	fallBackData,
+	liveGames,
 	standings,
+	isLoading,
 }: {
-	fallBackData: OutgoingMatch[];
+	liveGames: OutgoingMatch[];
 	standings: Standing[];
+	isLoading: boolean;
 }) {
-	const { data: liveGames, isLoading } = useSWR(
-		[`${env.NEXT_PUBLIC_API_URL}/schedule`, env.NEXT_PUBLIC_API_KEY],
-		liveGamesFetcher,
-		{
-			refreshInterval: 5000, // Refresh every 5 seconds
-			fallbackData: fallBackData,
-			revalidateOnFocus: true,
-		}
-	);
 	return (
 		<>
 			<h3 className="text-lg font-semibold mt-4 mb-2 flex items-center gap-2">

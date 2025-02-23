@@ -1,11 +1,11 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import LiveIndicator from "../live/live-indicator";
 import { OutgoingMatch } from "@/types/schedule";
 import { ScrollArea } from "../ui/scroll-area";
-import { Separator } from "../ui/separator";
 import { ScheduleTabsViewListCard } from "./schedule-tabs-view-list-card";
 import { Standing } from "@/types/standings";
-import { LiveGridList } from "../live/live-grid-list";
+import { LiveGamesAllGames } from "../live/live-games-all-games";
+import { LiveGamesTabContent } from "../live/live-games-tab-content";
+import { LiveGamesTrigger } from "../live/live-games-trigger";
 
 export default function ScheduleTabsViewList({
 	schedule,
@@ -14,7 +14,6 @@ export default function ScheduleTabsViewList({
 	schedule: OutgoingMatch[];
 	standings: Standing[];
 }) {
-	console.log(schedule);
 	const liveGames =
 		schedule.filter((game) => game?.status?.typeName === "Live") || [];
 
@@ -25,8 +24,6 @@ export default function ScheduleTabsViewList({
 	const scheduledGames = schedule.filter(
 		(game) => game?.status?.name === "Scheduled"
 	);
-
-	console.log(liveGames);
 
 	const allGames = schedule;
 
@@ -51,17 +48,7 @@ export default function ScheduleTabsViewList({
 						<span>Scheduled</span>{" "}
 						<span className="hidden xl:block">Games</span>
 					</TabsTrigger>
-					{liveGames.length > 0 ? (
-						<TabsTrigger
-							value="live"
-							className="text-xs md:text-sm flex xl:gap-1"
-						>
-							<span>Live</span>{" "}
-							<LiveIndicator className="ml-2 block xl:hidden" />
-							<span className="hidden xl:block">Games</span>
-							<LiveIndicator className="ml-2 hidden xl:block" />
-						</TabsTrigger>
-					) : null}
+					<LiveGamesTrigger />
 				</TabsList>
 			</div>
 			<TabsContent value="completed" className="space-y-4">
@@ -73,7 +60,7 @@ export default function ScheduleTabsViewList({
 					</h3>
 					<ScrollArea className="h-[75vh]">
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-							{completedGames.map((game) => (
+							{completedGames.reverse().map((game) => (
 								<ScheduleTabsViewListCard
 									game={game}
 									standings={standings}
@@ -107,12 +94,7 @@ export default function ScheduleTabsViewList({
 			<TabsContent value="all">
 				<div className="rounded-lg border bg-card text-card-foreground shadow-sm md:px-6 pb-16">
 					<ScrollArea className="h-[75vh]">
-						{liveGames.length > 0 ? (
-							<>
-								<LiveGridList standings={standings} fallBackData={liveGames} />
-								<Separator className="my-4" />
-							</>
-						) : null}
+						<LiveGamesAllGames standings={standings} liveGames={allGames} />
 						<h3 className="text-lg font-semibold mt-4 mb-2 flex items-center gap-2">
 							<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
 								All Games
@@ -130,13 +112,7 @@ export default function ScheduleTabsViewList({
 					</ScrollArea>
 				</div>
 			</TabsContent>
-			{liveGames.length > 0 ? (
-				<TabsContent value="live">
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-						<LiveGridList standings={standings} fallBackData={liveGames} />
-					</div>
-				</TabsContent>
-			) : null}
+			<LiveGamesTabContent standings={standings} liveGames={liveGames} />
 		</Tabs>
 	);
 }

@@ -2,12 +2,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Metadata } from "next";
 import { getSchedule } from "@/server/schedule";
 import { OutgoingMatch } from "@/types/schedule";
-import LiveIndicator from "@/components/live/live-indicator";
-import { Separator } from "@/components/ui/separator";
 import { AndaHeader } from "@/components/anda-header";
 import { ScheduleTabsViewListCard } from "@/components/scheduled/schedule-tabs-view-list-card";
 import { getStandings } from "@/server/standings";
-import { LiveGridList } from "@/components/live/live-grid-list";
+import { LiveGamesTrigger } from "@/components/live/live-games-trigger";
+import { LiveGamesTabContent } from "@/components/live/live-games-tab-content";
+import { LiveGamesAllGames } from "@/components/live/live-games-all-games";
 
 export const metadata: Metadata = {
 	title: "NLL Games | Schedule and Results | NLL Tracker by andamonium",
@@ -106,17 +106,7 @@ export default async function Page() {
 							<span>Scheduled</span>{" "}
 							<span className="hidden xl:block">Games</span>
 						</TabsTrigger>
-						{liveGames.length > 0 ? (
-							<TabsTrigger
-								value="live"
-								className="text-xs md:text-sm flex xl:gap-1"
-							>
-								<span>Live</span>{" "}
-								<LiveIndicator className="ml-2 block xl:hidden" />
-								<span className="hidden xl:block">Games</span>
-								<LiveIndicator className="ml-2 hidden xl:block" />
-							</TabsTrigger>
-						) : null}
+						<LiveGamesTrigger />
 					</TabsList>
 				</div>
 				<TabsContent value="completed" className="space-y-4">
@@ -162,12 +152,7 @@ export default async function Page() {
 								All Games
 							</span>
 						</h3>
-						{liveGames.length > 0 ? (
-							<>
-								<LiveGridList standings={standings} fallBackData={liveGames} />
-								<Separator className="my-4" />
-							</>
-						) : null}
+						<LiveGamesAllGames standings={standings} liveGames={liveGames} />
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
 							{allGames.map((game: OutgoingMatch) => (
 								<ScheduleTabsViewListCard
@@ -179,13 +164,7 @@ export default async function Page() {
 						</div>
 					</div>
 				</TabsContent>
-				{liveGames.length > 0 ? (
-					<TabsContent value="live">
-						<div className="rounded-lg border bg-card text-card-foreground shadow-sm px-6 pb-16">
-							<LiveGridList standings={standings} fallBackData={liveGames} />
-						</div>
-					</TabsContent>
-				) : null}
+				<LiveGamesTabContent standings={standings} liveGames={liveGames} />
 			</Tabs>
 		</div>
 	);
