@@ -17,10 +17,10 @@ export function LiveGridList({
 	standings: Standing[];
 }) {
 	const { data: liveGames, isLoading } = useSWR(
-		`${env.NEXT_PUBLIC_API_URL}/schedule`,
+		[`${env.NEXT_PUBLIC_API_URL}/schedule`, env.NEXT_PUBLIC_API_KEY],
 		liveGamesFetcher,
 		{
-			refreshInterval: 5000, // Refresh every 10 seconds
+			refreshInterval: 5000, // Refresh every 5 seconds
 			fallbackData: fallBackData,
 			revalidateOnFocus: true,
 		}

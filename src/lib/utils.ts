@@ -1,4 +1,3 @@
-import { env } from "@/env";
 import { OutgoingMatch } from "@/types/schedule";
 import { Standing } from "@/types/standings";
 import { clsx, type ClassValue } from "clsx";
@@ -263,11 +262,11 @@ export const liveGameFetcher = async ([url, apiKey]: [string, string]) => {
 	}
 };
 
-export const liveGamesFetcher = async () => {
+export const liveGamesFetcher = async ([url, apiKey]: [string, string]) => {
 	try {
-		const res = await fetch(`${env.NEXT_PUBLIC_API_URL}/schedule`, {
+		const res = await fetch(url, {
 			headers: {
-				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				"x-api-key": apiKey,
 			},
 		});
 		if (!res.ok) throw new Error("Failed to fetch game data");
