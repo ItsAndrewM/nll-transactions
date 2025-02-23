@@ -246,11 +246,11 @@ export function convertESTtoLocal(estTime: string): string {
 	return `${time} ${timezoneMap[offset] || `GMT${offset / -60}`}`;
 }
 
-export const liveGameFetcher = async (url: string) => {
+export const liveGameFetcher = async ([url, apiKey]: [string, string]) => {
 	try {
 		const res = await fetch(url, {
 			headers: {
-				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				"x-api-key": apiKey,
 			},
 		});
 		if (!res.ok) throw new Error("Failed to fetch game data");
@@ -282,11 +282,11 @@ export const liveGamesFetcher = async () => {
 	}
 };
 
-export const recrawledFetcher = async (url: string) => {
+export const recrawledFetcher = async ([url, apiKey]: [string, string]) => {
 	try {
 		const res = await fetch(url, {
 			headers: {
-				"x-api-key": env.NEXT_PUBLIC_API_KEY,
+				"x-api-key": apiKey,
 			},
 		});
 		if (!res.ok) throw new Error("Failed to fetch game data");

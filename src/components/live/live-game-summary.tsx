@@ -24,10 +24,13 @@ export default function LiveGameSummary({
 	teams: { home: Standing; away: Standing };
 }) {
 	const { data: liveMatch } = useSWR<OutgoingMatch>(
-		`${env.NEXT_PUBLIC_API_URL}/schedule/${gameData?.id}`,
+		[
+			`${env.NEXT_PUBLIC_API_URL}/schedule/${gameData?.id}`,
+			env.NEXT_PUBLIC_API_KEY,
+		],
 		liveGameFetcher,
 		{
-			refreshInterval: 5000, // Refresh every 5 seconds
+			refreshInterval: 5000,
 			fallbackData: liveGame,
 			revalidateOnFocus: true,
 		}
@@ -35,7 +38,7 @@ export default function LiveGameSummary({
 
 	// trigger recrawl depending on status
 	const { data: recrawledData } = useSWR<GameData>(
-		`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`,
+		[`${env.NEXT_PUBLIC_API_URL}/live/${gameData.id}`, env.NEXT_PUBLIC_API_KEY],
 		recrawledFetcher,
 		{
 			refreshInterval: 10000, // Refresh every 10 seconds
