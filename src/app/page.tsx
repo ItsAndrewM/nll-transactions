@@ -7,7 +7,7 @@ import { getFrontPage } from "@/server/front-page";
 import Image from "next/image";
 import Link from "next/link";
 
-export const revalidate = 3600;
+export const revalidate = 86400;
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;

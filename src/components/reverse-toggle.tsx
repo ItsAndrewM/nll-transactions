@@ -12,7 +12,7 @@ export default function ReverseToggle({
 	checked: boolean;
 }) {
 	return (
-		<div className="flex items-center space-x-2 my-4">
+		<div className="flex items-center space-x-2 my-4 md:px-6">
 			<Switch
 				id="recent"
 				name="recent"

@@ -6,12 +6,12 @@ export function AndaHeader() {
 		<div className="flex justify-between items-center mb-8 px-6">
 			<div className="flex items-center gap-4">
 				<Link
-					href={"https://github.com/itsandrewm/"}
-					className="hover:opacity-80 transition-opacity duration-300 ease-in-out"
+					href={"/"}
+					className="hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer"
 				>
 					<Image
-						src="/robotman.jpg"
-						alt="Andamonium"
+						src="/nlltracker-logo-2.png"
+						alt="NLL Tracker Logo"
 						width={50}
 						height={50}
 						className="rounded-full border-2 border-primary"
@@ -20,7 +20,7 @@ export function AndaHeader() {
 				<div>
 					<Link
 						href={"/"}
-						className="hover:text-slate-500 transition-colors duration-300 ease-in-out text-foreground"
+						className="hover:text-slate-500 transition-colors duration-300 ease-in-out text-foreground cursor-pointer"
 					>
 						<h1 className="text-4xl font-bold ">
 							{" "}
@@ -31,7 +31,7 @@ export function AndaHeader() {
 					</Link>
 					<Link
 						href={"https://andamonium.dev"}
-						className="text-muted-foreground hover:text-black transition-colors duration-300 ease-in-out"
+						className="text-muted-foreground hover:text-black transition-colors duration-300 ease-in-out cursor-pointer"
 					>
 						<p className="text-sm ">by andamonium</p>
 					</Link>
