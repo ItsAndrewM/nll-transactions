@@ -269,18 +269,25 @@ export const liveGamesFetcher = async ([url, apiKey]: [string, string]) => {
 				"x-api-key": apiKey,
 			},
 		});
-		if (!res.ok) throw new Error("Failed to fetch game data");
+
+		if (!res.ok)
+			throw new Error(
+				`Failed to fetch game data: ${res.status} ${res.statusText}`
+			);
+
 		const data = await res.json();
-		if (!data.success) throw new Error("Failed to fetch game data");
-		return data.schedule.filter(
+		if (!data.success) throw new Error("API returned success: false");
+
+		const liveGames = data.schedule.filter(
 			(game: OutgoingMatch) => game?.status?.typeName === "Live"
 		);
+
+		return liveGames;
 	} catch (error) {
-		console.error(error);
+		console.error("Error fetching live games:", error);
 		return null;
 	}
 };
-
 export const recrawledFetcher = async ([url, apiKey]: [string, string]) => {
 	try {
 		const res = await fetch(url, {
