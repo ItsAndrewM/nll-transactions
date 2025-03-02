@@ -63,8 +63,8 @@ export function cn(...inputs: ClassValue[]) {
 
 export const createFallbackName = (str: string): string => {
 	return (
-		str.split(" ")[0].charAt(0).toUpperCase() +
-		str.split(" ")[1].charAt(0).toUpperCase()
+		str?.split(" ")[0]?.charAt(0)?.toUpperCase() +
+		str?.split(" ")[1]?.charAt(0)?.toUpperCase()
 	);
 };
 
