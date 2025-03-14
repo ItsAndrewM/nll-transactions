@@ -44,7 +44,7 @@ export function ScheduleTabsViewListCard({
 	const venueTimezone = getIANATimezone(venue?.timeZone);
 
 	// Get user's local time
-	const localTime = getLocalTime(utcMatchStart, venueTimezone);
+	const localTime = getLocalTime(utcMatchStart);
 	const date = getLocalDate(utcMatchStart, venueTimezone);
 
 	return (
