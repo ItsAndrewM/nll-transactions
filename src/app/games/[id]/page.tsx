@@ -125,6 +125,8 @@ export default async function Page(props: { params: Params }) {
 
 	const { game_summary: game, live_game: liveGame } = data || {};
 
+	console.log(game);
+
 	const teams = await getVsTeamsWithoutId(
 		game?.game_info?.home?.title,
 		game?.game_info?.away?.title

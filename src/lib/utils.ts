@@ -445,3 +445,82 @@ export function getSuffix(position: number): string {
 			return `${position}th`;
 	}
 }
+
+export const getIANATimezone = (timezoneStr: string | undefined): string => {
+	if (!timezoneStr) return "America/New_York"; // Default fallback
+
+	// Handle specific Canadian timezone mappings
+	const canadianTimezones: Record<string, string> = {
+		"Canada/Eastern": "America/Toronto",
+		"Canada/Central": "America/Winnipeg",
+		"Canada/Mountain": "America/Edmonton",
+		"Canada/Pacific": "America/Vancouver",
+		"Canada/Atlantic": "America/Halifax",
+		"Canada/Newfoundland": "America/St_Johns",
+		"Canada/Saskatchewan": "America/Regina",
+		Saskatchewan: "America/Regina", // Handle Saskatchewan directly
+		Eastern: "America/New_York",
+		Central: "America/Chicago",
+		Mountain: "America/Denver",
+		Pacific: "America/Los_Angeles",
+		Atlantic: "America/Halifax",
+	};
+
+	// Check if we have a specific mapping
+	if (canadianTimezones[timezoneStr]) {
+		return canadianTimezones[timezoneStr];
+	}
+
+	// If it's already a valid IANA timezone, return it directly
+	try {
+		// Quick test to see if the timezone is valid
+		Intl.DateTimeFormat("en-US", { timeZone: timezoneStr });
+		return timezoneStr;
+	} catch (e) {
+		console.warn(
+			`Invalid timezone: ${timezoneStr}, falling back to America/New_York`
+		);
+		return "America/New_York"; // Default if invalid
+	}
+};
+
+export const getLocalTime = (utcMatchStart: string, timezone: string) => {
+	try {
+		// Format time in user's local timezone (no timeZone parameter)
+		const userLocalTime = new Date(utcMatchStart).toLocaleTimeString("en-US", {
+			hour: "numeric" as const,
+			minute: "numeric" as const,
+			hour12: true,
+		});
+
+		// Get user's timezone abbreviation
+		const userTimeZone =
+			new Date()
+				.toLocaleTimeString("en-US", {
+					timeZoneName: "short" as const,
+				})
+				.split(" ")
+				.pop() || "";
+
+		return `${userLocalTime} ${userTimeZone}`;
+	} catch (e) {
+		console.error(`Error formatting local time: ${e}`);
+		return new Date(utcMatchStart).toLocaleTimeString("en-US");
+	}
+};
+
+export function getLocalDate(utcMatchStart: string, venueTimezone: string) {
+	try {
+		return new Date(utcMatchStart).toLocaleDateString("en-US", {
+			weekday: "long",
+			year: "numeric",
+			month: "long",
+			day: "numeric",
+			timeZone: venueTimezone, // Use venue timezone for the date too
+		});
+	} catch (e) {
+		console.error(`Error formatting date: ${e}`);
+		// Fallback to a simple date format
+		return new Date(utcMatchStart).toLocaleDateString("en-US");
+	}
+}

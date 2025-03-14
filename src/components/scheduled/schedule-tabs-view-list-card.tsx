@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { cn, getIANATimezone, getLocalDate, getLocalTime } from "@/lib/utils";
 import { OutgoingMatch } from "@/types/schedule";
 import { imageUrls } from "@/data/image-urls";
 import { Standing } from "@/types/standings";
@@ -13,6 +13,7 @@ export function ScheduleTabsViewListCard({
 	game: OutgoingMatch;
 	standings: Standing[];
 }) {
+	console.log(game);
 	const { squads, date: matchDate, status, id, venue } = game || {};
 	const { away: awayTeam, home: homeTeam } = squads || {};
 	const { name, typeName } = status || {};
@@ -40,18 +41,12 @@ export function ScheduleTabsViewListCard({
 	const { wins: awayWins, losses: awayLosses } = awayStanding || {};
 	const { wins: homeWins, losses: homeLosses } = homeStanding || {};
 
-	const time = new Date(utcMatchStart).toLocaleTimeString("en-US", {
-		hour: "numeric",
-		minute: "numeric",
-		hour12: true,
-		timeZoneName: "short",
-	});
-	const date = new Date(startDate).toLocaleDateString("en-US", {
-		weekday: "long",
-		year: "numeric",
-		month: "long",
-		day: "numeric",
-	});
+	// Map venue timezone to valid IANA format
+	const venueTimezone = getIANATimezone(venue?.timeZone);
+
+	// Get user's local time
+	const localTime = getLocalTime(utcMatchStart, venueTimezone);
+	const date = getLocalDate(utcMatchStart, venueTimezone);
 
 	return (
 		<Card
@@ -61,7 +56,7 @@ export function ScheduleTabsViewListCard({
 			<CardHeader>
 				<CardTitle className="text-lg font-semibold text-center flex flex-col gap-2">
 					<span>{date}</span>
-					<span>{time}</span>
+					<span>{localTime}</span>
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
