@@ -13,11 +13,10 @@ export function ScheduleTabsViewListCard({
 	game: OutgoingMatch;
 	standings: Standing[];
 }) {
-	console.log(game);
 	const { squads, date: matchDate, status, id, venue } = game || {};
 	const { away: awayTeam, home: homeTeam } = squads || {};
 	const { name, typeName } = status || {};
-	const { startDate, utcMatchStart } = matchDate || {};
+	const { utcMatchStart } = matchDate || {};
 	const awayLogo = imageUrls.find(
 		(img) => img.name === awayTeam.displayName
 	)?.imageUrl;
