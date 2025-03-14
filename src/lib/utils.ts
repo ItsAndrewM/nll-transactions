@@ -477,14 +477,12 @@ export const getIANATimezone = (timezoneStr: string | undefined): string => {
 		Intl.DateTimeFormat("en-US", { timeZone: timezoneStr });
 		return timezoneStr;
 	} catch (e) {
-		console.warn(
-			`Invalid timezone: ${timezoneStr}, falling back to America/New_York`
-		);
+		console.warn(`Invalid timezone: ${e}, falling back to America/New_York`);
 		return "America/New_York"; // Default if invalid
 	}
 };
 
-export const getLocalTime = (utcMatchStart: string, timezone: string) => {
+export const getLocalTime = (utcMatchStart: string) => {
 	try {
 		// Format time in user's local timezone (no timeZone parameter)
 		const userLocalTime = new Date(utcMatchStart).toLocaleTimeString("en-US", {
