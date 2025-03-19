@@ -2,14 +2,11 @@ import { getAllTransactions } from "@/server/transactions";
 import { TransactionsFrontPage } from "./transactions-front-page";
 import { Suspense } from "react";
 
-type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export async function TransactionContainer({
-	params,
 	searchParams,
 }: {
-	params: Params;
 	searchParams: SearchParams;
 }) {
 	const order = await searchParams.then((params) =>

@@ -92,10 +92,7 @@ export default async function Home(props: {
 				</div>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8">
-				<TransactionContainer
-					params={props.params}
-					searchParams={props.searchParams}
-				/>
+				<TransactionContainer searchParams={props.searchParams} />
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 ">
 				<ScheduleContainer />
