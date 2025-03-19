@@ -1,9 +1,7 @@
-import { StatsDataTable } from "@/components/data-table/stats-data-table";
-import { teamsColumns } from "@/components/data-table/teams-columns";
-import ScheduleTabsViewList from "@/components/scheduled/schedule-tabs-view-list";
-import { TransactionsFrontPage } from "@/components/transactions/transactions-front-page";
+import { StatsDataTableContainer } from "@/components/data-table/stats-data-table-container";
+import { ScheduleContainer } from "@/components/scheduled/schedule-container";
+import { TransactionContainer } from "@/components/transactions/transaction-container";
 import { Button } from "@/components/ui/button";
-import { getFrontPage } from "@/server/front-page";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,16 +14,6 @@ export default async function Home(props: {
 	params: Params;
 	searchParams: SearchParams;
 }) {
-	const searchParams = await props.searchParams;
-	const order =
-		typeof searchParams.order === "string" ? searchParams.order : "dsc";
-	const team = typeof searchParams.team === "string" ? searchParams.team : "";
-
-	const {
-		data: allTransactions,
-		schedule,
-		standings,
-	} = await getFrontPage(order, team);
 	return (
 		<main className="w-full mx-auto flex flex-col">
 			<section className="relative h-screen md:h-[85vh] w-full md:px-4 md:py-16 sm:px-6 lg:px-8 mx-auto">
@@ -104,37 +92,16 @@ export default async function Home(props: {
 				</div>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8">
-				<TransactionsFrontPage transactions={allTransactions} />
+				<TransactionContainer
+					params={props.params}
+					searchParams={props.searchParams}
+				/>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 ">
-				<h2
-					className="uppercase text-4xl font-bold md:text-left text-center"
-					id="schedule"
-				>
-					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
-						Schedule
-					</span>
-				</h2>
-				<ScheduleTabsViewList schedule={schedule} standings={standings} />
+				<ScheduleContainer />
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 pb-20">
-				<h2
-					className="uppercase text-4xl font-bold md:text-left text-center"
-					id="standings"
-				>
-					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
-						Standings
-					</span>
-				</h2>
-				{/* <Standings standings={standings} /> */}
-				<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex flex-col gap-4">
-					<StatsDataTable
-						columns={teamsColumns}
-						data={standings}
-						defaultSort="position"
-						defaultSortDirection="asc"
-					/>
-				</div>
+				<StatsDataTableContainer />
 			</section>
 		</main>
 	);
