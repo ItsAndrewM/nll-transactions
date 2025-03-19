@@ -3,6 +3,8 @@ import { StatsDataTable } from "./stats-data-table";
 import { teamsColumns } from "./teams-columns";
 import { Suspense } from "react";
 
+export const revalidate = 3600;
+
 export async function StatsDataTableContainer() {
 	const standings = await getStandings();
 	return (

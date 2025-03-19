@@ -2,6 +2,8 @@ import { getAllTransactions } from "@/server/transactions";
 import { TransactionsFrontPage } from "./transactions-front-page";
 import { Suspense } from "react";
 
+export const revalidate = 3600;
+
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
 export async function TransactionContainer({

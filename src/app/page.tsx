@@ -5,12 +5,10 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export const revalidate = 3600;
-
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
 
-export default async function Home(props: {
+export default function Home(props: {
 	params: Params;
 	searchParams: SearchParams;
 }) {
