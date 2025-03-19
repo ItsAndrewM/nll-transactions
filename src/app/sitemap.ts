@@ -62,20 +62,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			priority: 0.8,
 		},
 
-		...players?.players.map((player: Player) => ({
-			url: `https://nlltracker.com/players/${player.personId}`,
+		...players?.players?.map((player: Player) => ({
+			url: `https://nlltracker.com/players/${player?.personId}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,
 		})),
-		...gameIds.map((gameId: number) => ({
+		...gameIds?.map((gameId: number) => ({
 			url: `https://nlltracker.com/games/${gameId}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,
 		})),
-		...teams.map((team: Standing) => ({
-			url: `https://nlltracker.com/teams/${team.team_id}`,
+		...teams?.map((team: Standing) => ({
+			url: `https://nlltracker.com/teams/${team?.team_id}`,
 			lastModified: new Date(),
 			changeFrequency: "weekly",
 			priority: 0.5,
