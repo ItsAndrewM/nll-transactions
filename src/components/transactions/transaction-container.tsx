@@ -1,6 +1,5 @@
 import { getAllTransactions } from "@/server/transactions";
 import { TransactionsFrontPage } from "./transactions-front-page";
-import { Suspense } from "react";
 
 export const revalidate = 3600;
 
@@ -19,9 +18,5 @@ export async function TransactionContainer({
 	);
 
 	const allTransactions = await getAllTransactions(order, team);
-	return (
-		<Suspense fallback={<div>Loading...</div>}>
-			<TransactionsFrontPage transactions={allTransactions} />
-		</Suspense>
-	);
+	return <TransactionsFrontPage transactions={allTransactions} />;
 }

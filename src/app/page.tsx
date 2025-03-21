@@ -4,6 +4,7 @@ import { TransactionContainer } from "@/components/transactions/transaction-cont
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -90,13 +91,19 @@ export default function Home(props: {
 				</div>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8">
-				<TransactionContainer searchParams={props.searchParams} />
+				<Suspense fallback={<div>Loading...</div>}>
+					<TransactionContainer searchParams={props.searchParams} />
+				</Suspense>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 ">
-				<ScheduleContainer />
+				<Suspense fallback={<div>Loading...</div>}>
+					<ScheduleContainer />
+				</Suspense>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 pb-20">
-				<StatsDataTableContainer />
+				<Suspense fallback={<div>Loading...</div>}>
+					<StatsDataTableContainer />
+				</Suspense>
 			</section>
 		</main>
 	);

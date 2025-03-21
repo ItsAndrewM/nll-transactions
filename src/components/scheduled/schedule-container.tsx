@@ -1,7 +1,6 @@
 import { getSchedule } from "@/server/schedule";
 import { getStandings } from "@/server/standings";
 import ScheduleTabsViewList from "./schedule-tabs-view-list";
-import { Suspense } from "react";
 
 export const revalidate = 3600;
 
@@ -20,9 +19,7 @@ export async function ScheduleContainer() {
 					Schedule
 				</span>
 			</h2>
-			<Suspense fallback={<div>Loading...</div>}>
-				<ScheduleTabsViewList schedule={schedule} standings={standings} />
-			</Suspense>
+			<ScheduleTabsViewList schedule={schedule} standings={standings} />
 		</>
 	);
 }
