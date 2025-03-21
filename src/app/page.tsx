@@ -1,4 +1,7 @@
+import { LoadingSkeleton as TransactionLoadingSkeleton } from "@/components/transactions/transactions-loading";
+import { LoadingSkeleton as StatsDataTableContainerLoadingSkeleton } from "@/components/data-table/skeleton-stats-data-table-container";
 import { StatsDataTableContainer } from "@/components/data-table/stats-data-table-container";
+import { LoadingSkeleton as ScheduleContainerLoadingSkeleton } from "@/components/scheduled/skeleton-schedule-container";
 import { ScheduleContainer } from "@/components/scheduled/schedule-container";
 import { TransactionContainer } from "@/components/transactions/transaction-container";
 import { Button } from "@/components/ui/button";
@@ -91,17 +94,33 @@ export default function Home(props: {
 				</div>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8">
-				<Suspense fallback={<div>Loading...</div>}>
+				<Suspense fallback={<TransactionLoadingSkeleton />}>
 					<TransactionContainer searchParams={props.searchParams} />
 				</Suspense>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 ">
-				<Suspense fallback={<div>Loading...</div>}>
+				<h2
+					className="uppercase text-4xl font-bold md:text-left text-center"
+					id="schedule"
+				>
+					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+						Schedule
+					</span>
+				</h2>
+				<Suspense fallback={<ScheduleContainerLoadingSkeleton />}>
 					<ScheduleContainer />
 				</Suspense>
 			</section>
 			<section className="relative w-full px-4 py-16 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 gap-8 pb-20">
-				<Suspense fallback={<div>Loading...</div>}>
+				<h2
+					className="uppercase text-4xl font-bold md:text-left text-center"
+					id="standings"
+				>
+					<span className="inline bg-gradient-to-t from-primary/85 from-45% to-transparent to-45% bg-no-repeat bg-[length:100%] transition-all duration-500 ease-in-out">
+						Standings
+					</span>
+				</h2>
+				<Suspense fallback={<StatsDataTableContainerLoadingSkeleton />}>
 					<StatsDataTableContainer />
 				</Suspense>
 			</section>

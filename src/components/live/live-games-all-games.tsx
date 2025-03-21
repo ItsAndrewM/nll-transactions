@@ -1,7 +1,6 @@
 "use client";
 
 import { Standing } from "@/types/standings";
-import { Separator } from "../ui/separator";
 import { OutgoingMatch } from "@/types/schedule";
 import { LiveGridList } from "./live-grid-list";
 import useSWR from "swr";
@@ -25,13 +24,10 @@ export function LiveGamesAllGames({
 		}
 	);
 	return !realTimeLiveGames?.length ? null : (
-		<>
-			<LiveGridList
-				standings={standings}
-				liveGames={realTimeLiveGames}
-				isLoading={isLoading}
-			/>
-			<Separator className="my-4" />
-		</>
+		<LiveGridList
+			standings={standings}
+			liveGames={realTimeLiveGames}
+			isLoading={isLoading}
+		/>
 	);
 }
