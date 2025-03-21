@@ -4,7 +4,7 @@ import { getAllTransactions } from "@/server/transactions";
 import { Suspense } from "react";
 import { getStandings } from "@/server/standings";
 import Standings from "@/components/standings/standings";
-import { TransactionsLoading } from "@/components/transactions/transactions-loading";
+import { LoadingSkeleton as TransactionsLoading } from "@/components/transactions/skeleton-transactions-page";
 import { StandingsLoading } from "@/components/standings/standings-loading";
 // import { TransactionIcon } from "@hugeicons/core-free-icons";
 // import { HugeiconsIcon } from "@hugeicons/react";

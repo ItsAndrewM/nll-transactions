@@ -4,7 +4,6 @@ import { OutgoingMatch } from "@/types/schedule";
 import LiveIndicator from "./live-indicator";
 import { ScheduleTabsViewListCard } from "../scheduled/schedule-tabs-view-list-card";
 import { Standing } from "@/types/standings";
-import { Spinner } from "../spinner";
 import { Separator } from "../ui/separator";
 
 export function LiveGridList({

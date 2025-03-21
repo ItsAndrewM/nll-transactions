@@ -1,4 +1,4 @@
-import { ArrowDownIcon, ArrowUpDownIcon } from "lucide-react";
+import { ArrowUpDownIcon } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import {
 	Table,

@@ -1,4 +1,4 @@
-import { LoadingSkeleton as TransactionLoadingSkeleton } from "@/components/transactions/transactions-loading";
+import { LoadingSkeleton as TransactionLoadingSkeleton } from "@/components/transactions/skeleton-transactions-page";
 import { LoadingSkeleton as StatsDataTableContainerLoadingSkeleton } from "@/components/data-table/skeleton-stats-data-table-container";
 import { StatsDataTableContainer } from "@/components/data-table/stats-data-table-container";
 import { LoadingSkeleton as ScheduleContainerLoadingSkeleton } from "@/components/scheduled/skeleton-schedule-container";
