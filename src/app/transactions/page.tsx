@@ -1,15 +1,9 @@
 import { AndaHeader } from "@/components/anda-header";
-import { TransactionsPage } from "@/components/transactions/transactions-page";
-import { getAllTransactions } from "@/server/transactions";
 import { Suspense } from "react";
-import { getStandings } from "@/server/standings";
-import Standings from "@/components/standings/standings";
-import { LoadingSkeleton as TransactionsLoading } from "@/components/transactions/skeleton-transactions-page";
-import { StandingsLoading } from "@/components/standings/standings-loading";
-// import { TransactionIcon } from "@hugeicons/core-free-icons";
-// import { HugeiconsIcon } from "@hugeicons/react";
-
-export const revalidate = 3600;
+import { LoadingSkeleton as TransactionLoadingSkeleton } from "@/components/transactions/skeleton-transactions-page-container";
+import { LoadingSkeleton as StandingsLoading } from "@/components/standings/standings-loading";
+import { TransactionsPageContainer } from "@/components/transactions/transactions-page-container";
+import { StandingsContainer } from "@/components/standings/standings-container";
 
 type Params = Promise<{ slug: string }>;
 type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>;
@@ -18,21 +12,12 @@ export default async function Page(props: {
 	params: Params;
 	searchParams: SearchParams;
 }) {
-	const searchParams = await props.searchParams;
-	const order =
-		typeof searchParams.order === "string" ? searchParams.order : "dsc";
-	const team = typeof searchParams.team === "string" ? searchParams.team : "";
-	const [allTransactions, standings] = await Promise.all([
-		getAllTransactions(order, team),
-		getStandings(),
-	]);
-
 	return (
-		<div className="mx-auto px-4 py-8 pb-20 flex flex-col items-center">
+		<div className="mx-auto px-4 py-8 pb-20 flex flex-col items-center container">
 			<AndaHeader />
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-				<Suspense fallback={<TransactionsLoading />}>
-					<TransactionsPage transactions={allTransactions} />
+				<Suspense fallback={<TransactionLoadingSkeleton />}>
+					<TransactionsPageContainer searchParams={props.searchParams} />
 				</Suspense>
 				<div className="flex flex-col gap-4 items-center justify-start w-full">
 					<h2
@@ -44,7 +29,7 @@ export default async function Page(props: {
 						</span>
 					</h2>
 					<Suspense fallback={<StandingsLoading />}>
-						<Standings standings={standings} />
+						<StandingsContainer />
 					</Suspense>
 				</div>
 			</div>

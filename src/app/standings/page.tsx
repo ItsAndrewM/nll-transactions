@@ -1,10 +1,10 @@
 import { AndaHeader } from "@/components/anda-header";
-import { StatsDataTable } from "@/components/data-table/stats-data-table";
-import { teamsColumns } from "@/components/data-table/teams-columns";
-import Standings from "@/components/standings/standings";
-import { getStandings } from "@/server/standings";
+import { StandingsContainer } from "@/components/standings/standings-container";
 import { Metadata } from "next";
-
+import { Suspense } from "react";
+import { LoadingSkeleton as StandingsLoading } from "@/components/standings/standings-loading";
+import { StatsDataTableContainer } from "@/components/data-table/stats-data-table-container";
+import { LoadingSkeleton as StatsDataTableContainerLoadingSkeleton } from "@/components/data-table/skeleton-stats-data-table-container";
 export const metadata: Metadata = {
 	title: "NLL Standings | NLL Tracker by andamonium",
 	description:
@@ -48,10 +48,7 @@ export const metadata: Metadata = {
 	},
 };
 
-export const revalidate = 3600;
-
-export default async function Page() {
-	const standings = await getStandings();
+export default function Page() {
 	return (
 		<div className="mx-auto px-4 py-8 pb-20 flex flex-col gap-4 items-center">
 			<AndaHeader />
@@ -67,7 +64,9 @@ export default async function Page() {
 							Standings
 						</span>
 					</h2>
-					<Standings standings={standings} />
+					<Suspense fallback={<StandingsLoading />}>
+						<StandingsContainer />
+					</Suspense>
 				</div>
 				<div className="flex flex-col gap-4 justify-start w-full">
 					<h2
@@ -78,14 +77,9 @@ export default async function Page() {
 							Team Stats
 						</span>
 					</h2>
-					<div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 flex flex-col gap-4">
-						<StatsDataTable
-							columns={teamsColumns}
-							data={standings}
-							defaultSort="position"
-							defaultSortDirection="asc"
-						/>
-					</div>
+					<Suspense fallback={<StatsDataTableContainerLoadingSkeleton />}>
+						<StatsDataTableContainer />
+					</Suspense>
 				</div>
 			</div>
 		</div>
