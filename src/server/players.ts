@@ -32,7 +32,8 @@ export async function getPlayer(id: string) {
 			},
 		});
 		if (!response.ok) {
-			throw new Error("Failed to fetch player");
+			console.log("Failed to fetch player", response);
+			return null;
 		}
 		const data = await response.json();
 		return { ...data.player, id };

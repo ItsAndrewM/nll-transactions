@@ -93,13 +93,15 @@ export default async function TeamPage(props: { params: Params }) {
 	return (
 		<div className="container mx-auto px-4 py-8 flex flex-col gap-8">
 			<AndaHeader />
-			<TeamHeader team={teamData} standings={teamStandings} />
-			<div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full">
-				<div>
-					<TeamSchedule schedule={teamData.schedule} />
-				</div>
-				<div>
-					<TeamRoster players={rosterData} />
+			<div className="flex flex-col gap-4">
+				<TeamHeader team={teamData} standings={teamStandings} />
+				<div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 w-full">
+					<div>
+						<TeamSchedule schedule={teamData.schedule} />
+					</div>
+					<div>
+						<TeamRoster players={rosterData} />
+					</div>
 				</div>
 			</div>
 		</div>

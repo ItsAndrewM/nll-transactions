@@ -4,6 +4,7 @@ import { ColumnDef } from "@tanstack/react-table";
 import ColumnHeader from "./column-header";
 import Image from "next/image";
 import { Standing } from "@/types/standings";
+import Link from "next/link";
 
 export const teamsColumns: ColumnDef<Standing>[] = [
 	{
@@ -19,7 +20,9 @@ export const teamsColumns: ColumnDef<Standing>[] = [
 			const team = row.getValue("team") as { name: string; logo: string };
 			return (
 				<div className="flex justify-center items-center w-full">
-					<Image src={team.logo} alt={team.name} width={32} height={32} />
+					<Link href={`/teams/${team.name}`} prefetch>
+						<Image src={team.logo} alt={team.name} width={32} height={32} />
+					</Link>
 				</div>
 			);
 		},
@@ -30,7 +33,11 @@ export const teamsColumns: ColumnDef<Standing>[] = [
 			<ColumnHeader<Standing> column={column} text="NAME" />
 		),
 		cell: ({ row }) => (
-			<div className="pl-4 text-left text-nowrap">{row.getValue("name")}</div>
+			<div className="pl-4 text-left text-nowrap">
+				<Link href={`/teams/${row.getValue("name")}`} prefetch>
+					{row.getValue("name")}
+				</Link>
+			</div>
 		),
 	},
 	{

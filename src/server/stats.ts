@@ -40,7 +40,8 @@ export const getPlayerStats = async (playerId: string) => {
 			}
 		);
 		if (!response.ok) {
-			throw new Error("Failed to fetch stats");
+			console.log("Failed to fetch stats");
+			return null;
 		}
 		const data = await response.json();
 		return data.player;

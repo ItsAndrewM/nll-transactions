@@ -3,7 +3,7 @@
 import { AllStats } from "@/types/games";
 import { ColumnDef } from "@tanstack/react-table";
 import ColumnHeader from "./column-header";
-
+import Link from "next/link";
 export const teamRunnerColumns: ColumnDef<AllStats>[] = [
 	{
 		accessorKey: "name",
@@ -11,7 +11,11 @@ export const teamRunnerColumns: ColumnDef<AllStats>[] = [
 			<ColumnHeader<AllStats> column={column} text="NAME" />
 		),
 		cell: ({ row }) => (
-			<div className="pl-4 text-left text-nowrap">{row.getValue("name")}</div>
+			<div className="pl-4 text-left text-nowrap">
+				<Link href={`/players/${row.original.id}`} prefetch>
+					{row.getValue("name")}
+				</Link>
+			</div>
 		),
 	},
 	{

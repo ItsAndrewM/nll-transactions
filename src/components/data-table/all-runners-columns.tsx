@@ -41,7 +41,11 @@ export const allRunnerColumns: ColumnDef<AllStats>[] = [
 			<ColumnHeader<AllStats> column={column} text="NAME" />
 		),
 		cell: ({ row }) => (
-			<div className="pl-4 text-left text-nowrap">{row.getValue("name")}</div>
+			<div className="pl-4 text-left text-nowrap">
+				<Link href={`/players/${row.original.id}`} prefetch>
+					{row.getValue("name")}
+				</Link>
+			</div>
 		),
 	},
 	{
