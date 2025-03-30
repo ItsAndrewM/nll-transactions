@@ -1,14 +1,6 @@
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-	CalendarDays,
-	MapPin,
-	Ruler,
-	Weight,
-	Instagram,
-	Twitter,
-	Youtube,
-} from "lucide-react";
+import { CalendarDays, MapPin, Ruler, Weight } from "lucide-react";
 
 export function PlayerPageSkeleton() {
 	return (
